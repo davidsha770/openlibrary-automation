@@ -1,21 +1,32 @@
-2026-04-13 14:53:33,291 - INFO - Starting login process...
-2026-04-13 14:53:48,669 - WARNING - PERFORMANCE WARNING: Homepage Load at https://openlibrary.org/ took 4294ms (Threshold: 3000ms)
-2026-04-13 14:53:51,113 - INFO - MATCH: Dune (1965)
-2026-04-13 14:53:51,117 - INFO - Syncing current library state...
-2026-04-13 14:54:11,766 - WARNING - PERFORMANCE WARNING: Load Book: Dune at https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M took 4578ms (Threshold: 2500ms)
-2026-04-13 14:54:13,770 - INFO - ADDING: 'Dune' to 'Want to Read'
-2026-04-13 14:54:13,910 - INFO - Screenshot saved for 'Dune' at outputs/screenshots/Dune.png
-2026-04-13 14:54:18,526 - INFO - Checking reading list: https://openlibrary.org/people/user532228/books/want-to-read
-2026-04-13 14:54:23,529 - INFO - Waiting for Web Components to hydrate...
-2026-04-13 14:54:38,537 - WARNING - Web Components hydration timed out. Attempting to scrape remaining DOM.
-2026-04-13 14:54:38,613 - INFO - Successfully retrieved 3 titles using selector: h3.booktitle a
-2026-04-13 14:54:38,614 - INFO - Found 3 titles in want-to-read
-2026-04-13 14:54:41,976 - WARNING - PERFORMANCE WARNING: Verify List: already-read at https://openlibrary.org/people/user532228/books/already-read took 2847ms (Threshold: 2000ms)
-2026-04-13 14:54:41,977 - INFO - Checking reading list: https://openlibrary.org/people/user532228/books/already-read
-2026-04-13 14:54:46,982 - INFO - Waiting for Web Components to hydrate...
-2026-04-13 14:55:01,988 - WARNING - Web Components hydration timed out. Attempting to scrape remaining DOM.
-2026-04-13 14:55:02,059 - INFO - Successfully retrieved 2 titles using selector: h3.booktitle a
-2026-04-13 14:55:02,060 - INFO - Found 2 titles in already-read
-2026-04-13 14:55:02,060 - INFO - Unique titles found across all lists: 5
-2026-04-13 14:55:02,061 - INFO - SUCCESS: All added books confirmed across the Reading Lists.
-2026-04-13 14:55:02,062 - INFO - Automation finished. Performance report generated.
+2026-04-13 16:06:30,331 - INFO - Starting login process...
+2026-04-13 16:06:42,789 - WARNING - PERFORMANCE WARNING: Homepage Load at https://openlibrary.org/ took 4459ms (Threshold: 3000ms)
+2026-04-13 16:06:45,332 - INFO - MATCH: Dune (1965)
+2026-04-13 16:06:45,354 - INFO - MATCH: Dune Messiah: Dune Chronicles, Book 2 (1969)
+2026-04-13 16:06:45,378 - INFO - MATCH: Das Haus an der Düne (1932)
+2026-04-13 16:06:45,413 - INFO - MATCH: Autour d'une vie (1899)
+2026-04-13 16:06:45,436 - INFO - MATCH: Jane Eyre ou Mémoires d'une gouvernante, de Currer-Bell, imités [and abridged] par Old-Nick (1847)
+2026-04-13 16:06:45,436 - INFO - Syncing current library state...
+2026-04-13 16:07:08,612 - WARNING - PERFORMANCE WARNING: Load Book: Dune at https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M took 4078ms (Threshold: 2500ms)
+2026-04-13 16:07:08,612 - INFO - SKIP: 'Dune' is already set to 'Want to Read'.
+2026-04-13 16:07:14,985 - INFO - ADDING: 'Dune Messiah: Dune Chronicles, Book 2' to 'Want to Read'
+2026-04-13 16:07:15,730 - INFO - Screenshot saved for 'Dune Messiah: Dune Chronicles, Book 2' at outputs/screenshots/Dune_Messiah__Dune_Chronicles__Book_2.png
+2026-04-13 16:07:23,359 - WARNING - PERFORMANCE WARNING: Load Book: Das Haus an der Düne at https://openlibrary.org/works/OL472165W/Peril_at_End_House?edition=key%3A/books/OL35638871M took 3949ms (Threshold: 2500ms)
+2026-04-13 16:07:25,361 - INFO - ADDING: 'Das Haus an der Düne' to 'Want to Read'
+2026-04-13 16:07:26,034 - INFO - Screenshot saved for 'Das Haus an der Düne' at outputs/screenshots/Das_Haus_an_der_Düne.png
+2026-04-13 16:07:34,551 - INFO - ADDING: 'Autour d'une vie' to 'Already Read'
+2026-04-13 16:07:35,224 - INFO - Screenshot saved for 'Autour d'une vie' at outputs/screenshots/Autour_d_une_vie.png
+2026-04-13 16:07:41,344 - WARNING - PERFORMANCE WARNING: Load Book: Jane Eyre ou Mémoires d'une gouvernante, de Currer-Bell, imités [and abridged] par Old-Nick at https://openlibrary.org/works/OL1095427W/Jane_Eyre?edition=key%3A/books/OL23443604M took 2918ms (Threshold: 2500ms)
+2026-04-13 16:07:41,344 - INFO - SKIP: 'Jane Eyre ou Mémoires d'une gouvernante, de Currer-Bell, imités [and abridged] par Old-Nick' is already set to 'Want to Read'.
+2026-04-13 16:07:42,725 - INFO - Checking reading list: https://openlibrary.org/people/user532228/books/want-to-read
+2026-04-13 16:07:47,729 - INFO - Waiting for Web Components to hydrate...
+2026-04-13 16:08:02,739 - WARNING - Web Components hydration timed out. Attempting to scrape remaining DOM.
+2026-04-13 16:08:02,804 - INFO - Successfully retrieved 3 titles using selector: h3.booktitle a
+2026-04-13 16:08:02,805 - INFO - Found 3 titles in want-to-read
+2026-04-13 16:08:04,278 - INFO - Checking reading list: https://openlibrary.org/people/user532228/books/already-read
+2026-04-13 16:08:09,282 - INFO - Waiting for Web Components to hydrate...
+2026-04-13 16:08:24,287 - WARNING - Web Components hydration timed out. Attempting to scrape remaining DOM.
+2026-04-13 16:08:24,312 - INFO - Successfully retrieved 2 titles using selector: h3.booktitle a
+2026-04-13 16:08:24,312 - INFO - Found 2 titles in already-read
+2026-04-13 16:08:24,312 - INFO - Unique titles found across all lists: 5
+2026-04-13 16:08:24,313 - INFO - SUCCESS: All added books confirmed across the Reading Lists.
+2026-04-13 16:08:24,314 - INFO - Automation finished. Performance report generated.

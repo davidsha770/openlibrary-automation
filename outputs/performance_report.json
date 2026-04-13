@@ -3,9 +3,9 @@
         "action": "Homepage Load",
         "url": "https://openlibrary.org/",
         "metrics": {
-            "load_time_ms": 4294,
-            "dom_content_loaded_ms": 1018,
-            "first_paint_ms": 940
+            "load_time_ms": 4459,
+            "dom_content_loaded_ms": 860,
+            "first_paint_ms": 680
         },
         "threshold_ms": 3000,
         "status": "Fail"
@@ -14,9 +14,53 @@
         "action": "Load Book: Dune",
         "url": "https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M",
         "metrics": {
-            "load_time_ms": 4578,
-            "dom_content_loaded_ms": 2192,
-            "first_paint_ms": 2120
+            "load_time_ms": 4078,
+            "dom_content_loaded_ms": 2088,
+            "first_paint_ms": 2028
+        },
+        "threshold_ms": 2500,
+        "status": "Fail"
+    },
+    {
+        "action": "Load Book: Dune Messiah: Dune Chronicles, Book 2",
+        "url": "https://openlibrary.org/works/OL893526W/Dune_Messiah?edition=key%3A/books/OL7525229M",
+        "metrics": {
+            "load_time_ms": 2060,
+            "dom_content_loaded_ms": 1352,
+            "first_paint_ms": 1308
+        },
+        "threshold_ms": 2500,
+        "status": "Pass"
+    },
+    {
+        "action": "Load Book: Das Haus an der D\u00fcne",
+        "url": "https://openlibrary.org/works/OL472165W/Peril_at_End_House?edition=key%3A/books/OL35638871M",
+        "metrics": {
+            "load_time_ms": 3949,
+            "dom_content_loaded_ms": 1512,
+            "first_paint_ms": 1440
+        },
+        "threshold_ms": 2500,
+        "status": "Fail"
+    },
+    {
+        "action": "Load Book: Autour d'une vie",
+        "url": "https://openlibrary.org/works/OL1105384W/Memoirs_of_a_Revolutionist?edition=key%3A/books/OL16829296M",
+        "metrics": {
+            "load_time_ms": 1846,
+            "dom_content_loaded_ms": 1846,
+            "first_paint_ms": 1588
+        },
+        "threshold_ms": 2500,
+        "status": "Pass"
+    },
+    {
+        "action": "Load Book: Jane Eyre ou M\u00e9moires d'une gouvernante, de Currer-Bell, imit\u00e9s [and abridged] par Old-Nick",
+        "url": "https://openlibrary.org/works/OL1095427W/Jane_Eyre?edition=key%3A/books/OL23443604M",
+        "metrics": {
+            "load_time_ms": 2918,
+            "dom_content_loaded_ms": 1214,
+            "first_paint_ms": 956
         },
         "threshold_ms": 2500,
         "status": "Fail"
@@ -25,9 +69,9 @@
         "action": "Verify List: want-to-read",
         "url": "https://openlibrary.org/people/user532228/books/want-to-read",
         "metrics": {
-            "load_time_ms": 1483,
-            "dom_content_loaded_ms": 1221,
-            "first_paint_ms": 1180
+            "load_time_ms": 833,
+            "dom_content_loaded_ms": 605,
+            "first_paint_ms": 568
         },
         "threshold_ms": 2000,
         "status": "Pass"
@@ -36,11 +80,11 @@
         "action": "Verify List: already-read",
         "url": "https://openlibrary.org/people/user532228/books/already-read",
         "metrics": {
-            "load_time_ms": 2847,
-            "dom_content_loaded_ms": 1483,
-            "first_paint_ms": 1128
+            "load_time_ms": 944,
+            "dom_content_loaded_ms": 685,
+            "first_paint_ms": 668
         },
         "threshold_ms": 2000,
-        "status": "Fail"
+        "status": "Pass"
     }
 ]
