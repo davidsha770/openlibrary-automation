@@ -30,7 +30,9 @@ A high-performance End-to-End (E2E) testing framework for [Open Library](https:/
 │   ├── screenshots/          # Action confirmation captures
 │   └── performance_report.json # Final performance benchmark report
 ├── requirements.txt          # Project dependencies
+├── run_tests.py              # Main entry point and pytest wrapper
 └── README.md                 # This file
+
 ```
 
 ## 🛠️ Setup & Installation
@@ -86,30 +88,33 @@ This will:
 
 > **Note:** The script is currently configured to run in **Headless** mode.
 
-## 📊 Performance Reporting
+## 📊 Reporting & Performance Analysis
 
-After each run, a detailed `performance_report.json` is generated in the `outputs/` folder. This includes:
-* **Navigation Timing**: DNS lookup, DOM Content Loaded, and Full Load time.
-* **Status**: Automatic "Pass/Fail" based on thresholds defined in `config.json`.
+After each execution, the framework generates comprehensive reports in the `outputs/` folder:
+
+* **Interactive HTML Report**: Found at `outputs/report.html`. This report provides a visual timeline of the test, including:
+    * Step-by-step execution logs.
+    * Integrated screenshots for visual confirmation.
+    * Detailed error tracebacks (if any).
+* **Performance Benchmark (`performance_report.json`)**: A detailed breakdown of site speed, capturing:
+    * **Navigation Timing**: DNS lookup, DOM Content Loaded, and Full Load time.
+    * **Resource Metrics**: Individual load times for key page elements.
+    * **Threshold Validation**: Automatic "Pass/Fail" status based on performance budgets defined in `config.json`.
+* **Real-time Logs**: Execution flow and performance warnings (e.g., if a page exceeds its time limit) are streamed directly to the console.
 
 ## 📸 Artifacts
 * **Screenshots**: Automatically saved to `outputs/screenshots/` upon successful actions or verification steps.
 * **Logs**: Comprehensive execution logs are streamed to the console for real-time monitoring.
 
-### Known Challenges & Solutions
-
 ```markdown
-## 🧩 Challenges & Solutions
+🧩 Challenges & Solutions
 
-* **Asynchronous Loop Conflicts**: Handled potential conflicts between `pytest-asyncio` and `playwright` by implementing a synchronous wrapper (`run_tests.py`) that manages the event loop explicitly.
-* **Web Component Hydration**: Open Library uses specialized Web Components that may take time to hydrate. The framework includes a "Smart Wait" mechanism that attempts to scrape the DOM as a fallback if hydration times out.
-* **Data Verification**: Implemented a text normalization utility to handle curly quotes and special characters, ensuring robust assertions between search results and the reading list.
+    Asynchronous Loop Conflicts: Handled potential conflicts between pytest-asyncio and playwright by implementing a synchronous wrapper (run_tests.py) that manages the event loop explicitly.
+
+    Web Component Hydration: Open Library uses specialized Web Components that may take time to hydrate. The framework includes a "Smart Wait" mechanism that attempts to scrape the DOM as a fallback if hydration times out.
+
+    Data Verification: Implemented a text normalization utility to handle curly quotes and special characters, ensuring robust assertions between search results and the reading list.
 ```
 
 ## 📝 License
 This project is for educational and testing purposes.
-
-## 📈 Reporting
-
-* **Interactive HTML Report**: A detailed `report.html` is generated, including execution steps, logs, and failure details.
-* **Performance Benchmarking**: The `performance_report.json` maps page load metrics against predefined thresholds in `config.json`.
