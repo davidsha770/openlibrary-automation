@@ -1,0 +1,21 @@
+2026-04-13 14:53:33,291 - INFO - Starting login process...
+2026-04-13 14:53:48,669 - WARNING - PERFORMANCE WARNING: Homepage Load at https://openlibrary.org/ took 4294ms (Threshold: 3000ms)
+2026-04-13 14:53:51,113 - INFO - MATCH: Dune (1965)
+2026-04-13 14:53:51,117 - INFO - Syncing current library state...
+2026-04-13 14:54:11,766 - WARNING - PERFORMANCE WARNING: Load Book: Dune at https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M took 4578ms (Threshold: 2500ms)
+2026-04-13 14:54:13,770 - INFO - ADDING: 'Dune' to 'Want to Read'
+2026-04-13 14:54:13,910 - INFO - Screenshot saved for 'Dune' at outputs/screenshots/Dune.png
+2026-04-13 14:54:18,526 - INFO - Checking reading list: https://openlibrary.org/people/user532228/books/want-to-read
+2026-04-13 14:54:23,529 - INFO - Waiting for Web Components to hydrate...
+2026-04-13 14:54:38,537 - WARNING - Web Components hydration timed out. Attempting to scrape remaining DOM.
+2026-04-13 14:54:38,613 - INFO - Successfully retrieved 3 titles using selector: h3.booktitle a
+2026-04-13 14:54:38,614 - INFO - Found 3 titles in want-to-read
+2026-04-13 14:54:41,976 - WARNING - PERFORMANCE WARNING: Verify List: already-read at https://openlibrary.org/people/user532228/books/already-read took 2847ms (Threshold: 2000ms)
+2026-04-13 14:54:41,977 - INFO - Checking reading list: https://openlibrary.org/people/user532228/books/already-read
+2026-04-13 14:54:46,982 - INFO - Waiting for Web Components to hydrate...
+2026-04-13 14:55:01,988 - WARNING - Web Components hydration timed out. Attempting to scrape remaining DOM.
+2026-04-13 14:55:02,059 - INFO - Successfully retrieved 2 titles using selector: h3.booktitle a
+2026-04-13 14:55:02,060 - INFO - Found 2 titles in already-read
+2026-04-13 14:55:02,060 - INFO - Unique titles found across all lists: 5
+2026-04-13 14:55:02,061 - INFO - SUCCESS: All added books confirmed across the Reading Lists.
+2026-04-13 14:55:02,062 - INFO - Automation finished. Performance report generated.

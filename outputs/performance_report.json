@@ -1,0 +1,46 @@
+[
+    {
+        "action": "Homepage Load",
+        "url": "https://openlibrary.org/",
+        "metrics": {
+            "load_time_ms": 4294,
+            "dom_content_loaded_ms": 1018,
+            "first_paint_ms": 940
+        },
+        "threshold_ms": 3000,
+        "status": "Fail"
+    },
+    {
+        "action": "Load Book: Dune",
+        "url": "https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M",
+        "metrics": {
+            "load_time_ms": 4578,
+            "dom_content_loaded_ms": 2192,
+            "first_paint_ms": 2120
+        },
+        "threshold_ms": 2500,
+        "status": "Fail"
+    },
+    {
+        "action": "Verify List: want-to-read",
+        "url": "https://openlibrary.org/people/user532228/books/want-to-read",
+        "metrics": {
+            "load_time_ms": 1483,
+            "dom_content_loaded_ms": 1221,
+            "first_paint_ms": 1180
+        },
+        "threshold_ms": 2000,
+        "status": "Pass"
+    },
+    {
+        "action": "Verify List: already-read",
+        "url": "https://openlibrary.org/people/user532228/books/already-read",
+        "metrics": {
+            "load_time_ms": 2847,
+            "dom_content_loaded_ms": 1483,
+            "first_paint_ms": 1128
+        },
+        "threshold_ms": 2000,
+        "status": "Fail"
+    }
+]

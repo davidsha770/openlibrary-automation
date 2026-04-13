@@ -70,11 +70,19 @@ Update the config/config.json file with your Open Library account details:
 
 ## 🚦 Running the Automation
 
-To execute the full E2E flow (Login -> Search -> Filter -> Add to List -> Verify):
+To execute the full E2E flow and generate a visual HTML report:
 
 ```Bash
-python3 -m tests.test_e2e
+python3 run_tests.py
 ```
+
+This will:
+
+    Initialize the Playwright environment.
+
+    Execute the test suite.
+
+    Generate an interactive report at outputs/report.html.
 
 > **Note:** The script is currently configured to run in **Headless** mode.
 
@@ -88,5 +96,20 @@ After each run, a detailed `performance_report.json` is generated in the `output
 * **Screenshots**: Automatically saved to `outputs/screenshots/` upon successful actions or verification steps.
 * **Logs**: Comprehensive execution logs are streamed to the console for real-time monitoring.
 
+### Known Challenges & Solutions
+
+```markdown
+## 🧩 Challenges & Solutions
+
+* **Asynchronous Loop Conflicts**: Handled potential conflicts between `pytest-asyncio` and `playwright` by implementing a synchronous wrapper (`run_tests.py`) that manages the event loop explicitly.
+* **Web Component Hydration**: Open Library uses specialized Web Components that may take time to hydrate. The framework includes a "Smart Wait" mechanism that attempts to scrape the DOM as a fallback if hydration times out.
+* **Data Verification**: Implemented a text normalization utility to handle curly quotes and special characters, ensuring robust assertions between search results and the reading list.
+```
+
 ## 📝 License
 This project is for educational and testing purposes.
+
+## 📈 Reporting
+
+* **Interactive HTML Report**: A detailed `report.html` is generated, including execution steps, logs, and failure details.
+* **Performance Benchmarking**: The `performance_report.json` maps page load metrics against predefined thresholds in `config.json`.
