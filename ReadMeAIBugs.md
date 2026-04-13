@@ -11,7 +11,8 @@ This document outlines three critical issues identified in the provided code sni
 
     Impact: On next line, the comparison will fail because it attempts to compare an integer (expected_count) with a coroutine object. The test will fail even if the data itself is correct.
 
-    Fix: ```python
+    Fix:
+    ```python
     actual = await reading_list.get_book_count()
     ```
 
@@ -25,7 +26,8 @@ This document outlines three critical issues identified in the provided code sni
 
     Impact: Python will raise a ValueError and the program will crash as soon as it encounters a character that is not a digit.
 
-    Fix: ```python
+    Fix:
+    ```python
     import re
     # Extract only the numeric digits from the string
 
@@ -43,7 +45,8 @@ This document outlines three critical issues identified in the provided code sni
 
     Impact: This results in a FileNotFoundError (or a Playwright-specific directory error), causing the automation to terminate prematurely.
 
-    Fix: ```python
+    Fix:
+    ```python
     import os
     Ensure the directory exists before saving the screenshot
 
