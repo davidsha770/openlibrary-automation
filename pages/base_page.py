@@ -4,6 +4,10 @@ from playwright.async_api import Page
 from utils.performance import PerformanceMonitor
 
 class BasePage:
+    """
+    Base class for all page objects. 
+    Provides shared utilities for performance monitoring and navigation.
+    """
     def __init__(self, page: Page, logger):
         self.page = page
         self.logger = logger
@@ -11,23 +15,24 @@ class BasePage:
 
     async def measure_page_performance(self, url: str, threshold_ms: int, action_name: str = "Navigation") -> dict:
         """
-        סעיף 4: תיקון הפרת SRP.
-        עדכון: שימוש ב-Wait Strategy יציב יותר למניעת Timeouts.
+        Measures page load performance using modern web metrics.
+        Uses a stable wait strategy (load instead of networkidle) to prevent flaky timeouts.
         """
         try:
+            # Navigate only if not already on the target URL
             if self.page.url != url:
-                # שינוי מ-networkidle ל-load כדי למנוע את ה-Timeout שראינו בלוג
+                # Changed from 'networkidle' to 'load' to avoid 30s timeouts 
+                # caused by persistent background analytics/scripts.
                 await self.page.goto(url, wait_until="load", timeout=30000)
             
-            # קריאה ל-Utility המודרני (סעיף 5)
+            # Capture performance metrics using the PerformanceMonitor utility
             metrics = await PerformanceMonitor.capture_modern_metrics(self.page)
             
-            # טיפול במקרה שהמדידה נכשלה או לא שלמה
-            load_time = metrics.get('load_time_ms', 999999) # Default גבוה אם אין נתון
-            
-            # אם ה-Utility החזיר סטטוס Incomplete, נתעד זאת
+            # Fallback for missing or incomplete metrics
+            load_time = metrics.get('load_time_ms', 999999) 
             is_incomplete = metrics.get('status') == "Incomplete"
             
+            # Determine success status based on threshold and completeness
             status = "Pass" if (load_time <= threshold_ms and not is_incomplete) else "Fail"
             
             report_entry = {
@@ -47,9 +52,10 @@ class BasePage:
             return metrics
 
         except Exception as e:
-            # כאן נכנסים ה-Timeouts של ה-goto
+            # Handle navigation or measurement timeouts
             self.logger.error(f"Failed performance measurement for {url}: {e}")
-            # מוסיפים רשומה של כישלון לדו"ח כדי שלא ייעלם
+            
+            # Log the error in the report so it is not omitted from final results
             self.performance_data.append({
                 "action": action_name,
                 "url": url,
@@ -59,7 +65,9 @@ class BasePage:
             return {}
 
     def save_performance_report(self, file_path: str = "outputs/performance_report.json"):
-        # נשאר אותו דבר, רק מוודא שהנתיב קיים
+        """
+        Exports all captured performance data to a JSON file.
+        """
         os.makedirs(os.path.dirname(file_path), exist_ok=True)
         with open(file_path, "w", encoding="utf-8") as f:
             json.dump(self.performance_data, f, indent=4)

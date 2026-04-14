@@ -3,10 +3,10 @@
         "action": "Homepage Load",
         "url": "https://openlibrary.org",
         "metrics": {
-            "load_time_ms": 3114,
-            "dom_content_loaded_ms": 1458,
-            "first_paint_ms": 1372,
-            "response_time_ms": 281,
+            "load_time_ms": 3645,
+            "dom_content_loaded_ms": 1772,
+            "first_paint_ms": 3112,
+            "response_time_ms": 5,
             "status": "Complete"
         },
         "threshold_ms": 3000,
@@ -16,75 +16,75 @@
         "action": "Load Book: OL26242482M",
         "url": "https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M",
         "metrics": {
-            "load_time_ms": 4045,
-            "dom_content_loaded_ms": 2793,
-            "first_paint_ms": 2708,
-            "response_time_ms": 311,
+            "load_time_ms": 6085,
+            "dom_content_loaded_ms": 3188,
+            "first_paint_ms": 0,
+            "response_time_ms": 5,
             "status": "Complete"
         },
         "threshold_ms": 2500,
         "status": "Fail"
     },
     {
-        "action": "Load Book: OL7525229M",
-        "url": "https://openlibrary.org/works/OL893526W/Dune_Messiah?edition=key%3A/books/OL7525229M",
+        "action": "Load Book: OL35075814M",
+        "url": "https://openlibrary.org/works/OL17761452W/Little_men?edition=key%3A/books/OL35075814M",
         "metrics": {
-            "load_time_ms": 2442,
-            "dom_content_loaded_ms": 1898,
-            "first_paint_ms": 1692,
-            "response_time_ms": 239,
+            "load_time_ms": 3289,
+            "dom_content_loaded_ms": 3048,
+            "first_paint_ms": 0,
+            "response_time_ms": 9,
+            "status": "Complete"
+        },
+        "threshold_ms": 2500,
+        "status": "Fail"
+    },
+    {
+        "action": "Load Book: OL20845786M",
+        "url": "https://openlibrary.org/works/OL1157252W/Les_Liaisons_dangereuses?edition=key%3A/books/OL20845786M",
+        "metrics": {
+            "load_time_ms": 2456,
+            "dom_content_loaded_ms": 2277,
+            "first_paint_ms": 0,
+            "response_time_ms": 3,
             "status": "Complete"
         },
         "threshold_ms": 2500,
         "status": "Pass"
     },
     {
-        "action": "Load Book: OL35638871M",
-        "url": "https://openlibrary.org/works/OL472165W/Peril_at_End_House?edition=key%3A/books/OL35638871M",
+        "action": "Load Book: OL4982843M",
+        "url": "https://openlibrary.org/works/OL362706W/Sonnets?edition=key%3A/books/OL4982843M",
         "metrics": {
-            "load_time_ms": 3616,
-            "dom_content_loaded_ms": 2069,
-            "first_paint_ms": 1744,
-            "response_time_ms": 315,
+            "load_time_ms": 2837,
+            "dom_content_loaded_ms": 2652,
+            "first_paint_ms": 0,
+            "response_time_ms": 8,
             "status": "Complete"
         },
         "threshold_ms": 2500,
         "status": "Fail"
     },
     {
-        "action": "Load Book: OL8886573M",
-        "url": "https://openlibrary.org/works/OL274574W/Cr\u00f3nica_de_una_muerte_anunciada?edition=key%3A/books/OL8886573M",
+        "action": "Load Book: OL31615621M",
+        "url": "https://openlibrary.org/works/OL1527356W/Le_avventure_di_Pinocchio?edition=key%3A/books/OL31615621M",
         "metrics": {
-            "load_time_ms": 4754,
-            "dom_content_loaded_ms": 2049,
-            "first_paint_ms": 1772,
-            "response_time_ms": 316,
+            "load_time_ms": 9411,
+            "dom_content_loaded_ms": 2067,
+            "first_paint_ms": 0,
+            "response_time_ms": 220,
             "status": "Complete"
         },
         "threshold_ms": 2500,
         "status": "Fail"
-    },
-    {
-        "action": "Load Book: OL16829296M",
-        "url": "https://openlibrary.org/works/OL1105384W/Memoirs_of_a_Revolutionist?edition=key%3A/books/OL16829296M",
-        "metrics": {
-            "load_time_ms": 2193,
-            "dom_content_loaded_ms": 2152,
-            "first_paint_ms": 1908,
-            "response_time_ms": 222,
-            "status": "Complete"
-        },
-        "threshold_ms": 2500,
-        "status": "Pass"
     },
     {
         "action": "Verify List: want-to-read",
         "url": "https://openlibrary.org/people/user532228/books/want-to-read",
         "metrics": {
-            "load_time_ms": 3885,
-            "dom_content_loaded_ms": 1453,
-            "first_paint_ms": 1544,
-            "response_time_ms": 211,
+            "load_time_ms": 3478,
+            "dom_content_loaded_ms": 2404,
+            "first_paint_ms": 0,
+            "response_time_ms": 6,
             "status": "Complete"
         },
         "threshold_ms": 2000,
@@ -94,13 +94,13 @@
         "action": "Verify List: already-read",
         "url": "https://openlibrary.org/people/user532228/books/already-read",
         "metrics": {
-            "load_time_ms": 1807,
-            "dom_content_loaded_ms": 1617,
-            "first_paint_ms": 1740,
-            "response_time_ms": 9,
+            "load_time_ms": 3312,
+            "dom_content_loaded_ms": 1691,
+            "first_paint_ms": 0,
+            "response_time_ms": 3,
             "status": "Complete"
         },
         "threshold_ms": 2000,
-        "status": "Pass"
+        "status": "Fail"
     }
 ]

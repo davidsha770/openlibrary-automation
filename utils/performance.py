@@ -2,11 +2,15 @@ import time
 from playwright.async_api import Page
 
 class PerformanceMonitor:
+    """
+    Utility class for capturing detailed web performance metrics using 
+    Performance Navigation Timing (Level 2).
+    """
     @staticmethod
     async def capture_modern_metrics(page: Page) -> dict:
         """
-        סעיף 5: שימוש ב-Performance Navigation Timing (Level 2).
-        עדכון: הוספת הגנות למקרה שהמדדים טרם התעדכנו בדפדפן.
+        Executes JavaScript in the browser context to capture precise timing metrics.
+        Includes protections for cases where metrics are not yet fully updated by the browser.
         """
         metrics_js = """
         () => {
@@ -16,8 +20,8 @@ class PerformanceMonitor:
             
             if (!nav) return null;
 
-            // אם loadEventEnd הוא 0, נשתמש ב-Date.now() כקירוב או נחזיר ערך חסר
-            // זה קורה כשהדף נחשב טעון מבחינת Playwright אבל הדפדפן טרם סגר את ה-Event
+            // If loadEventEnd is 0, the browser hasn't officially closed the event.
+            // We use performance.now() as a fallback approximation to avoid reporting 0ms.
             const loadTime = nav.loadEventEnd > 0 
                 ? nav.loadEventEnd - nav.startTime 
                 : performance.now() - nav.startTime;
@@ -32,7 +36,7 @@ class PerformanceMonitor:
         }
         """
         try:
-            # הוספת timeout קצר ל-evaluate עצמו כדי שלא יתקע את הטסט
+            # Execute the JS snippet with a short timeout to prevent blocking the test
             metrics = await page.evaluate(metrics_js)
             
             if not metrics:
@@ -40,5 +44,5 @@ class PerformanceMonitor:
                 
             return metrics
         except Exception as e:
-            # במקרה של שגיאת JS או ניתוק מהדף
+            # Handle potential JS errors or page disconnections
             return {"error": str(e), "load_time_ms": 0}

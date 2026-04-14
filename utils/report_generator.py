@@ -3,7 +3,7 @@ from datetime import datetime
 
 def generate_html_report(perf_results, screenshot_dir="outputs/screenshots"):
     """
-    Generates a standalone HTML report from performance data and screenshots.
+    Generates a standalone, styled HTML report integrating performance metrics and screenshots.
     """
     now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     
@@ -43,14 +43,14 @@ def generate_html_report(perf_results, screenshot_dir="outputs/screenshots"):
     """
 
     for res in perf_results:
-        # שליפת הנתונים מתוך תת-הדיקשנרי 'metrics' כפי שמוגדר ב-BasePage
+        # Extract nested data from the 'metrics' dictionary defined in BasePage
         metrics = res.get('metrics', {})
         load_time = metrics.get('load_time_ms', 0)
         dom_loaded = metrics.get('dom_content_loaded_ms', 0)
         first_paint = metrics.get('first_paint_ms', 0)
         threshold = res.get('threshold_ms', 0)
         
-        # לוגיקת סטטוס
+        # Determine status logic
         is_pass = load_time <= threshold
         status_text = "PASSED" if is_pass else "WARN (Slow)"
         status_class = "pass" if is_pass else "fail"
@@ -75,11 +75,11 @@ def generate_html_report(perf_results, screenshot_dir="outputs/screenshots"):
             <div class="screenshot-grid">
     """
 
-    # הוספת תמונות (נתיב יחסי לתיקיית ה-outputs)
+    # Add screenshots (paths relative to the 'outputs' folder)
     if os.path.exists(screenshot_dir):
         for img_name in sorted(os.listdir(screenshot_dir)):
             if img_name.endswith(".png"):
-                # אנחנו מניחים שה-HTML נשמר בתוך outputs/
+                # Assuming the HTML report is saved directly inside 'outputs/'
                 html_content += f"""
                 <div class="screenshot-card">
                     <a href="screenshots/{img_name}" target="_blank">
