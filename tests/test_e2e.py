@@ -5,93 +5,45 @@ import re
 import random
 from playwright.async_api import async_playwright
 from utils.logger_helper import setup_logger
+from utils.report_generator import generate_html_report
 from pages.search_page import SearchPage
 from pages.book_page import BookPage
 from pages.reading_list_page import ReadingListPage
+from pages.login_page import LoginPage
 
 # Initialize logger
 logger = setup_logger()
 
-async def login(page, config):
+async def search_books_by_title_under_year(query: str, max_year: int, limit: int, threshold: int, search_page):    
     """
-    Performs login before starting the E2E flow.
+    REQUIRED FUNCTION: Searches for books and filters them by publication year.
+    Now follows POM by delegating technical work to the search_page object.
     """
-    logger.info("Starting login process...")
-    creds = config.get("credentials", {})
-    username = creds.get("username")
-    password = creds.get("password")
-
-    if not username or not password or "YOUR_ACTUAL" in username:
-        logger.error("Missing or dummy credentials in config.json!")
-        raise ValueError("Please update config/config.json with real credentials.")
-
-    await page.goto("https://openlibrary.org/account/login")
-    await page.fill("input[name='username']", username)
-    await page.fill("input[name='password']", password)
-    await page.click("button[type='submit']")
-
-async def search_books_by_title_under_year(page, query: str, max_year: int, limit: int, threshold: int, search_page):    
-    """
-    Searches for books and filters them by publication year.
-    """
-    # measure_page_performance already handles page.goto
+    # 1. Performance measurement & Navigation
     await search_page.measure_page_performance("https://openlibrary.org/", threshold, "Homepage Load")
     
+    # 2. Execute the search
     await search_page.execute_search(query)
     
-    found_books = []
-    base_url = "https://openlibrary.org"
-
-    while len(found_books) < limit:
-        results = await search_page.get_results_on_page()
+    # 3. Get filtered results from the Page Object (where the logic now lives)
+    found_books = await search_page.get_filtered_books(max_year, limit)
+    
+    if not found_books:
+        logger.warning(f"No books found for query '{query}' under year {max_year}.")
         
-        for item in results:
-            if len(found_books) >= limit:
-                break
-                
-            year_el = await item.query_selector(search_page.PUBLICATION_YEAR_TEXT)
-            if year_el:
-                year_text = await year_el.inner_text()
-                year = await search_page.extract_year_from_text(year_text)
-                
-                if year and year < max_year:
-                    link_el = await item.query_selector(search_page.BOOK_TITLE_LINK)
-                    if link_el:
-                        title = await link_el.inner_text()
-                        href = await link_el.get_attribute("href")
-                        found_books.append({
-                            "title": title.strip(),
-                            "url": base_url + href
-                        })
-                        logger.info(f"MATCH: {title.strip()} ({year})")
-        
-        if len(found_books) < limit:
-            if not await search_page.go_to_next_page():
-                break
-                
     return found_books
 
-async def fetch_existing_books(page, list_type: str) -> list:
-    """
-    Retrieves book titles from a specific reading list (want-to-read or already-read).
-    """
-    url = f"https://openlibrary.org/people/user532228/books/{list_type}"
-    await page.goto(url, wait_until="networkidle")
-    # Extract and normalize titles for comparison
-    titles = await page.locator("h3.booktitle a").all_inner_texts()
-    return [t.lower().strip() for t in titles]
-
-async def add_books_to_reading_list(page, books: list, threshold, book_page) -> None:    
+async def add_books_to_reading_list(page, books: list, threshold_book, threshold_reading, book_page, reading_list_page) -> None:    
     """
     Adds found books to a random reading list after checking current library state.
     """
-    logger.info("Syncing current library state...")
-    want_to_read_list = await fetch_existing_books(page, "want-to-read")
-    already_read_list = await fetch_existing_books(page, "already-read")
+    logger.info("Syncing current library state using ReadingListPage...")
+    want_to_read_list = await reading_list_page.get_all_book_titles("want-to-read", threshold_reading)
+    already_read_list = await reading_list_page.get_all_book_titles("already-read", threshold_reading)
 
     for book in books:
         # Performance measurement handles navigation to book page
-        await book_page.measure_page_performance(book['url'], threshold, f"Load Book: {book['title']}")
+        await book_page.measure_page_performance(book['url'], threshold_book, f"Load Book: {book['title']}")
         book_title_clean = book['title'].lower().strip()
             
         # Randomly choose target status
@@ -107,7 +59,6 @@ async def add_books_to_reading_list(page, books: list, threshold, book_page) -> 
             continue
         
         try:
-            await page.wait_for_timeout(2000)
             logger.info(f"ADDING: '{book['title']}' to '{target_status}'")
             
             # Execute addition using the page object logic
@@ -116,7 +67,6 @@ async def add_books_to_reading_list(page, books: list, threshold, book_page) -> 
             if result != "Failed":
                 await book_page.capture_book_addition(book['title'])
             
-            await page.wait_for_timeout(2000)
         except Exception as e:
             logger.error(f"Error processing {book['title']}: {e}")
 
@@ -132,51 +82,30 @@ def normalize_text(text: str) -> str:
     text = re.sub(r'[^a-z0-9\s]', '', text)
     return " ".join(text.split())
 
-async def assert_reading_list_content(page, expected_titles: list[str], list_urls: list[str], threshold, reading_list_page) -> None:
+async def assert_reading_list_content(expected_titles: list[str], reading_list_page, threshold):
     """
-    Verifies that all expected books are present across the provided Reading Lists.
+    Verifies that all expected books are present in the actual results.
+    This function now focuses ONLY on the assertion logic.
     """
-    all_normalized_existing = []
-
-    for url in list_urls:
-        # Measure navigation to reading list
-        await reading_list_page.measure_page_performance(url, threshold, f"Verify List: {url.split('/')[-1]}")
-        logger.info(f"Checking reading list: {url}")
-        try:
-            # Wait for Web Components Hydration
-            await page.wait_for_timeout(5000)
-            
-            # Fetch and normalize titles from the current list
-            titles = await reading_list_page.get_all_book_titles()
-            normalized_for_this_list = [normalize_text(t) for t in titles]
-            all_normalized_existing.extend(normalized_for_this_list)
-            
-            logger.info(f"Found {len(titles)} titles in {url.split('/')[-1]}")
-            
-        except Exception as e:
-            logger.error(f"Failed to fetch list from {url}: {e}")
-
-    all_normalized_existing = list(set(all_normalized_existing))
-
+    actual_want = await reading_list_page.get_all_book_titles("want-to-read", threshold)
+    actual_read = await reading_list_page.get_all_book_titles("already-read", threshold)
+    actual_titles_from_all_lists = actual_want + actual_read
+    normalized_actual = [normalize_text(t) for t in actual_titles_from_all_lists]
     missing_books = []
+
     for expected in expected_titles:
         norm_expected = normalize_text(expected)
-        
-        # Verify if the expected title exists in the combined list data
-        found = any(norm_expected in ne or ne in norm_expected for ne in all_normalized_existing)
-        
+        # Check if the expected title is in the combined list
+        found = any(norm_expected in ne or ne in norm_expected for ne in normalized_actual)
         if not found:
             missing_books.append(expected)
 
-    logger.info(f"Unique titles found across all lists: {len(all_normalized_existing)}")
-            
-    if not missing_books:
-        logger.info("SUCCESS: All added books confirmed across the Reading Lists.")
-    else:
-        await page.screenshot(path="outputs/screenshots/verification_failed.png")
+    if missing_books:
         logger.error(f"Verification Failed! Missing: {missing_books}")
         raise AssertionError(f"Data Verification Failed! Missing: {missing_books}")
-          
+    
+    logger.info("SUCCESS: All added books confirmed in the Reading Lists.")
+
 async def main():
     config_path = os.path.join("config", "config.json")
     with open(config_path, "r") as f:
@@ -194,38 +123,35 @@ async def main():
         page = await context.new_page()
 
         # Initialize Page Objects
+        login_page = LoginPage(page, logger)
         search_page = SearchPage(page, logger)
         book_page = BookPage(page, logger)
         reading_list_page = ReadingListPage(page, logger)
         
         try:
-            await login(page, config)
+            creds = config.get("credentials", {})
+            await login_page.login(creds.get("username"), creds.get("password"))
 
-            # Step 1: Search based on criteria
-            found_books = await search_books_by_title_under_year(
-                page, data["search_query"], data["max_year"], 
-                data["results_limit"], thresholds["search_page"],
+            urls = await search_books_by_title_under_year(
+                data["search_query"], 
+                data["max_year"], 
+                data["results_limit"], 
+                thresholds["search_page"],
                 search_page
-            )
+)
             
-            if not found_books:
+            if not urls:
                 logger.warning("No matching books found during search.")
                 return
 
             # Step 2: Add books to user's reading list
-            await add_books_to_reading_list(page, found_books, thresholds["book_page"], book_page)  
+            await add_books_to_reading_list(page, urls, thresholds["book_page"], thresholds["reading_list"], book_page, reading_list_page)  
                       
             # Step 3: Verify list content
-            titles = [b['title'] for b in found_books]
             await assert_reading_list_content(
-                page, 
-                titles, 
-                [
-                    "https://openlibrary.org/people/user532228/books/want-to-read",
-                    "https://openlibrary.org/people/user532228/books/already-read"
-                ],
-                thresholds["reading_list"],
-                reading_list_page
+                [b['title'] for b in urls],
+                reading_list_page,
+                thresholds["reading_list"]
             )
             
         except Exception as e:
@@ -242,6 +168,8 @@ async def main():
             with open("outputs/performance_report.json", "w") as f:
                 json.dump(final_perf_results, f, indent=4)
             logger.info("Automation finished. Performance report generated.")
+            generate_html_report(final_perf_results)
+            logger.info("Report generated: outputs/report.html")
             await page.close()
             await browser.close()
 

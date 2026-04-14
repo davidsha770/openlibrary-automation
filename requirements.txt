@@ -1,4 +1,5 @@
-playwright
-pytest
-pytest-html
-pytest-asyncio
+# Core Engine
+playwright==1.42.0
+
+# Optional but recommended for handling async more robustly in some environments
+# asyncio (included in Python 3.7+, but sometimes pinned)

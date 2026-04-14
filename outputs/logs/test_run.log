@@ -1,32 +1,63 @@
-2026-04-13 16:06:30,331 - INFO - Starting login process...
-2026-04-13 16:06:42,789 - WARNING - PERFORMANCE WARNING: Homepage Load at https://openlibrary.org/ took 4459ms (Threshold: 3000ms)
-2026-04-13 16:06:45,332 - INFO - MATCH: Dune (1965)
-2026-04-13 16:06:45,354 - INFO - MATCH: Dune Messiah: Dune Chronicles, Book 2 (1969)
-2026-04-13 16:06:45,378 - INFO - MATCH: Das Haus an der Düne (1932)
-2026-04-13 16:06:45,413 - INFO - MATCH: Autour d'une vie (1899)
-2026-04-13 16:06:45,436 - INFO - MATCH: Jane Eyre ou Mémoires d'une gouvernante, de Currer-Bell, imités [and abridged] par Old-Nick (1847)
-2026-04-13 16:06:45,436 - INFO - Syncing current library state...
-2026-04-13 16:07:08,612 - WARNING - PERFORMANCE WARNING: Load Book: Dune at https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M took 4078ms (Threshold: 2500ms)
-2026-04-13 16:07:08,612 - INFO - SKIP: 'Dune' is already set to 'Want to Read'.
-2026-04-13 16:07:14,985 - INFO - ADDING: 'Dune Messiah: Dune Chronicles, Book 2' to 'Want to Read'
-2026-04-13 16:07:15,730 - INFO - Screenshot saved for 'Dune Messiah: Dune Chronicles, Book 2' at outputs/screenshots/Dune_Messiah__Dune_Chronicles__Book_2.png
-2026-04-13 16:07:23,359 - WARNING - PERFORMANCE WARNING: Load Book: Das Haus an der Düne at https://openlibrary.org/works/OL472165W/Peril_at_End_House?edition=key%3A/books/OL35638871M took 3949ms (Threshold: 2500ms)
-2026-04-13 16:07:25,361 - INFO - ADDING: 'Das Haus an der Düne' to 'Want to Read'
-2026-04-13 16:07:26,034 - INFO - Screenshot saved for 'Das Haus an der Düne' at outputs/screenshots/Das_Haus_an_der_Düne.png
-2026-04-13 16:07:34,551 - INFO - ADDING: 'Autour d'une vie' to 'Already Read'
-2026-04-13 16:07:35,224 - INFO - Screenshot saved for 'Autour d'une vie' at outputs/screenshots/Autour_d_une_vie.png
-2026-04-13 16:07:41,344 - WARNING - PERFORMANCE WARNING: Load Book: Jane Eyre ou Mémoires d'une gouvernante, de Currer-Bell, imités [and abridged] par Old-Nick at https://openlibrary.org/works/OL1095427W/Jane_Eyre?edition=key%3A/books/OL23443604M took 2918ms (Threshold: 2500ms)
-2026-04-13 16:07:41,344 - INFO - SKIP: 'Jane Eyre ou Mémoires d'une gouvernante, de Currer-Bell, imités [and abridged] par Old-Nick' is already set to 'Want to Read'.
-2026-04-13 16:07:42,725 - INFO - Checking reading list: https://openlibrary.org/people/user532228/books/want-to-read
-2026-04-13 16:07:47,729 - INFO - Waiting for Web Components to hydrate...
-2026-04-13 16:08:02,739 - WARNING - Web Components hydration timed out. Attempting to scrape remaining DOM.
-2026-04-13 16:08:02,804 - INFO - Successfully retrieved 3 titles using selector: h3.booktitle a
-2026-04-13 16:08:02,805 - INFO - Found 3 titles in want-to-read
-2026-04-13 16:08:04,278 - INFO - Checking reading list: https://openlibrary.org/people/user532228/books/already-read
-2026-04-13 16:08:09,282 - INFO - Waiting for Web Components to hydrate...
-2026-04-13 16:08:24,287 - WARNING - Web Components hydration timed out. Attempting to scrape remaining DOM.
-2026-04-13 16:08:24,312 - INFO - Successfully retrieved 2 titles using selector: h3.booktitle a
-2026-04-13 16:08:24,312 - INFO - Found 2 titles in already-read
-2026-04-13 16:08:24,312 - INFO - Unique titles found across all lists: 5
-2026-04-13 16:08:24,313 - INFO - SUCCESS: All added books confirmed across the Reading Lists.
-2026-04-13 16:08:24,314 - INFO - Automation finished. Performance report generated.
+2026-04-14 13:42:56,165 - INFO - Navigating to login page: https://openlibrary.org/account/login
+2026-04-14 13:43:04,621 - INFO - Login form submitted.
+2026-04-14 13:43:13,425 - WARNING - PERFORMANCE WARNING: Homepage Load at https://openlibrary.org/ took 5640ms (Threshold: 3000ms)
+2026-04-14 13:43:15,949 - INFO - Match found: Dune (1965)
+2026-04-14 13:43:15,981 - INFO - Match found: Dune Messiah: Dune Chronicles, Book 2 (1969)
+2026-04-14 13:43:16,024 - INFO - Match found: Das Haus an der Düne (1932)
+2026-04-14 13:43:16,079 - INFO - Match found: Autour d'une vie (1899)
+2026-04-14 13:43:16,118 - INFO - Match found: Jane Eyre ou Mémoires d'une gouvernante, de Currer-Bell, imités [and abridged] par Old-Nick (1847)
+2026-04-14 13:43:16,118 - INFO - Syncing current library state using ReadingListPage...
+2026-04-14 13:43:27,867 - WARNING - PERFORMANCE WARNING: Verify List: want-to-read at https://openlibrary.org/people/user532228/books/want-to-read took 11233ms (Threshold: 2000ms)
+2026-04-14 13:43:27,867 - INFO - Successfully navigated to want-to-read list.
+2026-04-14 13:43:27,935 - INFO - Retrieved 1 titles from want-to-read.
+2026-04-14 13:43:30,427 - INFO - Successfully navigated to already-read list.
+2026-04-14 13:43:30,486 - INFO - Retrieved 4 titles from already-read.
+2026-04-14 13:43:39,337 - WARNING - PERFORMANCE WARNING: Load Book: Dune at https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M took 8037ms (Threshold: 2500ms)
+2026-04-14 13:43:39,337 - INFO - ADDING: 'Dune' to 'Want to Read'
+2026-04-14 13:43:40,195 - INFO - Screenshot saved for 'Dune' at outputs/screenshots/Dune.png
+2026-04-14 13:43:44,025 - INFO - SKIP: 'Dune Messiah: Dune Chronicles, Book 2' is already set to 'Already Read'.
+2026-04-14 13:43:49,052 - WARNING - PERFORMANCE WARNING: Load Book: Das Haus an der Düne at https://openlibrary.org/works/OL472165W/Peril_at_End_House?edition=key%3A/books/OL35638871M took 3006ms (Threshold: 2500ms)
+2026-04-14 13:43:49,053 - INFO - SKIP: 'Das Haus an der Düne' is already set to 'Already Read'.
+2026-04-14 13:43:52,651 - INFO - SKIP: 'Autour d'une vie' is already set to 'Already Read'.
+2026-04-14 13:43:56,230 - WARNING - PERFORMANCE WARNING: Load Book: Jane Eyre ou Mémoires d'une gouvernante, de Currer-Bell, imités [and abridged] par Old-Nick at https://openlibrary.org/works/OL1095427W/Jane_Eyre?edition=key%3A/books/OL23443604M took 2596ms (Threshold: 2500ms)
+2026-04-14 13:43:56,231 - INFO - ADDING: 'Jane Eyre ou Mémoires d'une gouvernante, de Currer-Bell, imités [and abridged] par Old-Nick' to 'Already Read'
+2026-04-14 13:43:56,900 - INFO - Screenshot saved for 'Jane Eyre ou Mémoires d'une gouvernante, de Currer-Bell, imités [and abridged] par Old-Nick' at outputs/screenshots/Jane_Eyre_ou_Mémoires_d_une_gouvernante__de_Currer.png
+2026-04-14 13:43:58,336 - INFO - Successfully navigated to want-to-read list.
+2026-04-14 13:43:58,398 - INFO - Retrieved 1 titles from want-to-read.
+2026-04-14 13:43:59,885 - INFO - Successfully navigated to already-read list.
+2026-04-14 13:43:59,952 - INFO - Retrieved 4 titles from already-read.
+2026-04-14 13:43:59,953 - INFO - SUCCESS: All added books confirmed in the Reading Lists.
+2026-04-14 13:43:59,953 - INFO - Automation finished. Performance report generated.
+2026-04-14 13:47:46,185 - INFO - Navigating to login page: https://openlibrary.org/account/login
+2026-04-14 13:47:53,960 - INFO - Login form submitted.
+2026-04-14 13:48:02,715 - WARNING - PERFORMANCE WARNING: Homepage Load at https://openlibrary.org/ took 4660ms (Threshold: 3000ms)
+2026-04-14 13:48:04,359 - INFO - Match found: Dune (1965)
+2026-04-14 13:48:04,408 - INFO - Match found: Dune Messiah: Dune Chronicles, Book 2 (1969)
+2026-04-14 13:48:04,452 - INFO - Match found: Das Haus an der Düne (1932)
+2026-04-14 13:48:04,513 - INFO - Match found: Autour d'une vie (1899)
+2026-04-14 13:48:04,548 - INFO - Match found: Jane Eyre ou Mémoires d'une gouvernante, de Currer-Bell, imités [and abridged] par Old-Nick (1847)
+2026-04-14 13:48:04,549 - INFO - Syncing current library state using ReadingListPage...
+2026-04-14 13:48:15,613 - WARNING - PERFORMANCE WARNING: Verify List: want-to-read at https://openlibrary.org/people/user532228/books/want-to-read took 7022ms (Threshold: 2000ms)
+2026-04-14 13:48:15,613 - INFO - Successfully navigated to want-to-read list.
+2026-04-14 13:48:15,678 - INFO - Retrieved 1 titles from want-to-read.
+2026-04-14 13:48:18,267 - WARNING - PERFORMANCE WARNING: Verify List: already-read at https://openlibrary.org/people/user532228/books/already-read took 2079ms (Threshold: 2000ms)
+2026-04-14 13:48:18,267 - INFO - Successfully navigated to already-read list.
+2026-04-14 13:48:18,334 - INFO - Retrieved 4 titles from already-read.
+2026-04-14 13:48:21,779 - WARNING - PERFORMANCE WARNING: Load Book: Dune at https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M took 2629ms (Threshold: 2500ms)
+2026-04-14 13:48:21,779 - INFO - ADDING: 'Dune' to 'Want to Read'
+2026-04-14 13:48:22,507 - INFO - Screenshot saved for 'Dune' at outputs/screenshots/Dune.png
+2026-04-14 13:48:26,164 - INFO - SKIP: 'Dune Messiah: Dune Chronicles, Book 2' is already set to 'Already Read'.
+2026-04-14 13:48:29,854 - WARNING - PERFORMANCE WARNING: Load Book: Das Haus an der Düne at https://openlibrary.org/works/OL472165W/Peril_at_End_House?edition=key%3A/books/OL35638871M took 2859ms (Threshold: 2500ms)
+2026-04-14 13:48:29,854 - INFO - SKIP: 'Das Haus an der Düne' is already set to 'Already Read'.
+2026-04-14 13:48:33,369 - INFO - ADDING: 'Autour d'une vie' to 'Want to Read'
+2026-04-14 13:48:34,082 - INFO - Screenshot saved for 'Autour d'une vie' at outputs/screenshots/Autour_d_une_vie.png
+2026-04-14 13:48:38,127 - WARNING - PERFORMANCE WARNING: Load Book: Jane Eyre ou Mémoires d'une gouvernante, de Currer-Bell, imités [and abridged] par Old-Nick at https://openlibrary.org/works/OL1095427W/Jane_Eyre?edition=key%3A/books/OL23443604M took 3230ms (Threshold: 2500ms)
+2026-04-14 13:48:38,127 - INFO - SKIP: 'Jane Eyre ou Mémoires d'une gouvernante, de Currer-Bell, imités [and abridged] par Old-Nick' is already set to 'Want to Read'.
+2026-04-14 13:48:40,845 - WARNING - PERFORMANCE WARNING: Verify List: want-to-read at https://openlibrary.org/people/user532228/books/want-to-read took 2057ms (Threshold: 2000ms)
+2026-04-14 13:48:40,845 - INFO - Successfully navigated to want-to-read list.
+2026-04-14 13:48:40,915 - INFO - Retrieved 1 titles from want-to-read.
+2026-04-14 13:48:43,256 - INFO - Successfully navigated to already-read list.
+2026-04-14 13:48:43,325 - INFO - Retrieved 4 titles from already-read.
+2026-04-14 13:48:43,325 - INFO - SUCCESS: All added books confirmed in the Reading Lists.
+2026-04-14 13:48:43,326 - INFO - Automation finished. Performance report generated.
+2026-04-14 13:48:43,326 - INFO - Report generated: outputs/report.html

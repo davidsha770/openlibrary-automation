@@ -1,7 +1,7 @@
 {
   "credentials": {
-    "username": "<your email",
-    "password": "your password"
+    "username": "<your email>",
+    "password": "<your password>"
   },
   "test_data": {
     "search_query": "Dune",
