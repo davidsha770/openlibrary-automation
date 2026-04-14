@@ -33,13 +33,12 @@ class SearchPage(BasePage):
         match = re.search(r'\d{4}', text)
         return int(match.group()) if match else None
 
-    async def get_filtered_books(self, max_year: int, limit: int):
+    async def get_filtered_books(self, base_url, max_year: int, limit: int):
         """
         Scans search results (including pagination) and returns books published before max_year.
         This method encapsulates all the DOM-traversal logic.
         """
         found_books = []
-        base_url = "https://openlibrary.org"
 
         while len(found_books) < limit:
             # Get current results on the page
@@ -56,18 +55,14 @@ class SearchPage(BasePage):
                     year = await self.extract_year_from_text(year_text)
                     
                     # Filter logic
-                    if year and year < max_year:
+                    if year and year <= max_year:
                         link_el = await item.query_selector(self.BOOK_TITLE_LINK)
                         if link_el:
-                            title = await link_el.inner_text()
                             href = await link_el.get_attribute("href")
-                            found_books.append({
-                                "title": title.strip(),
-                                "url": base_url + href,
-                                "year": year
-                            })
-                            self.logger.info(f"Match found: {title.strip()} ({year})")
-            
+                            full_url = base_url + href
+                            found_books.append(full_url)
+                            self.logger.info(f"Match found: {full_url} (Year: {year})")
+
             # Pagination logic: Go to next page if we haven't reached the limit
             if len(found_books) < limit:
                 next_btn = await self.page.query_selector(self.NEXT_PAGE_BTN)

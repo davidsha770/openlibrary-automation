@@ -8,9 +8,9 @@ class ReadingListPage(BasePage):
     # --- Selectors ---
     # Centralizing selectors here allows us to update them in one place if the site changes
     BOOK_TITLES = "h3.booktitle a"
-    LIST_URL_TEMPLATE = "https://openlibrary.org/people/user532228/books/{list_type}"
+    LIST_URL_TEMPLATE = "https://openlibrary.org/people/{user_name}/books/{list_type}"
 
-    async def get_all_book_titles(self, list_type: str, threshold: int):
+    async def get_all_book_titles(self, list_type: str, threshold: int, user_name):
         """
         Navigates to a specific reading list, measures performance, 
         and extracts all book titles.
@@ -20,7 +20,7 @@ class ReadingListPage(BasePage):
         :return: A list of normalized book titles (lowercase and stripped)
         """
         # Construct the URL based on the list type
-        target_url = self.LIST_URL_TEMPLATE.format(list_type=list_type)
+        target_url = self.LIST_URL_TEMPLATE.format(user_name=user_name ,list_type=list_type)
         
         # 1. Navigation & Performance Measurement
         # We use the method from BasePage to handle both the goto and the metric collection
@@ -58,3 +58,38 @@ class ReadingListPage(BasePage):
         """
         titles = await self.get_all_book_titles(list_type, threshold)
         return book_title.lower().strip() in titles
+    
+    async def clear_reading_lists(self, user_name):
+        """
+        Clears books directly from the list page using the status text.
+        """
+        # מיפוי של סוג הרשימה לטקסט שמופיע על הכפתור הפעיל
+        list_map = {
+            "want-to-read": "Want to Read",
+            "already-read": "Already Read"
+        }
+
+        for list_id, btn_text in list_map.items():
+            target_url = self.LIST_URL_TEMPLATE.format(user_name=user_name ,list_type=list_id)
+            await self.page.goto(target_url)
+            await self.page.wait_for_load_state("networkidle")
+
+            # מחפשים את כל הכפתורים שמכילים את הטקסט של הסטטוס הנוכחי
+            # אנחנו מתמקדים בכפתורים שיש להם את הקלאס 'activated' או 'book-progress-btn'
+            active_buttons = await self.page.locator(f"button:has-text('{btn_text}')").all()
+
+            if not active_buttons:
+                self.logger.info(f"List {list_id} is already empty.")
+                continue
+
+            self.logger.info(f"Found {len(active_buttons)} books to remove from {list_id}")
+
+            for btn in active_buttons:
+                try:
+                    # מוודאים שזה הכפתור הראשי (זה שיש לו את ה-V או הקלאס activated)
+                    if await btn.is_visible():
+                        await btn.click()
+                        # אחרי כל לחיצה, האתר לעיתים מרענן את השורה או מסיר אותה מה-DOM
+                        await self.page.wait_for_timeout(800) 
+                except Exception as e:
+                    self.logger.error(f"Error removing book with text '{btn_text}': {e}")

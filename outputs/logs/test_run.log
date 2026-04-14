@@ -61,3 +61,1520 @@
 2026-04-14 13:48:43,325 - INFO - SUCCESS: All added books confirmed in the Reading Lists.
 2026-04-14 13:48:43,326 - INFO - Automation finished. Performance report generated.
 2026-04-14 13:48:43,326 - INFO - Report generated: outputs/report.html
+2026-04-14 14:29:50,785 - ERROR - Credentials missing in environment variables!
+2026-04-14 14:33:58,214 - INFO - Navigating to login page: https://openlibrary.org/account/login
+2026-04-14 14:34:08,481 - INFO - Login form submitted.
+2026-04-14 14:34:18,358 - INFO - Match found: Dune (1965)
+2026-04-14 14:34:18,409 - INFO - Match found: Dune Messiah: Dune Chronicles, Book 2 (1969)
+2026-04-14 14:34:18,434 - INFO - Match found: Das Haus an der Düne (1932)
+2026-04-14 14:34:18,475 - INFO - Match found: Autour d'une vie (1899)
+2026-04-14 14:34:18,588 - INFO - Match found: Jane Eyre ou Mémoires d'une gouvernante, de Currer-Bell, imités [and abridged] par Old-Nick (1847)
+2026-04-14 14:34:18,588 - INFO - Syncing current library state using ReadingListPage...
+2026-04-14 14:34:31,214 - WARNING - PERFORMANCE WARNING: Verify List: want-to-read at https://openlibrary.org/people/user532228/books/want-to-read took 11814ms (Threshold: 2000ms)
+2026-04-14 14:34:31,214 - INFO - Successfully navigated to want-to-read list.
+2026-04-14 14:34:31,277 - INFO - Retrieved 1 titles from want-to-read.
+2026-04-14 14:34:34,094 - WARNING - PERFORMANCE WARNING: Verify List: already-read at https://openlibrary.org/people/user532228/books/already-read took 2301ms (Threshold: 2000ms)
+2026-04-14 14:34:34,095 - INFO - Successfully navigated to already-read list.
+2026-04-14 14:34:34,175 - INFO - Retrieved 4 titles from already-read.
+2026-04-14 14:34:39,415 - WARNING - PERFORMANCE WARNING: Load Book: Dune at https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M took 4418ms (Threshold: 2500ms)
+2026-04-14 14:34:39,415 - INFO - ADDING: 'Dune' to 'Want to Read'
+2026-04-14 14:34:39,605 - INFO - Screenshot saved for 'Dune' at outputs/screenshots/Dune.png
+2026-04-14 14:34:43,969 - INFO - ADDING: 'Dune Messiah: Dune Chronicles, Book 2' to 'Want to Read'
+2026-04-14 14:34:44,091 - INFO - Screenshot saved for 'Dune Messiah: Dune Chronicles, Book 2' at outputs/screenshots/Dune_Messiah__Dune_Chronicles__Book_2.png
+2026-04-14 14:34:49,162 - WARNING - PERFORMANCE WARNING: Load Book: Das Haus an der Düne at https://openlibrary.org/works/OL472165W/Peril_at_End_House?edition=key%3A/books/OL35638871M took 3980ms (Threshold: 2500ms)
+2026-04-14 14:34:49,163 - INFO - SKIP: 'Das Haus an der Düne' is already set to 'Already Read'.
+2026-04-14 14:34:53,231 - INFO - ADDING: 'Autour d'une vie' to 'Want to Read'
+2026-04-14 14:34:53,328 - INFO - Screenshot saved for 'Autour d'une vie' at outputs/screenshots/Autour_d_une_vie.png
+2026-04-14 14:34:58,495 - WARNING - PERFORMANCE WARNING: Load Book: Jane Eyre ou Mémoires d'une gouvernante, de Currer-Bell, imités [and abridged] par Old-Nick at https://openlibrary.org/works/OL1095427W/Jane_Eyre?edition=key%3A/books/OL23443604M took 3496ms (Threshold: 2500ms)
+2026-04-14 14:34:58,495 - INFO - ADDING: 'Jane Eyre ou Mémoires d'une gouvernante, de Currer-Bell, imités [and abridged] par Old-Nick' to 'Already Read'
+2026-04-14 14:34:58,602 - INFO - Screenshot saved for 'Jane Eyre ou Mémoires d'une gouvernante, de Currer-Bell, imités [and abridged] par Old-Nick' at outputs/screenshots/Jane_Eyre_ou_Mémoires_d_une_gouvernante__de_Currer.png
+2026-04-14 14:35:02,654 - INFO - Successfully navigated to want-to-read list.
+2026-04-14 14:35:02,722 - INFO - Retrieved 3 titles from want-to-read.
+2026-04-14 14:35:04,569 - INFO - Successfully navigated to already-read list.
+2026-04-14 14:35:04,638 - INFO - Retrieved 2 titles from already-read.
+2026-04-14 14:35:04,638 - INFO - SUCCESS: All added books confirmed in the Reading Lists.
+2026-04-14 14:35:04,639 - INFO - Automation finished. Performance report generated.
+2026-04-14 14:35:04,639 - INFO - Report generated: outputs/report.html
+2026-04-14 15:38:08,693 - INFO - Navigating to login page: https://openlibrary.org/account/login
+2026-04-14 15:38:21,767 - INFO - Login form submitted.
+2026-04-14 15:38:48,752 - ERROR - E2E Execution failed: SearchPage.get_filtered_books() missing 1 required positional argument: 'limit'
+2026-04-14 15:38:48,753 - INFO - Cleaning up environment...
+2026-04-14 15:38:48,753 - WARNING - Cleanup failed (non-critical): 'ReadingListPage' object has no attribute 'BASE_LIST_URL'
+2026-04-14 15:38:48,754 - INFO - Automation finished. Performance report generated.
+2026-04-14 15:38:48,754 - INFO - Report generated: outputs/report.html
+2026-04-14 15:40:00,029 - INFO - Navigating to login page: https://openlibrary.org/account/login
+2026-04-14 15:40:12,072 - INFO - Login form submitted.
+2026-04-14 15:40:20,341 - INFO - Match found: https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M (Year: 1965)
+2026-04-14 15:40:20,352 - INFO - No more pages available.
+2026-04-14 15:40:20,353 - INFO - Syncing current library state using ReadingListPage...
+2026-04-14 15:40:25,485 - INFO - Successfully navigated to want-to-read list.
+2026-04-14 15:40:25,584 - INFO - Retrieved 3 titles from want-to-read.
+2026-04-14 15:40:33,573 - WARNING - PERFORMANCE WARNING: Verify List: already-read at https://openlibrary.org/people/user532228/books/already-read took 2222ms (Threshold: 2000ms)
+2026-04-14 15:40:33,573 - INFO - Successfully navigated to already-read list.
+2026-04-14 15:40:33,689 - INFO - Retrieved 2 titles from already-read.
+2026-04-14 15:40:33,689 - ERROR - E2E Execution failed: string indices must be integers
+2026-04-14 15:40:33,689 - INFO - Cleaning up environment...
+2026-04-14 15:40:33,690 - WARNING - Cleanup failed (non-critical): 'ReadingListPage' object has no attribute 'BASE_LIST_URL'
+2026-04-14 15:40:33,690 - INFO - Automation finished. Performance report generated.
+2026-04-14 15:40:33,691 - INFO - Report generated: outputs/report.html
+2026-04-14 16:06:25,645 - INFO - Navigating to login page: https://openlibrary.org/account/login
+2026-04-14 16:06:47,008 - INFO - Login form submitted.
+2026-04-14 16:07:13,638 - WARNING - PERFORMANCE WARNING: Homepage Load at https://openlibrary.org took 4833ms (Threshold: 3000ms)
+2026-04-14 16:07:16,607 - INFO - Match found: https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M (Year: 1965)
+2026-04-14 16:07:16,612 - INFO - No more pages available.
+2026-04-14 16:07:16,612 - INFO - Syncing current library state using ReadingListPage...
+2026-04-14 16:07:46,616 - ERROR - Failed to measure performance for https://openlibrary.org/people/user532228/books/want-to-read: Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to "https://openlibrary.org/people/user532228/books/want-to-read", waiting until "networkidle"
+
+2026-04-14 16:07:46,617 - INFO - Successfully navigated to want-to-read list.
+2026-04-14 16:07:46,719 - INFO - Retrieved 3 titles from want-to-read.
+2026-04-14 16:08:05,306 - WARNING - PERFORMANCE WARNING: Verify List: already-read at https://openlibrary.org/people/user532228/books/already-read took 3579ms (Threshold: 2000ms)
+2026-04-14 16:08:05,306 - INFO - Successfully navigated to already-read list.
+2026-04-14 16:08:05,389 - INFO - Retrieved 2 titles from already-read.
+2026-04-14 16:08:25,418 - WARNING - PERFORMANCE WARNING: Load Book: OL26242482M at https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M took 6302ms (Threshold: 2500ms)
+2026-04-14 16:08:25,418 - ERROR - E2E Execution failed: string indices must be integers
+2026-04-14 16:08:25,418 - INFO - Cleaning up environment...
+2026-04-14 16:08:25,419 - WARNING - Cleanup failed (non-critical): 'ReadingListPage' object has no attribute 'BASE_LIST_URL'
+2026-04-14 16:08:25,420 - INFO - Automation finished. Performance report generated.
+2026-04-14 16:08:25,422 - INFO - Report generated: outputs/report.html
+2026-04-14 16:08:55,876 - INFO - Navigating to login page: https://openlibrary.org/account/login
+2026-04-14 16:09:25,885 - ERROR - E2E Execution failed: Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to "https://openlibrary.org/account/login", waiting until "load"
+
+2026-04-14 16:09:25,886 - INFO - Cleaning up environment...
+2026-04-14 16:09:25,886 - WARNING - Cleanup failed (non-critical): 'ReadingListPage' object has no attribute 'BASE_LIST_URL'
+2026-04-14 16:09:25,886 - INFO - Automation finished. Performance report generated.
+2026-04-14 16:09:25,887 - INFO - Report generated: outputs/report.html
+2026-04-14 16:09:56,510 - INFO - Navigating to login page: https://openlibrary.org/account/login
+2026-04-14 16:10:10,003 - INFO - Login form submitted.
+2026-04-14 16:10:29,160 - INFO - Match found: https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M (Year: 1965)
+2026-04-14 16:10:29,277 - INFO - Match found: https://openlibrary.org/works/OL893526W/Dune_Messiah?edition=key%3A/books/OL7525229M (Year: 1969)
+2026-04-14 16:10:29,406 - INFO - Match found: https://openlibrary.org/works/OL472165W/Peril_at_End_House?edition=key%3A/books/OL35638871M (Year: 1932)
+2026-04-14 16:10:29,505 - INFO - Match found: https://openlibrary.org/works/OL274574W/Crónica_de_una_muerte_anunciada?edition=key%3A/books/OL8886573M (Year: 1980)
+2026-04-14 16:10:29,820 - INFO - Match found: https://openlibrary.org/works/OL1105384W/Memoirs_of_a_Revolutionist?edition=key%3A/books/OL16829296M (Year: 1899)
+2026-04-14 16:10:29,820 - INFO - Syncing current library state using ReadingListPage...
+2026-04-14 16:10:50,307 - WARNING - PERFORMANCE WARNING: Verify List: want-to-read at https://openlibrary.org/people/user532228/books/want-to-read took 4313ms (Threshold: 2000ms)
+2026-04-14 16:10:50,307 - INFO - Successfully navigated to want-to-read list.
+2026-04-14 16:10:50,413 - INFO - Retrieved 3 titles from want-to-read.
+2026-04-14 16:10:57,451 - WARNING - PERFORMANCE WARNING: Verify List: already-read at https://openlibrary.org/people/user532228/books/already-read took 2722ms (Threshold: 2000ms)
+2026-04-14 16:10:57,452 - INFO - Successfully navigated to already-read list.
+2026-04-14 16:10:57,555 - INFO - Retrieved 2 titles from already-read.
+2026-04-14 16:11:05,151 - WARNING - PERFORMANCE WARNING: Load Book: OL26242482M at https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M took 4994ms (Threshold: 2500ms)
+2026-04-14 16:11:05,151 - ERROR - E2E Execution failed: string indices must be integers
+2026-04-14 16:11:05,151 - INFO - Cleaning up environment...
+2026-04-14 16:11:05,152 - WARNING - Cleanup failed (non-critical): 'ReadingListPage' object has no attribute 'BASE_LIST_URL'
+2026-04-14 16:11:05,152 - INFO - Automation finished. Performance report generated.
+2026-04-14 16:11:05,155 - INFO - Report generated: outputs/report.html
+2026-04-14 16:12:39,177 - INFO - Navigating to login page: https://openlibrary.org/account/login
+2026-04-14 16:12:39,296 - ERROR - E2E Execution failed: Page.goto: net::ERR_INTERNET_DISCONNECTED at https://openlibrary.org/account/login
+Call log:
+  - navigating to "https://openlibrary.org/account/login", waiting until "load"
+
+2026-04-14 16:12:39,296 - INFO - Cleaning up environment...
+2026-04-14 16:12:39,296 - WARNING - Cleanup failed (non-critical): 'ReadingListPage' object has no attribute 'BASE_LIST_URL'
+2026-04-14 16:12:39,297 - INFO - Automation finished. Performance report generated.
+2026-04-14 16:12:39,301 - INFO - Report generated: outputs/report.html
+2026-04-14 16:12:47,192 - INFO - Navigating to login page: https://openlibrary.org/account/login
+2026-04-14 16:12:47,212 - ERROR - E2E Execution failed: Page.goto: net::ERR_INTERNET_DISCONNECTED at https://openlibrary.org/account/login
+Call log:
+  - navigating to "https://openlibrary.org/account/login", waiting until "load"
+
+2026-04-14 16:12:47,212 - INFO - Cleaning up environment...
+2026-04-14 16:12:47,212 - WARNING - Cleanup failed (non-critical): 'ReadingListPage' object has no attribute 'BASE_LIST_URL'
+2026-04-14 16:12:47,213 - INFO - Automation finished. Performance report generated.
+2026-04-14 16:12:47,213 - INFO - Report generated: outputs/report.html
+2026-04-14 16:17:25,022 - INFO - Navigating to login page: https://openlibrary.org/account/login
+2026-04-14 16:17:37,070 - INFO - Login form submitted.
+2026-04-14 16:17:47,198 - INFO - Match found: https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M (Year: 1965)
+2026-04-14 16:17:47,264 - INFO - Match found: https://openlibrary.org/works/OL893526W/Dune_Messiah?edition=key%3A/books/OL7525229M (Year: 1969)
+2026-04-14 16:17:47,590 - INFO - Match found: https://openlibrary.org/works/OL472165W/Peril_at_End_House?edition=key%3A/books/OL35638871M (Year: 1932)
+2026-04-14 16:17:47,676 - INFO - Match found: https://openlibrary.org/works/OL274574W/Crónica_de_una_muerte_anunciada?edition=key%3A/books/OL8886573M (Year: 1980)
+2026-04-14 16:17:47,719 - INFO - Match found: https://openlibrary.org/works/OL1105384W/Memoirs_of_a_Revolutionist?edition=key%3A/books/OL16829296M (Year: 1899)
+2026-04-14 16:17:47,720 - INFO - Syncing current library state using ReadingListPage...
+2026-04-14 16:17:53,560 - WARNING - PERFORMANCE WARNING: Load Book: OL26242482M at https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M took 3852ms (Threshold: 2500ms)
+2026-04-14 16:17:53,560 - ERROR - E2E Execution failed: string indices must be integers
+2026-04-14 16:17:53,560 - INFO - Cleaning up environment...
+2026-04-14 16:21:28,020 - INFO - Navigating to login page: https://openlibrary.org/account/login
+2026-04-14 16:21:45,443 - INFO - Login form submitted.
+2026-04-14 16:21:59,645 - WARNING - PERFORMANCE WARNING: Homepage Load at https://openlibrary.org took 5831ms (Threshold: 3000ms)
+2026-04-14 16:22:04,107 - INFO - Match found: https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M (Year: 1965)
+2026-04-14 16:22:04,156 - INFO - Match found: https://openlibrary.org/works/OL893526W/Dune_Messiah?edition=key%3A/books/OL7525229M (Year: 1969)
+2026-04-14 16:22:04,219 - INFO - Match found: https://openlibrary.org/works/OL472165W/Peril_at_End_House?edition=key%3A/books/OL35638871M (Year: 1932)
+2026-04-14 16:22:04,290 - INFO - Match found: https://openlibrary.org/works/OL274574W/Crónica_de_una_muerte_anunciada?edition=key%3A/books/OL8886573M (Year: 1980)
+2026-04-14 16:22:04,364 - INFO - Match found: https://openlibrary.org/works/OL1105384W/Memoirs_of_a_Revolutionist?edition=key%3A/books/OL16829296M (Year: 1899)
+2026-04-14 16:22:04,365 - INFO - Syncing current library state using ReadingListPage...
+2026-04-14 16:22:25,958 - WARNING - PERFORMANCE WARNING: Load Book: OL26242482M at https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M took 17909ms (Threshold: 2500ms)
+2026-04-14 16:22:25,958 - INFO - ADDING: 'https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M' to 'Want to Read'
+2026-04-14 16:22:26,006 - ERROR - E2E Execution failed: string indices must be integers
+2026-04-14 16:22:26,007 - INFO - Cleaning up environment...
+2026-04-14 16:23:29,816 - INFO - Cleanup finished for: want-to-read
+2026-04-14 16:23:41,144 - INFO - Navigating to login page: https://openlibrary.org/account/login
+2026-04-14 16:23:55,609 - INFO - Login form submitted.
+2026-04-14 16:24:15,048 - INFO - Match found: https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M (Year: 1965)
+2026-04-14 16:24:15,103 - INFO - Match found: https://openlibrary.org/works/OL893526W/Dune_Messiah?edition=key%3A/books/OL7525229M (Year: 1969)
+2026-04-14 16:24:15,228 - INFO - Match found: https://openlibrary.org/works/OL472165W/Peril_at_End_House?edition=key%3A/books/OL35638871M (Year: 1932)
+2026-04-14 16:24:15,287 - INFO - Match found: https://openlibrary.org/works/OL274574W/Crónica_de_una_muerte_anunciada?edition=key%3A/books/OL8886573M (Year: 1980)
+2026-04-14 16:24:15,446 - INFO - Match found: https://openlibrary.org/works/OL1105384W/Memoirs_of_a_Revolutionist?edition=key%3A/books/OL16829296M (Year: 1899)
+2026-04-14 16:24:15,447 - INFO - Syncing current library state using ReadingListPage...
+2026-04-14 16:24:40,099 - WARNING - PERFORMANCE WARNING: Load Book: OL26242482M at https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M took 20150ms (Threshold: 2500ms)
+2026-04-14 16:24:40,099 - INFO - ADDING: 'https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M' to 'Already Read'
+2026-04-14 16:24:40,497 - INFO - Screenshot saved for 'https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M' at outputs/screenshots/https___openlibrary_org_works_OL893415W_Dune_editi.png
+2026-04-14 16:24:49,833 - WARNING - PERFORMANCE WARNING: Load Book: OL7525229M at https://openlibrary.org/works/OL893526W/Dune_Messiah?edition=key%3A/books/OL7525229M took 3075ms (Threshold: 2500ms)
+2026-04-14 16:24:49,833 - INFO - ADDING: 'https://openlibrary.org/works/OL893526W/Dune_Messiah?edition=key%3A/books/OL7525229M' to 'Want to Read'
+2026-04-14 16:24:50,039 - INFO - Screenshot saved for 'https://openlibrary.org/works/OL893526W/Dune_Messiah?edition=key%3A/books/OL7525229M' at outputs/screenshots/https___openlibrary_org_works_OL893526W_Dune_Messi.png
+2026-04-14 16:25:00,484 - WARNING - PERFORMANCE WARNING: Load Book: OL35638871M at https://openlibrary.org/works/OL472165W/Peril_at_End_House?edition=key%3A/books/OL35638871M took 5326ms (Threshold: 2500ms)
+2026-04-14 16:25:00,485 - INFO - ADDING: 'https://openlibrary.org/works/OL472165W/Peril_at_End_House?edition=key%3A/books/OL35638871M' to 'Want to Read'
+2026-04-14 16:25:00,716 - INFO - Screenshot saved for 'https://openlibrary.org/works/OL472165W/Peril_at_End_House?edition=key%3A/books/OL35638871M' at outputs/screenshots/https___openlibrary_org_works_OL472165W_Peril_at_E.png
+2026-04-14 16:25:15,101 - WARNING - PERFORMANCE WARNING: Load Book: OL8886573M at https://openlibrary.org/works/OL274574W/Crónica_de_una_muerte_anunciada?edition=key%3A/books/OL8886573M took 4264ms (Threshold: 2500ms)
+2026-04-14 16:25:15,102 - INFO - ADDING: 'https://openlibrary.org/works/OL274574W/Crónica_de_una_muerte_anunciada?edition=key%3A/books/OL8886573M' to 'Already Read'
+2026-04-14 16:25:15,327 - INFO - Screenshot saved for 'https://openlibrary.org/works/OL274574W/Crónica_de_una_muerte_anunciada?edition=key%3A/books/OL8886573M' at outputs/screenshots/https___openlibrary_org_works_OL274574W_Crónica_de.png
+2026-04-14 16:25:25,249 - WARNING - PERFORMANCE WARNING: Load Book: OL16829296M at https://openlibrary.org/works/OL1105384W/Memoirs_of_a_Revolutionist?edition=key%3A/books/OL16829296M took 3216ms (Threshold: 2500ms)
+2026-04-14 16:25:25,249 - INFO - ADDING: 'https://openlibrary.org/works/OL1105384W/Memoirs_of_a_Revolutionist?edition=key%3A/books/OL16829296M' to 'Already Read'
+2026-04-14 16:25:25,431 - INFO - Screenshot saved for 'https://openlibrary.org/works/OL1105384W/Memoirs_of_a_Revolutionist?edition=key%3A/books/OL16829296M' at outputs/screenshots/https___openlibrary_org_works_OL1105384W_Memoirs_o.png
+2026-04-14 16:25:34,850 - WARNING - PERFORMANCE WARNING: Verify List: want-to-read at https://openlibrary.org/people/user532228/books/want-to-read took 2116ms (Threshold: 2000ms)
+2026-04-14 16:25:34,850 - INFO - Successfully navigated to want-to-read list.
+2026-04-14 16:25:34,956 - INFO - Retrieved 1 titles from want-to-read.
+2026-04-14 16:25:43,763 - WARNING - PERFORMANCE WARNING: Verify List: already-read at https://openlibrary.org/people/user532228/books/already-read took 2469ms (Threshold: 2000ms)
+2026-04-14 16:25:43,764 - INFO - Successfully navigated to already-read list.
+2026-04-14 16:25:43,885 - INFO - Retrieved 4 titles from already-read.
+2026-04-14 16:25:43,885 - INFO - Checking count: Expected 5, Found 5
+2026-04-14 16:25:43,885 - INFO - Cleaning up environment...
+2026-04-14 16:26:15,885 - INFO - Cleanup finished for: want-to-read
+2026-04-14 16:28:17,757 - INFO - Cleanup finished for: already-read
+2026-04-14 16:28:17,758 - INFO - Automation finished. Performance report generated.
+2026-04-14 16:28:17,760 - INFO - Report generated: outputs/report.html
+2026-04-14 16:36:38,058 - INFO - Navigating to login page: https://openlibrary.org/account/login
+2026-04-14 16:36:54,405 - INFO - Login form submitted.
+2026-04-14 16:37:24,409 - ERROR - Failed to measure performance for https://openlibrary.org: Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to "https://openlibrary.org/", waiting until "networkidle"
+
+2026-04-14 16:37:30,160 - INFO - Match found: https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M (Year: 1965)
+2026-04-14 16:37:30,166 - INFO - No more pages available.
+2026-04-14 16:37:30,167 - INFO - Syncing current library state using ReadingListPage...
+2026-04-14 16:38:00,171 - ERROR - Failed to measure performance for https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M: Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to "https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M", waiting until "networkidle"
+
+2026-04-14 16:38:00,171 - INFO - ADDING: 'https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M' to 'Want to Read'
+2026-04-14 16:38:00,391 - INFO - Screenshot saved for 'https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M' at outputs/screenshots/https___openlibrary_org_works_OL893415W_Dune_editi.png
+2026-04-14 16:38:30,393 - ERROR - Failed to measure performance for https://openlibrary.org/people/user532228/books/want-to-read: Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to "https://openlibrary.org/people/user532228/books/want-to-read", waiting until "networkidle"
+
+2026-04-14 16:38:30,394 - INFO - Successfully navigated to want-to-read list.
+2026-04-14 16:38:30,493 - INFO - Retrieved 2 titles from want-to-read.
+2026-04-14 16:39:00,499 - ERROR - Failed to measure performance for https://openlibrary.org/people/user532228/books/already-read: Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to "https://openlibrary.org/people/user532228/books/already-read", waiting until "networkidle"
+
+2026-04-14 16:39:00,500 - INFO - Successfully navigated to already-read list.
+2026-04-14 16:39:00,619 - INFO - Retrieved 3 titles from already-read.
+2026-04-14 16:39:00,619 - INFO - Checking count: Expected 1, Found 5
+2026-04-14 16:39:00,619 - INFO - Cleaning up environment...
+2026-04-14 16:39:00,619 - INFO - Navigating to want-to-read for autonomous cleanup...
+2026-04-14 16:39:20,126 - INFO - Found 2 books to remove from want-to-read.
+2026-04-14 16:40:08,097 - INFO - Navigating to already-read for autonomous cleanup...
+2026-04-14 16:40:33,147 - INFO - Found 3 books to remove from already-read.
+2026-04-14 16:41:08,357 - ERROR - Failed to remove https://openlibrary.org/works/OL274574W/Crónica_de_una_muerte_anunciada?edition=key%3A/books/OL8886573M: Timeout 30000ms exceeded.
+2026-04-14 16:41:48,945 - INFO - Total cleanup finished.
+2026-04-14 16:41:48,946 - INFO - Automation finished. Performance report generated.
+2026-04-14 16:41:48,946 - INFO - Report generated: outputs/report.html
+2026-04-14 16:45:24,906 - INFO - Navigating to login page: https://openlibrary.org/account/login
+2026-04-14 16:45:34,616 - INFO - Cleaning up environment...
+2026-04-14 16:46:35,277 - INFO - Navigating to login page: https://openlibrary.org/account/login
+2026-04-14 16:46:50,482 - INFO - Login form submitted.
+2026-04-14 16:46:50,482 - INFO - Cleaning up environment...
+2026-04-14 16:46:56,916 - INFO - Clearing 2 books from want-to-read
+2026-04-14 16:47:27,957 - INFO - Clearing 3 books from already-read
+2026-04-14 16:47:46,214 - INFO - Automation finished. Performance report generated.
+2026-04-14 16:47:46,215 - INFO - Report generated: outputs/report.html
+2026-04-14 16:53:58,373 - INFO - Navigating to login page: https://openlibrary.org/account/login
+2026-04-14 16:54:15,125 - INFO - Login form submitted.
+2026-04-14 16:54:15,125 - INFO - Cleaning up environment...
+2026-04-14 16:54:24,619 - INFO - Found 2 books to remove from want-to-read
+2026-04-14 16:54:44,299 - ERROR - Cleanup error for https://openlibrary.org/works/OL472165W/Peril_at_End_House?edition=key%3A/books/OL35638871M: Page.wait_for_selector: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator("reading-log-button") to be visible
+
+2026-04-14 16:54:57,954 - ERROR - Cleanup error for https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M: Page.wait_for_selector: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator("reading-log-button") to be visible
+
+2026-04-14 16:55:14,667 - INFO - Found 3 books to remove from already-read
+2026-04-14 16:55:29,092 - ERROR - Cleanup error for https://openlibrary.org/works/OL274574W/Crónica_de_una_muerte_anunciada?edition=key%3A/books/OL8886573M: Page.wait_for_selector: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator("reading-log-button") to be visible
+
+2026-04-14 16:55:43,281 - ERROR - Cleanup error for https://openlibrary.org/works/OL1095427W/Jane_Eyre?edition=key%3A/books/OL23443604M: Page.wait_for_selector: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator("reading-log-button") to be visible
+
+2026-04-14 16:55:56,144 - ERROR - Cleanup error for https://openlibrary.org/works/OL1105384W/Memoirs_of_a_Revolutionist?edition=key%3A/books/OL16829296M: Page.wait_for_selector: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator("reading-log-button") to be visible
+
+2026-04-14 16:55:56,145 - INFO - Automation finished. Performance report generated.
+2026-04-14 16:55:56,146 - INFO - Report generated: outputs/report.html
+2026-04-14 17:00:08,328 - INFO - Navigating to login page: https://openlibrary.org/account/login
+2026-04-14 17:00:34,719 - INFO - Login form submitted.
+2026-04-14 17:00:34,719 - INFO - Cleaning up environment...
+2026-04-14 17:01:06,747 - WARNING - Cleanup failed (non-critical): Timeout 30000ms exceeded.
+2026-04-14 17:01:06,748 - INFO - Automation finished. Performance report generated.
+2026-04-14 17:01:06,749 - INFO - Report generated: outputs/report.html
+2026-04-14 17:01:15,187 - INFO - Navigating to login page: https://openlibrary.org/account/login
+2026-04-14 17:01:37,121 - INFO - Login form submitted.
+2026-04-14 17:01:37,122 - INFO - Cleaning up environment...
+2026-04-14 17:02:09,507 - WARNING - Cleanup failed (non-critical): Timeout 30000ms exceeded.
+2026-04-14 17:02:09,508 - INFO - Automation finished. Performance report generated.
+2026-04-14 17:02:09,509 - INFO - Report generated: outputs/report.html
+2026-04-14 17:02:14,475 - INFO - Navigating to login page: https://openlibrary.org/account/login
+2026-04-14 17:02:27,792 - INFO - Login form submitted.
+2026-04-14 17:02:27,792 - INFO - Cleaning up environment...
+2026-04-14 17:02:54,369 - WARNING - No active button found for: https://openlibrary.org/works/OL472165W/Peril_at_End_House?edition=key%3A/books/OL35638871M
+2026-04-14 17:02:57,942 - WARNING - No active button found for: https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M
+2026-04-14 17:05:16,630 - INFO - Navigating to login page: https://openlibrary.org/account/login
+2026-04-14 17:05:43,920 - INFO - Login form submitted.
+2026-04-14 17:05:43,920 - INFO - Cleaning up environment...
+2026-04-14 17:06:16,998 - WARNING - Cleanup failed (non-critical): Timeout 30000ms exceeded.
+2026-04-14 17:06:17,000 - INFO - Automation finished. Performance report generated.
+2026-04-14 17:06:17,000 - INFO - Report generated: outputs/report.html
+2026-04-14 17:06:20,693 - INFO - Navigating to login page: https://openlibrary.org/account/login
+2026-04-14 17:06:38,135 - INFO - Login form submitted.
+2026-04-14 17:06:38,135 - INFO - Cleaning up environment...
+2026-04-14 17:07:21,347 - WARNING - No active button found for: https://openlibrary.org/works/OL472165W/Peril_at_End_House?edition=key%3A/books/OL35638871M
+2026-04-14 17:07:24,510 - WARNING - No active button found for: https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M
+2026-04-14 17:11:09,613 - INFO - Navigating to login page: https://openlibrary.org/account/login
+2026-04-14 17:11:30,346 - INFO - Login form submitted.
+2026-04-14 17:11:30,347 - INFO - Cleaning up environment...
+2026-04-14 17:11:49,736 - WARNING - Could not find button. HTML structure: Component not found
+2026-04-14 17:11:52,636 - WARNING - Could not find button. HTML structure: Component not found
+2026-04-14 17:12:10,580 - WARNING - Could not find button. HTML structure: Component not found
+2026-04-14 17:12:21,207 - WARNING - Could not find button. HTML structure: Component not found
+2026-04-14 17:12:23,898 - WARNING - Could not find button. HTML structure: Component not found
+2026-04-14 17:12:23,903 - INFO - Automation finished. Performance report generated.
+2026-04-14 17:12:23,904 - INFO - Report generated: outputs/report.html
+2026-04-14 17:14:50,716 - INFO - Navigating to login page: https://openlibrary.org/account/login
+2026-04-14 17:15:07,978 - INFO - Login form submitted.
+2026-04-14 17:15:07,978 - INFO - Cleaning up environment...
+2026-04-14 17:15:25,991 - INFO - DEBUG HTML for https://openlibrary.org/works/OL472165W/Peril_at_End_House?edition=key%3A/books/OL35638871M: 
+<div class="btn-notice read-options" id="read-options">
+
+        <div class="illustration edition-cover">
+          
+
+
+
+
+<div class="coverMagic cover-animation">
+    <div class="SRPCover bookCover" style="display: block;">
+        <a href="//covers.openlibrary.org/b/id/12346016-L.jpg" aria-controls="seeImage" class="coverLook dialog--open" title="Pull up a bigger book cover">
+
+            <img itemprop="image" src="//covers.openlibrary.org/b/id/12346016-M.jpg" srcset="//covers.openlibrary.org/b/id/12346016-L.jpg 2x" class="cover" style="aspect-ratio: 0.6002751977984176" alt="Cover of: Das Haus an der Düne by Agatha Christie, Agatha Christie" fetchpriority="high">
+        </a>
+    </div>
+    <div class="SRPCoverBlank" style="display: none;">
+        <div class="innerBorder">
+            <div class="BookTitle">
+Das Haus an der Düne 
+
+                <div class="Author">
+Agatha Christie, Agatha Christ ...
+</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="hidden">
+    <div class="coverFloat" id="seeImage">
+        <div class="coverFloatHead">
+            <h2>
+Das Haus an der Düne 
+</h2>
+            <a class="dialog--close" href="javascript:;">×<span class="shift">Close</span></a>
+        </div>
+        <a class="dialog--close" href="javascript:;"><img src="//covers.openlibrary.org/b/id/12346016-L.jpg" class="cover" alt="Das Haus an der Düne by Agatha Christie, Agatha Christie"></a>
+    </div>
+</div>
+
+          
+          
+
+
+<!-- The below style is inlined to avoid repaints -->
+<div class="smaller sansserif manageCoversContainer" style="position: absolute; bottom: 15px">
+  <a aria-controls="addImage-0" class="coverPop dialog--open" href="/books/OL35638871M/Das_Haus_an_der_Düne/manage-covers">
+    <div class="manageCovers" data-config="{&quot;key&quot;: &quot;/type/edition&quot;, &quot;url&quot;: &quot;//covers.openlibrary.org&quot;, &quot;selector&quot;: &quot;.edition-cover .bookCover img&quot;, &quot;add_url&quot;: &quot;/books/OL35638871M/Das_Haus_an_der_D\u00fcne/add-cover&quot;, &quot;manage_url&quot;: &quot;/books/OL35638871M/Das_Haus_an_der_D\u00fcne/manage-covers&quot;}">Manage Covers</div>
+  </a>
+</div>
+
+<div class="hidden">
+    <div class="floater" id="addImage-0">
+        <div class="floaterHead">
+            <h2>Book Covers</h2>
+            <a class="dialog--close" href="javascript:;">×<span class="shift">Close</span></a>
+        </div>
+
+        <div id="tabsImages" class="ol-tabs tabsPop ui-tabs ui-corner-all ui-widget ui-widget-content">
+            <ul role="tablist" class="ui-tabs-nav ui-corner-all ui-helper-reset ui-helper-clearfix ui-widget-header">
+                <li role="tab" tabindex="0" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab ui-tabs-active ui-state-active" aria-controls="imagesAdd-0" aria-labelledby="ui-id-1" aria-selected="true" aria-expanded="true"><a href="#imagesAdd-0" tabindex="-1" class="ui-tabs-anchor" id="ui-id-1">Add</a></li>
+                <li role="tab" tabindex="-1" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab" aria-controls="imagesManage-0" aria-labelledby="ui-id-2" aria-selected="false" aria-expanded="false"><a href="#imagesManage-0" tabindex="-1" class="ui-tabs-anchor" id="ui-id-2">Manage</a></li>
+            </ul>
+
+            <div class="imagesAdd ui-tabs-panel ui-corner-bottom ui-widget-content" id="imagesAdd-0" aria-labelledby="ui-id-1" role="tabpanel" aria-hidden="false">
+                
+            </div>
+
+            <div class="imagesManage ui-tabs-panel ui-corner-bottom ui-widget-content" id="imagesManage-0" aria-labelledby="ui-id-2" role="tabpanel" aria-hidden="true" style="display: none;">
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+        </div>
+
+
+
+        
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="cta-button-group">
+  <a class="cta-btn cta-btn--preview" data-book-preview="" data-iframe-src="https://archive.org/details/dashausderdune0000chri?view=theater&amp;wrapper=false" data-iframe-link="https://archive.org/details/dashausderdune0000chri" data-ol-link-track="CTAClick|Preview" href="#bookPreview">Preview</a>
+</div>
+
+<div class="hidden">
+  <div id="bookPreview">
+    <div class="book-preview">
+      <div class="floaterHead">
+        <h2>Preview Book</h2>
+        <a class="dialog--close" data-key="book_preview" href="javascript:;">×<span class="shift">Close</span></a>
+      </div>
+      <div>
+        <iframe style="width:100%; height:515px"></iframe>
+        <p class="learn-more">
+          <a data-key="book_preview_learn_more" data-ol-link-track="book_preview_learn_more">
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="cta-dropper cta-button-group">
+  <a href="/borrow/ia/dashausderdune0000chri?ref=ol" title="Borrow ebook from Internet Archive" class="cta-btn cta-btn--ia cta-btn--available cta-btn--borrow" data-ol-link-track="CTAClick|Borrow">Borrow</a>
+  <details class="cta-btn cta-btn--available">
+    <summary></summary>
+    <ul class="dropper-menu">
+      <li>
+        <a href="/borrow/ia/dashausderdune0000chri?ref=ol&amp;_autoReadAloud=show" title="Borrow ebook from Internet Archive using Read Aloud" data-ol-link-track="CTAClick|BorrowListen" class="cta-btn cta-btn--available cta-btn--w-icon">
+          <span class="btn-icon listen"></span>
+          <span class="btn-label">Listen</span>
+        </a>
+      </li>
+      <li>
+        
+
+<a class="cta-btn cta-btn--available cta-btn--w-icon cta-btn--external" href="/books/OL35638871M/-/borrow?action=locate" target="_blank" data-ol-link-track="CTAClick|Locate">
+
+  <span class="btn-icon map"></span>
+  <span class="btn-label">Locate</span>
+</a>
+
+      </li>
+    </ul>
+  </details>
+</div>
+
+
+<div class="lists-widget-container">
+<input type="hidden" name="list-i18n-strings" value="{&quot;cover_of&quot;: &quot;Cover of: &quot;, &quot;see_this_list&quot;: &quot;See this list&quot;, &quot;remove_from_list&quot;: &quot;Remove from your list?&quot;, &quot;from&quot;: &quot;from&quot;, &quot;you&quot;: &quot;You&quot;}">
+
+
+
+
+
+
+
+
+
+<div class="generic-dropper-wrapper my-books-dropper" data-work-key="/works/OL472165W">
+  <div class="generic-dropper">
+    <div class="generic-dropper__actions">
+      <div class="generic-dropper__primary">
+        
+<form class="reading-log primary-action" method="POST" action="/works/OL472165W/bookshelves.json">
+
+  <input type="hidden" name="action" value="remove">
+  <input type="hidden" name="bookshelf_id" value="1">
+  <input type="hidden" name="work_id" value="/works/OL472165W">
+  <input type="hidden" name="edition_id" value="/books/OL35638871M">
+  <input type="hidden" name="user-key" value="/people/user532228">
+  
+  <button class="book-progress-btn primary-action activated" type="submit">
+    <span class="activated-check ">✓</span>
+    <span class="btn-text">Want to Read</span>
+  </button>
+</form>
+
+
+
+      </div>
+      <a class="generic-dropper__dropclick" href="javascript:;">
+        <div class="arrow"></div>
+      </a>
+    </div>
+    <div class="generic-dropper__dropdown">
+      
+
+
+<div class="read-statuses">
+  <form class="reading-log" method="POST" action="/works/OL472165W/bookshelves.json">
+    <input type="hidden" name="action" value="remove">
+    <input type="hidden" name="bookshelf_id" value="-1">
+    <input type="hidden" name="default-key" value="/books/OL35638871M">
+    <input type="hidden" name="edition_id" value="/books/OL35638871M">
+    <input type="hidden" name="work_id" value="/works/OL472165W">
+    <button class="remove-from-list " type="submit">Remove From Shelf</button>
+  </form>
+
+  <form class="reading-log" method="POST" action="/works/OL472165W/bookshelves.json">
+    <input type="hidden" name="action" value="add">
+    <input type="hidden" name="bookshelf_id" value="1">
+    <input type="hidden" name="edition_id" value="/books/OL35638871M">
+    <button class="nostyle-btn hidden" type="submit">Want to Read</button>
+  </form>
+
+  <form class="reading-log" method="POST" action="/works/OL472165W/bookshelves.json">
+    <input type="hidden" name="action" value="add">
+    <input type="hidden" name="bookshelf_id" value="2">
+    <input type="hidden" name="edition_id" value="/books/OL35638871M">
+    <button class="nostyle-btn " type="submit">Currently Reading</button>
+  </form>
+
+  <form class="reading-log" method="POST" action="/works/OL472165W/bookshelves.json">
+    <input type="hidden" name="action" value="add">
+    <input type="hidden" name="bookshelf_id" value="3">
+    <input type="hidden" name="edition_id" value="/books/OL35638871M">
+    <button class="nostyle-btn " type="submit">Already Read</button>
+  </form>
+</div>
+
+
+
+
+
+<div class="reading-lists">
+  <p class="reading-list-title">My Reading Lists:</p>
+  <div class="my-lists" data-seed-key="/books/OL35638871M" data-work-key="/works/OL472165W" data-user-key="/people/user532228">
+</div>
+  <p class="create checkboxes">
+    <label>
+      <input type="checkbox" class="work-checkbox">
+      <span>Use this Work</span>
+    </label>
+  </p>
+  <a href="javascript:;" class="create create-new-list" aria-controls="addList">Create a new list</a>
+</div>
+
+
+
+<div class="hidden">
+  <div class="floaterAdd" id="addList">
+    <div class="floaterHead">
+      <h2>Create a new list</h2>
+      <a class="dialog--close" href="javascript:;">×<span class="shift">Close</span></a>
+    </div>
+    <form method="post" class="floatform" name="new-list" id="create-list-form">
+      <div class="formElement">
+        <div class="label">
+          <label for="list_label">Name:</label>
+        </div>
+        <div class="input">
+          <input type="text" name="list_label" id="list_label" class="text required" value="" required="">
+        </div>
+      </div>
+      <div class="formElement">
+        <div class="label">
+          <label for="list_desc">Description:</label>
+        </div>
+        <div class="input">
+          <textarea name="list_desc" id="list_desc" rows="5" cols="30"></textarea>
+        </div>
+      </div>
+      <div class="formElement">
+        <div class="input">
+          <button id="create-list-button" type="submit" class="larger">Create new list</button>
+          &nbsp; &nbsp;
+          <a class="small dialog--close plain red" href="javascript:;">Cancel</a>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="check-in-container-OL472165W" class="check-in-container" data-config="{&quot;workOlid&quot;: &quot;OL472165W&quot;, &quot;editionKey&quot;: &quot;/books/OL35638871M&quot;}">
+    <div id="check-in-display-OL472165W" class="last-read-date hidden">
+      <span class="date-display">
+        Read <time class="check-in-date">None</time>
+        <a class="prompt-edit-date check-in-trigger dialog--open" href="javascript:;" aria-controls="modal-content-OL472165W" data-ol-link-track="CheckInPrompt|EditDate">Edit</a>
+      </span>
+    </div>
+
+    <div id="prompt-OL472165W" class="check-in-prompt hidden" data-work-olid="OL472165W">
+      <span class="prompt-copy">When did you finish this book?</span>
+      <span class="prompt-options">
+        <a class="prompt-current-year use-local-year" href="javascript:;" data-ol-link-track="CheckInPrompt|SetDateCurrentYear" data-server-year="2026">2026</a>
+        <a class="prompt-today" href="javascript:;" data-ol-link-track="CheckInPrompt|SetDateToday">Today</a>
+        <a class="prompt-custom check-in-trigger dialog--open" href="javascript:;" aria-controls="modal-content-OL472165W" data-ol-link-track="CheckInPrompt|SetDateCustom">Other</a>
+      </span>
+    </div>
+    <div class="hidden">
+      <div id="check-in-form-modal" class="floaterAdd">
+        <div class="floaterHead">
+          <h2>Check-In</h2>
+          <a class="dialog--close" href="javascript:;">×<span class="shift">Close</span></a>
+        </div>
+        
+<div class="check-in">
+  <form class="check-in__form" action="" method="post">
+    <input type="hidden" name="event_type" value="3">
+    <input type="hidden" name="event_id" value="">
+    <input type="hidden" name="edition_key" value="">
+    <div>
+      Add an optional check-in date. Check-in dates are used to track yearly reading goals.
+    </div>
+    <div class="check-in__inputs">
+      <label class="check-in__label">End Date:</label>
+      <span>
+        <label class="check-in__year-label">Year:</label>
+        <select class="check-in__select" name="year">
+          <option value="">Year</option>
+          <option class="hidden show-if-local-year" value="2027">2027</option>
+          <option value="2026">2026</option>
+          <option value="2025">2025</option>
+          <option value="2024">2024</option>
+          <option value="2023">2023</option>
+          <option value="2022">2022</option>
+          <option value="2021">2021</option>
+          <option value="2020">2020</option>
+          <option value="2019">2019</option>
+          <option value="2018">2018</option>
+          <option value="2017">2017</option>
+          <option value="2016">2016</option>
+          <option value="2015">2015</option>
+          <option value="2014">2014</option>
+          <option value="2013">2013</option>
+          <option value="2012">2012</option>
+          <option value="2011">2011</option>
+          <option value="2010">2010</option>
+          <option value="2009">2009</option>
+          <option value="2008">2008</option>
+          <option value="2007">2007</option>
+          <option value="2006">2006</option>
+          <option value="2005">2005</option>
+          <option value="2004">2004</option>
+          <option value="2003">2003</option>
+          <option value="2002">2002</option>
+          <option value="2001">2001</option>
+          <option value="2000">2000</option>
+          <option value="1999">1999</option>
+          <option value="1998">1998</option>
+          <option value="1997">1997</option>
+          <option value="1996">1996</option>
+          <option value="1995">1995</option>
+          <option value="1994">1994</option>
+          <option value="1993">1993</option>
+          <option value="1992">1992</option>
+          <option value="1991">1991</option>
+          <option value="1990">1990</option>
+          <option value="1989">1989</option>
+          <option value="1988">1988</option>
+          <option value="1987">1987</option>
+          <option value="1986">1986</option>
+          <option value="1985">1985</option>
+          <option value="1984">1984</option>
+          <option value="1983">1983</option>
+          <option value="1982">1982</option>
+          <option value="1981">1981</option>
+          <option value="1980">1980</option>
+          <option value="1979">1979</option>
+          <option value="1978">1978</option>
+          <option value="1977">1977</option>
+          <option value="1976">1976</option>
+          <option value="1975">1975</option>
+          <option value="1974">1974</option>
+          <option value="1973">1973</option>
+          <option value="1972">1972</option>
+          <option value="1971">1971</option>
+          <option value="1970">1970</option>
+          <option value="1969">1969</option>
+          <option value="1968">1968</option>
+          <option value="1967">1967</option>
+          <option value="1966">1966</option>
+          <option value="1965">1965</option>
+          <option value="1964">1964</option>
+          <option value="1963">1963</option>
+          <option value="1962">1962</option>
+          <option value="1961">1961</option>
+          <option value="1960">1960</option>
+          <option value="1959">1959</option>
+          <option value="1958">1958</option>
+          <option value="1957">1957</option>
+          <option value="1956">1956</option>
+          <option value="1955">1955</option>
+          <option value="1954">1954</option>
+          <option value="1953">1953</option>
+          <option value="1952">1952</option>
+          <option value="1951">1951</option>
+          <option value="1950">1950</option>
+          <option value="1949">1949</option>
+          <option value="1948">1948</option>
+          <option value="1947">1947</option>
+          <option value="1946">1946</option>
+          <option value="1945">1945</option>
+          <option value="1944">1944</option>
+          <option value="1943">1943</option>
+          <option value="1942">1942</option>
+          <option value="1941">1941</option>
+          <option value="1940">1940</option>
+          <option value="1939">1939</option>
+          <option value="1938">1938</option>
+          <option value="1937">1937</option>
+          <option value="1936">1936</option>
+          <option value="1935">1935</option>
+          <option value="1934">1934</option>
+          <option value="1933">1933</option>
+          <option value="1932">1932</option>
+          <option value="1931">1931</option>
+          <option value="1930">1930</option>
+          <option value="1929">1929</option>
+          <option value="1928">1928</option>
+          <option value="1927">1927</option>
+          <option value="1926">1926</option>
+          <option value="1925">1925</option>
+          <option value="1924">1924</option>
+          <option value="1923">1923</option>
+          <option value="1922">1922</option>
+          <option value="1921">1921</option>
+          <option value="1920">1920</option>
+          <option value="1919">1919</option>
+          <option value="1918">1918</option>
+          <option value="1917">1917</option>
+          <option value="1916">1916</option>
+          <option value="1915">1915</option>
+          <option value="1914">1914</option>
+          <option value="1913">1913</option>
+          <option value="1912">1912</option>
+          <option value="1911">1911</option>
+          <option value="1910">1910</option>
+          <option value="1909">1909</option>
+          <option value="1908">1908</option>
+          <option value="1907">1907</option>
+        </select>
+      </span>
+      <span>
+        <label class="check-in__month-label">Month:</label>
+        <select class="check-in__select" name="month" disabled="">
+          <option value="">Month</option>
+          <option value="1">January</option>
+          <option value="2">February</option>
+          <option value="3">March</option>
+          <option value="4">April</option>
+          <option value="5">May</option>
+          <option value="6">June</option>
+          <option value="7">July</option>
+          <option value="8">August</option>
+          <option value="9">September</option>
+          <option value="10">October</option>
+          <option value="11">November</option>
+          <option value="12">December</option>
+        </select>
+      </span>
+      <span>
+        <label class="check-in__day-label">Day:</label>
+        <select class="check-in__select" name="day" disabled="">
+          <option value="">Day</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+          <option value="13">13</option>
+          <option value="14">14</option>
+          <option value="15">15</option>
+          <option value="16">16</option>
+          <option value="17">17</option>
+          <option value="18">18</option>
+          <option value="19">19</option>
+          <option value="20">20</option>
+          <option value="21">21</option>
+          <option value="22">22</option>
+          <option value="23">23</option>
+          <option value="24">24</option>
+          <option value="25">25</option>
+          <option value="26">26</option>
+          <option value="27">27</option>
+          <option value="28">28</option>
+          <option value="29">29</option>
+          <option value="30">30</option>
+          <option value="31">31</option>
+        </select>
+      </span>
+      <span>
+        <a class="check-in__today" href="javascript:;" data-ol-link-track="CheckInForm|SetDateToday">Today</a>
+      </span>
+    </div>
+    <span class="check-in__actions">
+      <button class="check-in__delete-btn cta-btn cta-btn--delete invisible" data-ol-link-track="CheckInForm|DeleteCheckIn">Delete Event</button>
+      <button type="submit" class="check-in__submit-btn cta-btn cta-btn--shell" data-ol-link-track="CheckInForm|SubmitCheckIn" disabled="">Submit</button>
+    </span>
+  </form>
+</div>
+
+      </div>
+    </div>
+</div>
+
+
+
+<ul class="listLists already-lists"></ul>
+
+
+
+<form class="star-rating-form desktop" id="ratingsForm" method="POST" action="/works/OL472165W/ratings.json" property="reviewRating" typeof="Rating" vocab="http://schema.org/" data-work-key="/works/OL472165W">
+  <meta property="worstRating" content="1">
+  <meta property="bestRating" content="5">
+  <input type="hidden" value="/books/OL35638871M" name="edition_id">
+  <div class="review" id="starRatingSection">
+    <div class="stars" data-ol-link-track="StarRating|BookRated">
+      <input type="submit" value="1" name="rating" class="star-1" id="star-1">
+      <label class="star star-1 " property="worstRating" for="star-1">1</label>
+      <input type="submit" value="2" name="rating" class="star-2" id="star-2">
+      <label class="star star-2 " for="star-2">2</label>
+      <input type="submit" value="3" name="rating" class="star-3" id="star-3">
+      <label class="star star-3 " for="star-3">3</label>
+      <input type="submit" value="4" name="rating" class="star-4" id="star-4">
+      <label class="star star-4 " for="star-4">4</label>
+      <input type="submit" value="5" name="rating" class="star-5" id="star-5">
+      <label class="star star-5 " property="bestRating" for="star-5">5</label>
+      
+      <span></span>
+    </div>
+  </div>
+  <!-- <span class="star-rating__not-rated">Rate</span> -->
+  <button type="submit" class="star-messaging hidden">Clear my rating</button>
+</form>
+
+</div>
+
+
+
+
+        <hr>
+
+        
+<div class="modal-links desktop">
+  
+
+
+
+
+
+
+
+
+<div class="">
+  <a href="javascript:;" class="observations-modal-link icon-link" data-ol-link-track="ModalLinkClick|ReviewIcon">
+  <img class="icon-link__image" src="/static/images/icons/reviews.svg" alt="">
+  <div class="icon-link__text">Review</div>
+</a>
+
+
+
+  <div class="hidden">
+    <div id="sidebar-review-metadata-form" class="floaterAdd metadata-form" data-context="{&quot;username&quot;: &quot;user532228&quot;, &quot;work&quot;: &quot;/works/OL472165W&quot;, &quot;id&quot;: &quot;sidebar-review&quot;}">
+      <div class="floaterHead">
+        <h2>My Book Review</h2>
+        <a class="dialog--close" href="javascript:;">×<span class="shift">Close</span></a>
+      </div>
+      <script nomodule="" src="/static/build/components/production/ol-polyfills-legacy.js?v=2d80fb4b6ffec405079b9656d1a646f4" defer=""></script><script type="module" async="" defer="" src="/static/build/components/production/ol-ObservationForm.js?v=c3cedea6f0ea5ea56b0519fa5f9f237f"></script><script nomodule="" src="/static/build/components/production/ol-ObservationForm-legacy.js?v=7943a4df7d5a99ddd33ef18e444de43d" defer=""></script><ol-observation-form schema="%7B%22observations%22%3A%20%5B%7B%22id%22%3A%201%2C%20%22label%22%3A%20%22Pace%22%2C%20%22description%22%3A%20%22How%20would%20you%20rate%20the%20pacing%20of%20this%20book%3F%22%2C%20%22multi_choice%22%3A%20true%2C%20%22values%22%3A%20%5B%22Slow%20paced%22%2C%20%22Medium%20paced%22%2C%20%22Fast%20paced%22%2C%20%22Meandering%22%5D%7D%2C%20%7B%22id%22%3A%202%2C%20%22label%22%3A%20%22Enjoyability%22%2C%20%22description%22%3A%20%22How%20much%20did%20you%20enjoy%20reading%20this%20book%3F%22%2C%20%22multi_choice%22%3A%20true%2C%20%22values%22%3A%20%5B%22Boring%22%2C%20%22Engaging%22%2C%20%22Exciting%22%2C%20%22Neutral%22%5D%7D%2C%20%7B%22id%22%3A%203%2C%20%22label%22%3A%20%22Clarity%22%2C%20%22description%22%3A%20%22How%20clearly%20was%20this%20book%20written%20and%20presented%3F%22%2C%20%22multi_choice%22%3A%20true%2C%20%22values%22%3A%20%5B%22Succinct%22%2C%20%22Dense%22%2C%20%22Incomprehensible%22%2C%20%22Confusing%22%2C%20%22Clearly%20written%22%2C%20%22Effective%20explanations%22%2C%20%22Well%20organized%22%2C%20%22Disorganized%22%5D%7D%2C%20%7B%22id%22%3A%206%2C%20%22label%22%3A%20%22Difficulty%22%2C%20%22description%22%3A%20%22How%20would%20you%20rate%20the%20difficulty%20of%20this%20book%20for%20a%20general%20audience%3F%22%2C%20%22multi_choice%22%3A%20true%2C%20%22values%22%3A%20%5B%22Beginner%22%2C%20%22Intermediate%22%2C%20%22Advanced%22%2C%20%22Expert%22%2C%20%22University%22%2C%20%22Layman%22%2C%20%22Juvenile%22%5D%7D%2C%20%7B%22id%22%3A%208%2C%20%22label%22%3A%20%22Breadth%22%2C%20%22description%22%3A%20%22How%20would%20you%20describe%20the%20breadth%20and%20depth%20of%20this%20book%3F%22%2C%20%22multi_choice%22%3A%20true%2C%20%22values%22%3A%20%5B%22Comprehensive%22%2C%20%22Not%20comprehensive%22%2C%20%22Focused%22%2C%20%22Interdisciplinary%22%2C%20%22Extraneous%22%2C%20%22Shallow%22%2C%20%22Introductory%22%5D%7D%2C%20%7B%22id%22%3A%2010%2C%20%22label%22%3A%20%22Genres%22%2C%20%22description%22%3A%20%22What%20are%20the%20genres%20of%20this%20book%3F%22%2C%20%22multi_choice%22%3A%20true%2C%20%22values%22%3A%20%5B%22Sci-fi%22%2C%20%22Satire%22%2C%20%22Poetry%22%2C%20%22Memoir%22%2C%20%22Paranormal%22%2C%20%22Mystery%22%2C%20%22Humor%22%2C%20%22Horror%22%2C%20%22Fantasy%22%2C%20%22Drama%22%2C%20%22Crime%22%2C%20%22Graphical%22%2C%20%22Classic%22%2C%20%22Anthology%22%2C%20%22Action%22%2C%20%22Romance%22%2C%20%22How-to%22%2C%20%22Encyclopedia%22%2C%20%22Dictionary%22%2C%20%22Technical%22%2C%20%22Reference%22%2C%20%22Textbook%22%2C%20%22Biographical%22%2C%20%22Fiction%22%2C%20%22Nonfiction%22%2C%20%22Biography%22%2C%20%22Based%20on%20a%20true%20story%22%2C%20%22Exploratory%22%2C%20%22Research%22%2C%20%22Philosophical%22%2C%20%22Essay%22%2C%20%22Review%22%5D%7D%2C%20%7B%22id%22%3A%2013%2C%20%22label%22%3A%20%22Mood%22%2C%20%22description%22%3A%20%22What%20are%20the%20moods%20of%20this%20book%3F%22%2C%20%22multi_choice%22%3A%20true%2C%20%22values%22%3A%20%5B%22Scientific%22%2C%20%22Dry%22%2C%20%22Emotional%22%2C%20%22Strange%22%2C%20%22Suspenseful%22%2C%20%22Sad%22%2C%20%22Dark%22%2C%20%22Lonely%22%2C%20%22Tense%22%2C%20%22Fearful%22%2C%20%22Angry%22%2C%20%22Hopeful%22%2C%20%22Lighthearted%22%2C%20%22Calm%22%2C%20%22Informative%22%2C%20%22Ominous%22%2C%20%22Mysterious%22%2C%20%22Romantic%22%2C%20%22Whimsical%22%2C%20%22Idyllic%22%2C%20%22Melancholy%22%2C%20%22Humorous%22%2C%20%22Gloomy%22%2C%20%22Reflective%22%2C%20%22Inspiring%22%2C%20%22Cheerful%22%5D%7D%2C%20%7B%22id%22%3A%2014%2C%20%22label%22%3A%20%22Impressions%22%2C%20%22description%22%3A%20%22How%20did%20you%20feel%20about%20this%20book%20and%20do%20you%20recommend%20it%3F%22%2C%20%22multi_choice%22%3A%20true%2C%20%22values%22%3A%20%5B%22Recommend%22%2C%20%22Highly%20recommend%22%2C%20%22Don%27t%20recommend%22%2C%20%22Field%20defining%22%2C%20%22Actionable%22%2C%20%22Forgettable%22%2C%20%22Quotable%22%2C%20%22Citable%22%2C%20%22Original%22%2C%20%22Unremarkable%22%2C%20%22Life%20changing%22%2C%20%22Best%20in%20class%22%2C%20%22Overhyped%22%2C%20%22Underrated%22%5D%7D%2C%20%7B%22id%22%3A%2016%2C%20%22label%22%3A%20%22Length%22%2C%20%22description%22%3A%20%22How%20would%20you%20rate%20or%20describe%20the%20length%20of%20this%20book%3F%22%2C%20%22multi_choice%22%3A%20true%2C%20%22values%22%3A%20%5B%22Short%22%2C%20%22Medium%22%2C%20%22Long%22%5D%7D%2C%20%7B%22id%22%3A%2017%2C%20%22label%22%3A%20%22Credibility%22%2C%20%22description%22%3A%20%22How%20factually%20accurate%20and%20reliable%20is%20the%20content%20of%20this%20book%3F%22%2C%20%22multi_choice%22%3A%20true%2C%20%22values%22%3A%20%5B%22Accurate%22%2C%20%22Inaccurate%22%2C%20%22Outdated%22%2C%20%22Evergreen%22%2C%20%22Biased%22%2C%20%22Objective%22%2C%20%22Subjective%22%2C%20%22Rigorous%22%2C%20%22Misleading%22%2C%20%22Controversial%22%2C%20%22Trendy%22%5D%7D%2C%20%7B%22id%22%3A%2018%2C%20%22label%22%3A%20%22Features%22%2C%20%22description%22%3A%20%22What%20text%20features%20does%20this%20book%20utilize%3Fdoes%20this%20book%20make%20use%20of%3F%22%2C%20%22multi_choice%22%3A%20true%2C%20%22values%22%3A%20%5B%22Tables%2C%20diagrams%2C%20and%20figures%22%2C%20%22Problem%20sets%22%2C%20%22Proofs%22%2C%20%22Interviews%22%2C%20%22Table%20of%20contents%22%2C%20%22Illustrations%22%2C%20%22Index%22%2C%20%22Glossary%22%2C%20%22Chapters%22%2C%20%22Appendix%22%2C%20%22Bibliography%22%5D%7D%2C%20%7B%22id%22%3A%2019%2C%20%22label%22%3A%20%22Content%20Warnings%22%2C%20%22description%22%3A%20%22Does%20this%20book%20contain%20objectionable%20content%3F%22%2C%20%22multi_choice%22%3A%20true%2C%20%22values%22%3A%20%5B%22Adult%20themes%22%2C%20%22Trigger%20warnings%22%2C%20%22Offensive%20language%22%2C%20%22Graphic%20imagery%22%2C%20%22Insensitivity%22%2C%20%22Racism%22%5D%7D%2C%20%7B%22id%22%3A%2020%2C%20%22label%22%3A%20%22Style%22%2C%20%22description%22%3A%20%22What%20type%20of%20verbiage%2C%20nomenclature%2C%20or%20symbols%20are%20employed%20in%20this%20book%3F%22%2C%20%22multi_choice%22%3A%20true%2C%20%22values%22%3A%20%5B%22Technical%22%2C%20%22Jargony%22%2C%20%22Neologisms%22%2C%20%22Slang%22%2C%20%22Olde%22%5D%7D%2C%20%7B%22id%22%3A%2021%2C%20%22label%22%3A%20%22Purpose%22%2C%20%22description%22%3A%20%22Why%20should%20someone%20read%20this%20book%3F%22%2C%20%22multi_choice%22%3A%20true%2C%20%22values%22%3A%20%5B%22Entertainment%22%2C%20%22Broaden%20perspective%22%2C%20%22How-to%22%2C%20%22Learn%20about%22%2C%20%22Self-help%22%2C%20%22Hope%22%2C%20%22Inspiration%22%2C%20%22Fact%20checking%22%2C%20%22Problem%20solving%22%5D%7D%5D%7D" observations="%7B%7D" work_key="/works/OL472165W" username="user532228"></ol-observation-form>
+    </div>
+  </div>
+</div>
+
+  
+  
+
+
+
+
+
+
+
+
+<div class="">
+  <a href="javascript:;" class="notes-modal-link icon-link" data-ol-link-track="ModalLinkClick|NoteIcon">
+  <img class="icon-link__image" src="/static/images/icons/notes.svg" alt="">
+  <div class="icon-link__text">Notes</div>
+</a>
+
+
+
+  <div class="hidden">
+    <div id="sidebar-notes-metadata-form" class="floaterAdd metadata-form" data-context="{&quot;id&quot;: &quot;sidebar-notes&quot;}">
+      <div class="floaterHead">
+        <h2>My Book Notes</h2>
+        <a class="dialog--close" href="javascript:;">×<span class="shift">Close</span></a>
+      </div>
+      <form class="book-notes-form" method="POST" action="/works/OL472165W/notes.json">
+        <p>My private notes about this edition:</p>
+        <div>
+          <textarea class="notes-modal-textarea" name="notes" rows="10"></textarea>
+        </div>
+        <input type="hidden" name="work_id" value="OL472165W">
+        <input type="hidden" name="edition_id" value="OL35638871M">
+        <div class="note-form-buttons">
+          <button class="delete-note-button cta-btn cta-btn--delete hidden" type="button">Delete Note</button>
+          <button class="update-note-button cta-btn cta-btn--shell">Save Note</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+  
+  
+
+
+
+
+
+<div class="share-modal-wrapper">
+  <a href="javascript:;" class="share-modal-link icon-link" data-ol-link-track="ModalLinkClick|ShareIcon">
+  <img class="icon-link__image" src="/static/images/icons/share.svg" alt="">
+  <div class="icon-link__text">Share</div>
+</a>
+
+
+
+  <div class="hidden">
+    <div id="social-modal-content" class="floaterAdd">
+      <div class="content">
+        <div class="floaterHead right-justify">
+          <a class="dialog--close" href="javascript:;">×<span class="shift">Close</span></a>
+        </div>
+        <div class="shareLinks cta-section">
+          <ul class="shareLinks-list">
+              <li>
+                <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fopenlibrary.org%2Fworks%2FOL472165W%2FPeril_at_End_House%3Fedition%3Dkey%253A%252Fbooks%252FOL35638871M" class="sansserif large" target="_blank" data-ol-link-track="Share|Facebook">
+                  <img title="Share on Facebook" alt="Facebook" class="share-link" src="/static/images/facebook.svg?v=2221df78e6776d3671b56fbed6732cd7" loading="lazy">
+                </a>
+                <div class="share-source">Facebook</div>
+              </li>
+              
+              <li>
+                <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fopenlibrary.org%2Fworks%2FOL472165W%2FPeril_at_End_House%3Fedition%3Dkey%253A%252Fbooks%252FOL35638871M&amp;via=openlibrary&amp;text=Check+this+out%3A+Das+Haus+an+der+D%C3%BCne+by+Agatha+Christie" class="sansserif large" target="_blank" data-ol-link-track="Share|Twitter">
+                  <img title="Share on Twitter" alt="Twitter" class="share-link" src="/static/images/twitter.svg?v=ec50fd8c4aa8205ba33750f580e76a5b" loading="lazy">
+                </a>
+                <div class="share-source">Twitter</div>
+              </li>
+              
+              <li>
+                <a href="https://pinterest.com/pin/create/link/?url=https%3A%2F%2Fopenlibrary.org%2Fworks%2FOL472165W%2FPeril_at_End_House%3Fedition%3Dkey%253A%252Fbooks%252FOL35638871M&amp;description=Check+this+out%3A+Das+Haus+an+der+D%C3%BCne+by+Agatha+Christie" class="sansserif large" target="_blank" data-ol-link-track="Share|Pinterest">
+                  <img title="Share on Pinterest" alt="Pinterest" class="share-link" src="/static/images/pinterest.svg?v=df62fe57a8c7caabbcc722e7b59b7367" loading="lazy">
+                </a>
+                <div class="share-source">Pinterest</div>
+              </li>
+              
+            <li>
+              
+              <a class="embed-work-btn" title="Embed this book in your website" data-ol-link-track="Share|Embed" onclick="prompt('Copy embed code to clipboard:', '&lt;iframe frameborder=&quot;0&quot; width=&quot;165&quot; height=&quot;400&quot; src=&quot;//openlibrary.orghttps://openlibrary.org/books/OL35638871M/widget&quot;&gt;&lt;/iframe&gt;');">
+                <img alt="Embed icon" class="share-link" src="/static/images/embed.png?v=3cfbbb4731c6f5c37e543bc98579f357" loading="lazy">
+              </a>
+              <div class="share-source">Embed</div>
+            </li>
+            
+            <li>
+              <a class="copy-url-btn" title="Copy url to clipboard" data-ol-link-track="Share|CopyURL">
+                  <img alt="Copy URL icon" class="share-link" src="/static/images/copy_url.png?v=ee1e83c926d101bcf002dbfd4801f7e2" loading="lazy">
+              </a>
+              <div class="share-source">Copy URL</div>
+            </li>
+
+            <li>
+              <a href="/qrcode?path=/works/OL472165W/Peril_at_End_House" target="_blank" class="qr-code-btn" title="Open QR code" data-ol-link-track="Share|QRCode">
+                  <img alt="QR code icon" class="share-link" src="/static/images/qr_code.png?v=171b6f30f4749df7e536e368d400a743" loading="lazy">
+              </a>
+              <div class="share-source">QR Code</div>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+        <div class="readers-stats__wrapper mobile">
+          
+
+<ul class="readers-stats  " itemprop="aggregateRating" itemscope="" itemtype="https://schema.org/AggregateRating">
+  <meta itemprop="ratingValue" content="4.18">
+  <meta itemprop="ratingCount" content="22">
+  <li class="avg-ratings" onclick="location.href='#starRatingSection';" data-ol-link-track="StarRating|StatsComponentClick">
+    
+
+  <span class="star star--small">★</span><span class="star star--small">★</span><span class="star star--small">★</span><span class="star star--small">★</span>
+  <span itemprop="ratingValue">4.2 (22 ratings)</span>
+
+  </li>
+  <li class="reading-log-stat"><span class="readers-stats__stat">182</span> <span class="readers-stats__label">Want to read</span></li>
+  <li class="reading-log-stat"><span class="readers-stats__stat">10</span> <span class="readers-stats__label">Currently reading</span></li>
+  <li class="reading-log-stat"><span class="readers-stats__stat">72</span> <span class="readers-stats__label">Have read</span></li>
+</ul>
+
+
+          <hr>
+          
+<div class="modal-links mobile">
+  
+
+
+
+
+
+
+
+
+<div class="">
+  <a href="javascript:;" class="observations-modal-link icon-link" data-ol-link-track="ModalLinkClick|ReviewIcon">
+  <img class="icon-link__image" src="/static/images/icons/reviews.svg" alt="">
+  <div class="icon-link__text">Review</div>
+</a>
+
+
+
+  <div class="hidden">
+    <div id="sidebar-review-metadata-form" class="floaterAdd metadata-form" data-context="{&quot;username&quot;: &quot;user532228&quot;, &quot;work&quot;: &quot;/works/OL472165W&quot;, &quot;id&quot;: &quot;sidebar-review&quot;}">
+      <div class="floaterHead">
+        <h2>My Book Review</h2>
+        <a class="dialog--close" href="javascript:;">×<span class="shift">Close</span></a>
+      </div>
+      <ol-observation-form schema="%7B%22observations%22%3A%20%5B%7B%22id%22%3A%201%2C%20%22label%22%3A%20%22Pace%22%2C%20%22description%22%3A%20%22How%20would%20you%20rate%20the%20pacing%20of%20this%20book%3F%22%2C%20%22multi_choice%22%3A%20true%2C%20%22values%22%3A%20%5B%22Slow%20paced%22%2C%20%22Medium%20paced%22%2C%20%22Fast%20paced%22%2C%20%22Meandering%22%5D%7D%2C%20%7B%22id%22%3A%202%2C%20%22label%22%3A%20%22Enjoyability%22%2C%20%22description%22%3A%20%22How%20much%20did%20you%20enjoy%20reading%20this%20book%3F%22%2C%20%22multi_choice%22%3A%20true%2C%20%22values%22%3A%20%5B%22Boring%22%2C%20%22Engaging%22%2C%20%22Exciting%22%2C%20%22Neutral%22%5D%7D%2C%20%7B%22id%22%3A%203%2C%20%22label%22%3A%20%22Clarity%22%2C%20%22description%22%3A%20%22How%20clearly%20was%20this%20book%20written%20and%20presented%3F%22%2C%20%22multi_choice%22%3A%20true%2C%20%22values%22%3A%20%5B%22Succinct%22%2C%20%22Dense%22%2C%20%22Incomprehensible%22%2C%20%22Confusing%22%2C%20%22Clearly%20written%22%2C%20%22Effective%20explanations%22%2C%20%22Well%20organized%22%2C%20%22Disorganized%22%5D%7D%2C%20%7B%22id%22%3A%206%2C%20%22label%22%3A%20%22Difficulty%22%2C%20%22description%22%3A%20%22How%20would%20you%20rate%20the%20difficulty%20of%20this%20book%20for%20a%20general%20audience%3F%22%2C%20%22multi_choice%22%3A%20true%2C%20%22values%22%3A%20%5B%22Beginner%22%2C%20%22Intermediate%22%2C%20%22Advanced%22%2C%20%22Expert%22%2C%20%22University%22%2C%20%22Layman%22%2C%20%22Juvenile%22%5D%7D%2C%20%7B%22id%22%3A%208%2C%20%22label%22%3A%20%22Breadth%22%2C%20%22description%22%3A%20%22How%20would%20you%20describe%20the%20breadth%20and%20depth%20of%20this%20book%3F%22%2C%20%22multi_choice%22%3A%20true%2C%20%22values%22%3A%20%5B%22Comprehensive%22%2C%20%22Not%20comprehensive%22%2C%20%22Focused%22%2C%20%22Interdisciplinary%22%2C%20%22Extraneous%22%2C%20%22Shallow%22%2C%20%22Introductory%22%5D%7D%2C%20%7B%22id%22%3A%2010%2C%20%22label%22%3A%20%22Genres%22%2C%20%22description%22%3A%20%22What%20are%20the%20genres%20of%20this%20book%3F%22%2C%20%22multi_choice%22%3A%20true%2C%20%22values%22%3A%20%5B%22Sci-fi%22%2C%20%22Satire%22%2C%20%22Poetry%22%2C%20%22Memoir%22%2C%20%22Paranormal%22%2C%20%22Mystery%22%2C%20%22Humor%22%2C%20%22Horror%22%2C%20%22Fantasy%22%2C%20%22Drama%22%2C%20%22Crime%22%2C%20%22Graphical%22%2C%20%22Classic%22%2C%20%22Anthology%22%2C%20%22Action%22%2C%20%22Romance%22%2C%20%22How-to%22%2C%20%22Encyclopedia%22%2C%20%22Dictionary%22%2C%20%22Technical%22%2C%20%22Reference%22%2C%20%22Textbook%22%2C%20%22Biographical%22%2C%20%22Fiction%22%2C%20%22Nonfiction%22%2C%20%22Biography%22%2C%20%22Based%20on%20a%20true%20story%22%2C%20%22Exploratory%22%2C%20%22Research%22%2C%20%22Philosophical%22%2C%20%22Essay%22%2C%20%22Review%22%5D%7D%2C%20%7B%22id%22%3A%2013%2C%20%22label%22%3A%20%22Mood%22%2C%20%22description%22%3A%20%22What%20are%20the%20moods%20of%20this%20book%3F%22%2C%20%22multi_choice%22%3A%20true%2C%20%22values%22%3A%20%5B%22Scientific%22%2C%20%22Dry%22%2C%20%22Emotional%22%2C%20%22Strange%22%2C%20%22Suspenseful%22%2C%20%22Sad%22%2C%20%22Dark%22%2C%20%22Lonely%22%2C%20%22Tense%22%2C%20%22Fearful%22%2C%20%22Angry%22%2C%20%22Hopeful%22%2C%20%22Lighthearted%22%2C%20%22Calm%22%2C%20%22Informative%22%2C%20%22Ominous%22%2C%20%22Mysterious%22%2C%20%22Romantic%22%2C%20%22Whimsical%22%2C%20%22Idyllic%22%2C%20%22Melancholy%22%2C%20%22Humorous%22%2C%20%22Gloomy%22%2C%20%22Reflective%22%2C%20%22Inspiring%22%2C%20%22Cheerful%22%5D%7D%2C%20%7B%22id%22%3A%2014%2C%20%22label%22%3A%20%22Impressions%22%2C%20%22description%22%3A%20%22How%20did%20you%20feel%20about%20this%20book%20and%20do%20you%20recommend%20it%3F%22%2C%20%22multi_choice%22%3A%20true%2C%20%22values%22%3A%20%5B%22Recommend%22%2C%20%22Highly%20recommend%22%2C%20%22Don%27t%20recommend%22%2C%20%22Field%20defining%22%2C%20%22Actionable%22%2C%20%22Forgettable%22%2C%20%22Quotable%22%2C%20%22Citable%22%2C%20%22Original%22%2C%20%22Unremarkable%22%2C%20%22Life%20changing%22%2C%20%22Best%20in%20class%22%2C%20%22Overhyped%22%2C%20%22Underrated%22%5D%7D%2C%20%7B%22id%22%3A%2016%2C%20%22label%22%3A%20%22Length%22%2C%20%22description%22%3A%20%22How%20would%20you%20rate%20or%20describe%20the%20length%20of%20this%20book%3F%22%2C%20%22multi_choice%22%3A%20true%2C%20%22values%22%3A%20%5B%22Short%22%2C%20%22Medium%22%2C%20%22Long%22%5D%7D%2C%20%7B%22id%22%3A%2017%2C%20%22label%22%3A%20%22Credibility%22%2C%20%22description%22%3A%20%22How%20factually%20accurate%20and%20reliable%20is%20the%20content%20of%20this%20book%3F%22%2C%20%22multi_choice%22%3A%20true%2C%20%22values%22%3A%20%5B%22Accurate%22%2C%20%22Inaccurate%22%2C%20%22Outdated%22%2C%20%22Evergreen%22%2C%20%22Biased%22%2C%20%22Objective%22%2C%20%22Subjective%22%2C%20%22Rigorous%22%2C%20%22Misleading%22%2C%20%22Controversial%22%2C%20%22Trendy%22%5D%7D%2C%20%7B%22id%22%3A%2018%2C%20%22label%22%3A%20%22Features%22%2C%20%22description%22%3A%20%22What%20text%20features%20does%20this%20book%20utilize%3Fdoes%20this%20book%20make%20use%20of%3F%22%2C%20%22multi_choice%22%3A%20true%2C%20%22values%22%3A%20%5B%22Tables%2C%20diagrams%2C%20and%20figures%22%2C%20%22Problem%20sets%22%2C%20%22Proofs%22%2C%20%22Interviews%22%2C%20%22Table%20of%20contents%22%2C%20%22Illustrations%22%2C%20%22Index%22%2C%20%22Glossary%22%2C%20%22Chapters%22%2C%20%22Appendix%22%2C%20%22Bibliography%22%5D%7D%2C%20%7B%22id%22%3A%2019%2C%20%22label%22%3A%20%22Content%20Warnings%22%2C%20%22description%22%3A%20%22Does%20this%20book%20contain%20objectionable%20content%3F%22%2C%20%22multi_choice%22%3A%20true%2C%20%22values%22%3A%20%5B%22Adult%20themes%22%2C%20%22Trigger%20warnings%22%2C%20%22Offensive%20language%22%2C%20%22Graphic%20imagery%22%2C%20%22Insensitivity%22%2C%20%22Racism%22%5D%7D%2C%20%7B%22id%22%3A%2020%2C%20%22label%22%3A%20%22Style%22%2C%20%22description%22%3A%20%22What%20type%20of%20verbiage%2C%20nomenclature%2C%20or%20symbols%20are%20employed%20in%20this%20book%3F%22%2C%20%22multi_choice%22%3A%20true%2C%20%22values%22%3A%20%5B%22Technical%22%2C%20%22Jargony%22%2C%20%22Neologisms%22%2C%20%22Slang%22%2C%20%22Olde%22%5D%7D%2C%20%7B%22id%22%3A%2021%2C%20%22label%22%3A%20%22Purpose%22%2C%20%22description%22%3A%20%22Why%20should%20someone%20read%20this%20book%3F%22%2C%20%22multi_choice%22%3A%20true%2C%20%22values%22%3A%20%5B%22Entertainment%22%2C%20%22Broaden%20perspective%22%2C%20%22How-to%22%2C%20%22Learn%20about%22%2C%20%22Self-help%22%2C%20%22Hope%22%2C%20%22Inspiration%22%2C%20%22Fact%20checking%22%2C%20%22Problem%20solving%22%5D%7D%5D%7D" observations="%7B%7D" work_key="/works/OL472165W" username="user532228"></ol-observation-form>
+    </div>
+  </div>
+</div>
+
+  
+  
+
+<form class="star-rating-form mobile" id="ratingsForm--mobile" method="POST" action="/works/OL472165W/ratings.json" property="reviewRating" typeof="Rating" vocab="http://schema.org/" data-work-key="/works/OL472165W">
+  <meta property="worstRating" content="1">
+  <meta property="bestRating" content="5">
+  <input type="hidden" value="/books/OL35638871M" name="edition_id">
+  <div class="review" id="starRatingSection--mobile">
+    <div class="stars" data-ol-link-track="StarRating|BookRated">
+      <input type="submit" value="1" name="rating" class="star-1" id="star-1--mobile">
+      <label class="star star-1 " property="worstRating" for="star-1--mobile">1</label>
+      <input type="submit" value="2" name="rating" class="star-2" id="star-2--mobile">
+      <label class="star star-2 " for="star-2--mobile">2</label>
+      <input type="submit" value="3" name="rating" class="star-3" id="star-3--mobile">
+      <label class="star star-3 " for="star-3--mobile">3</label>
+      <input type="submit" value="4" name="rating" class="star-4" id="star-4--mobile">
+      <label class="star star-4 " for="star-4--mobile">4</label>
+      <input type="submit" value="5" name="rating" class="star-5" id="star-5--mobile">
+      <label class="star star-5 " property="bestRating" for="star-5--mobile">5</label>
+      
+      <span></span>
+    </div>
+  </div>
+  <!-- <span class="star-rating__not-rated">Rate</span> -->
+  <button type="submit" class="star-messaging hidden">Clear my rating</button>
+</form>
+
+  
+  
+
+
+
+
+
+
+
+
+<div class="">
+  <a href="javascript:;" class="notes-modal-link icon-link" data-ol-link-track="ModalLinkClick|NoteIcon">
+  <img class="icon-link__image" src="/static/images/icons/notes.svg" alt="">
+  <div class="icon-link__text">Notes</div>
+</a>
+
+
+
+  <div class="hidden">
+    <div id="sidebar-notes-metadata-form" class="floaterAdd metadata-form" data-context="{&quot;id&quot;: &quot;sidebar-notes&quot;}">
+      <div class="floaterHead">
+        <h2>My Book Notes</h2>
+        <a class="dialog--close" href="javascript:;">×<span class="shift">Close</span></a>
+      </div>
+      <form class="book-notes-form" method="POST" action="/works/OL472165W/notes.json">
+        <p>My private notes about this edition:</p>
+        <div>
+          <textarea class="notes-modal-textarea" name="notes" rows="10"></textarea>
+        </div>
+        <input type="hidden" name="work_id" value="OL472165W">
+        <input type="hidden" name="edition_id" value="OL35638871M">
+        <div class="note-form-buttons">
+          <button class="delete-note-button cta-btn cta-btn--delete hidden" type="button">Delete Note</button>
+          <button class="update-note-button cta-btn cta-btn--shell">Save Note</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+  
+  
+
+
+
+
+
+<div class="share-modal-wrapper">
+  <a href="javascript:;" class="share-modal-link icon-link" data-ol-link-track="ModalLinkClick|ShareIcon">
+  <img class="icon-link__image" src="/static/images/icons/share.svg" alt="">
+  <div class="icon-link__text">Share</div>
+</a>
+
+
+
+  <div class="hidden">
+    <div id="social-modal-content" class="floaterAdd">
+      <div class="content">
+        <div class="floaterHead right-justify">
+          <a class="dialog--close" href="javascript:;">×<span class="shift">Close</span></a>
+        </div>
+        <div class="shareLinks cta-section">
+          <ul class="shareLinks-list">
+              <li>
+                <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fopenlibrary.org%2Fworks%2FOL472165W%2FPeril_at_End_House%3Fedition%3Dkey%253A%252Fbooks%252FOL35638871M" class="sansserif large" target="_blank" data-ol-link-track="Share|Facebook">
+                  <img title="Share on Facebook" alt="Facebook" class="share-link" src="/static/images/facebook.svg?v=2221df78e6776d3671b56fbed6732cd7" loading="lazy">
+                </a>
+                <div class="share-source">Facebook</div>
+              </li>
+              
+              <li>
+                <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fopenlibrary.org%2Fworks%2FOL472165W%2FPeril_at_End_House%3Fedition%3Dkey%253A%252Fbooks%252FOL35638871M&amp;via=openlibrary&amp;text=Check+this+out%3A+Das+Haus+an+der+D%C3%BCne+by+Agatha+Christie" class="sansserif large" target="_blank" data-ol-link-track="Share|Twitter">
+                  <img title="Share on Twitter" alt="Twitter" class="share-link" src="/static/images/twitter.svg?v=ec50fd8c4aa8205ba33750f580e76a5b" loading="lazy">
+                </a>
+                <div class="share-source">Twitter</div>
+              </li>
+              
+              <li>
+                <a href="https://pinterest.com/pin/create/link/?url=https%3A%2F%2Fopenlibrary.org%2Fworks%2FOL472165W%2FPeril_at_End_House%3Fedition%3Dkey%253A%252Fbooks%252FOL35638871M&amp;description=Check+this+out%3A+Das+Haus+an+der+D%C3%BCne+by+Agatha+Christie" class="sansserif large" target="_blank" data-ol-link-track="Share|Pinterest">
+                  <img title="Share on Pinterest" alt="Pinterest" class="share-link" src="/static/images/pinterest.svg?v=df62fe57a8c7caabbcc722e7b59b7367" loading="lazy">
+                </a>
+                <div class="share-source">Pinterest</div>
+              </li>
+              
+            <li>
+              
+              <a class="embed-work-btn" title="Embed this book in your website" data-ol-link-track="Share|Embed" onclick="prompt('Copy embed code to clipboard:', '&lt;iframe frameborder=&quot;0&quot; width=&quot;165&quot; height=&quot;400&quot; src=&quot;//openlibrary.orghttps://openlibrary.org/books/OL35638871M/widget&quot;&gt;&lt;/iframe&gt;');">
+                <img alt="Embed icon" class="share-link" src="/static/images/embed.png?v=3cfbbb4731c6f5c37e543bc98579f357" loading="lazy">
+              </a>
+              <div class="share-source">Embed</div>
+            </li>
+            
+            <li>
+              <a class="copy-url-btn" title="Copy url to clipboard" data-ol-link-track="Share|CopyURL">
+                  <img alt="Copy URL icon" class="share-link" src="/static/images/copy_url.png?v=ee1e83c926d101bcf002dbfd4801f7e2" loading="lazy">
+              </a>
+              <div class="share-source">Copy URL</div>
+            </li>
+
+            <li>
+              <a href="/qrcode?path=/works/OL472165W/Peril_at_End_House" target="_blank" class="qr-code-btn" title="Open QR code" data-ol-link-track="Share|QRCode">
+                  <img alt="QR code icon" class="share-link" src="/static/images/qr_code.png?v=171b6f30f4749df7e536e368d400a743" loading="lazy">
+              </a>
+              <div class="share-source">QR Code</div>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+        </div>
+
+      </div>
+2026-04-14 17:15:26,042 - WARNING - Could not find button. HTML structure: Component not found
+2026-04-14 17:19:25,731 - INFO - Navigating to login page: https://openlibrary.org/account/login
+2026-04-14 17:19:43,451 - INFO - Login form submitted.
+2026-04-14 17:19:43,452 - INFO - Cleaning up environment...
+2026-04-14 17:19:50,580 - INFO - Found 2 books to remove from want-to-read
+2026-04-14 17:19:55,957 - INFO - Toggled off activated button for: https://openlibrary.org/works/OL472165W/Peril_at_End_House?edition=key%3A/books/OL35638871M
+2026-04-14 17:20:00,845 - INFO - Toggled off activated button for: https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M
+2026-04-14 17:20:11,587 - INFO - Found 3 books to remove from already-read
+2026-04-14 17:20:17,028 - INFO - Toggled off activated button for: https://openlibrary.org/works/OL274574W/Crónica_de_una_muerte_anunciada?edition=key%3A/books/OL8886573M
+2026-04-14 17:20:22,540 - INFO - Toggled off activated button for: https://openlibrary.org/works/OL1095427W/Jane_Eyre?edition=key%3A/books/OL23443604M
+2026-04-14 17:20:26,361 - INFO - Toggled off activated button for: https://openlibrary.org/works/OL1105384W/Memoirs_of_a_Revolutionist?edition=key%3A/books/OL16829296M
+2026-04-14 17:20:27,363 - INFO - Automation finished. Performance report generated.
+2026-04-14 17:20:27,364 - INFO - Report generated: outputs/report.html
+2026-04-14 17:25:40,318 - INFO - Navigating to login page: https://openlibrary.org/account/login
+2026-04-14 17:25:54,690 - INFO - Login form submitted.
+2026-04-14 17:25:54,691 - INFO - Cleaning up environment...
+2026-04-14 17:25:56,531 - INFO - List want-to-read is already empty.
+2026-04-14 17:26:21,664 - INFO - Removing 2 books directly from already-read...
+2026-04-14 17:26:51,683 - ERROR - Failed to remove book from list: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("button.remove-from-list").first
+    - locator resolved to <button type="submit" class="remove-from-list ">Remove From Shelf</button>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+      - waiting 100ms
+    58 × waiting for element to be visible, enabled and stable
+       - element is not visible
+     - retrying click action
+       - waiting 500ms
+
+2026-04-14 17:27:21,693 - ERROR - Failed to remove book from list: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("button.remove-from-list").nth(1)
+    - locator resolved to <button type="submit" class="remove-from-list ">Remove From Shelf</button>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+      - waiting 100ms
+    55 × waiting for element to be visible, enabled and stable
+       - element is not visible
+     - retrying click action
+       - waiting 500ms
+
+2026-04-14 17:27:21,693 - INFO - Finished clearing already-read
+2026-04-14 17:27:21,695 - INFO - Automation finished. Performance report generated.
+2026-04-14 17:27:21,696 - INFO - Report generated: outputs/report.html
+2026-04-14 17:35:31,516 - INFO - Navigating to login page: https://openlibrary.org/account/login
+2026-04-14 17:35:45,693 - INFO - Login form submitted.
+2026-04-14 17:35:45,694 - INFO - Cleaning up environment...
+2026-04-14 17:35:48,700 - INFO - List want-to-read is already empty.
+2026-04-14 17:36:06,794 - INFO - Found 4 books to remove from already-read
+2026-04-14 17:36:08,584 - INFO - Automation finished. Performance report generated.
+2026-04-14 17:36:08,585 - INFO - Report generated: outputs/report.html
+2026-04-14 17:37:06,657 - INFO - Navigating to login page: https://openlibrary.org/account/login
+2026-04-14 17:37:17,557 - INFO - Login form submitted.
+2026-04-14 17:37:32,436 - INFO - Match found: https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M (Year: 1965)
+2026-04-14 17:37:32,501 - INFO - Match found: https://openlibrary.org/works/OL893526W/Dune_Messiah?edition=key%3A/books/OL7525229M (Year: 1969)
+2026-04-14 17:37:32,555 - INFO - Match found: https://openlibrary.org/works/OL472165W/Peril_at_End_House?edition=key%3A/books/OL35638871M (Year: 1932)
+2026-04-14 17:37:32,643 - INFO - Match found: https://openlibrary.org/works/OL274574W/Crónica_de_una_muerte_anunciada?edition=key%3A/books/OL8886573M (Year: 1980)
+2026-04-14 17:37:32,698 - INFO - Match found: https://openlibrary.org/works/OL1105384W/Memoirs_of_a_Revolutionist?edition=key%3A/books/OL16829296M (Year: 1899)
+2026-04-14 17:37:32,699 - INFO - Syncing current library state using ReadingListPage...
+2026-04-14 17:38:02,702 - ERROR - Failed to measure performance for https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M: Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to "https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M", waiting until "networkidle"
+
+2026-04-14 17:38:02,702 - INFO - ADDING: 'https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M' to 'Want to Read'
+2026-04-14 17:38:02,951 - INFO - Screenshot saved for 'https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M' at outputs/screenshots/https___openlibrary_org_works_OL893415W_Dune_editi.png
+2026-04-14 17:38:29,149 - WARNING - PERFORMANCE WARNING: Load Book: OL7525229M at https://openlibrary.org/works/OL893526W/Dune_Messiah?edition=key%3A/books/OL7525229M took 3045ms (Threshold: 2500ms)
+2026-04-14 17:38:29,150 - INFO - ADDING: 'https://openlibrary.org/works/OL893526W/Dune_Messiah?edition=key%3A/books/OL7525229M' to 'Already Read'
+2026-04-14 17:38:29,331 - INFO - Screenshot saved for 'https://openlibrary.org/works/OL893526W/Dune_Messiah?edition=key%3A/books/OL7525229M' at outputs/screenshots/https___openlibrary_org_works_OL893526W_Dune_Messi.png
+2026-04-14 17:38:59,335 - ERROR - Failed to measure performance for https://openlibrary.org/works/OL472165W/Peril_at_End_House?edition=key%3A/books/OL35638871M: Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to "https://openlibrary.org/works/OL472165W/Peril_at_End_House?edition=key%3A/books/OL35638871M", waiting until "networkidle"
+
+2026-04-14 17:38:59,335 - INFO - ADDING: 'https://openlibrary.org/works/OL472165W/Peril_at_End_House?edition=key%3A/books/OL35638871M' to 'Want to Read'
+2026-04-14 17:38:59,577 - INFO - Screenshot saved for 'https://openlibrary.org/works/OL472165W/Peril_at_End_House?edition=key%3A/books/OL35638871M' at outputs/screenshots/https___openlibrary_org_works_OL472165W_Peril_at_E.png
+2026-04-14 17:39:29,580 - ERROR - Failed to measure performance for https://openlibrary.org/works/OL274574W/Crónica_de_una_muerte_anunciada?edition=key%3A/books/OL8886573M: Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to "https://openlibrary.org/works/OL274574W/Cr%C3%B3nica_de_una_muerte_anunciada?edition=key%3A/books/OL8886573M", waiting until "networkidle"
+
+2026-04-14 17:39:29,581 - INFO - ADDING: 'https://openlibrary.org/works/OL274574W/Crónica_de_una_muerte_anunciada?edition=key%3A/books/OL8886573M' to 'Already Read'
+2026-04-14 17:39:29,770 - INFO - Screenshot saved for 'https://openlibrary.org/works/OL274574W/Crónica_de_una_muerte_anunciada?edition=key%3A/books/OL8886573M' at outputs/screenshots/https___openlibrary_org_works_OL274574W_Crónica_de.png
+2026-04-14 17:39:59,771 - ERROR - Failed to measure performance for https://openlibrary.org/works/OL1105384W/Memoirs_of_a_Revolutionist?edition=key%3A/books/OL16829296M: Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to "https://openlibrary.org/works/OL1105384W/Memoirs_of_a_Revolutionist?edition=key%3A/books/OL16829296M", waiting until "networkidle"
+
+2026-04-14 17:39:59,772 - INFO - ADDING: 'https://openlibrary.org/works/OL1105384W/Memoirs_of_a_Revolutionist?edition=key%3A/books/OL16829296M' to 'Already Read'
+2026-04-14 17:39:59,953 - INFO - Screenshot saved for 'https://openlibrary.org/works/OL1105384W/Memoirs_of_a_Revolutionist?edition=key%3A/books/OL16829296M' at outputs/screenshots/https___openlibrary_org_works_OL1105384W_Memoirs_o.png
+2026-04-14 17:40:29,957 - ERROR - Failed to measure performance for https://openlibrary.org/people/user532228/books/want-to-read: Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to "https://openlibrary.org/people/user532228/books/want-to-read", waiting until "networkidle"
+
+2026-04-14 17:40:29,957 - INFO - Successfully navigated to want-to-read list.
+2026-04-14 17:40:30,067 - INFO - Retrieved 2 titles from want-to-read.
+2026-04-14 17:41:00,068 - ERROR - Failed to measure performance for https://openlibrary.org/people/user532228/books/already-read: Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to "https://openlibrary.org/people/user532228/books/already-read", waiting until "networkidle"
+
+2026-04-14 17:41:00,069 - INFO - Successfully navigated to already-read list.
+2026-04-14 17:41:00,173 - INFO - Retrieved 3 titles from already-read.
+2026-04-14 17:41:00,173 - INFO - Checking count: Expected 5, Found 5
+2026-04-14 17:41:00,174 - INFO - Cleaning up environment...
+2026-04-14 17:41:11,294 - INFO - Found 4 books to remove from want-to-read
+2026-04-14 17:41:44,959 - WARNING - Cleanup failed (non-critical): Timeout 30000ms exceeded.
+2026-04-14 17:41:44,962 - INFO - Automation finished. Performance report generated.
+2026-04-14 17:41:44,963 - INFO - Report generated: outputs/report.html
+2026-04-14 17:42:50,142 - INFO - Navigating to login page: https://openlibrary.org/account/login
+2026-04-14 17:43:08,177 - INFO - Login form submitted.
+2026-04-14 17:43:22,658 - WARNING - PERFORMANCE WARNING: Homepage Load at https://openlibrary.org took 3481ms (Threshold: 3000ms)
+2026-04-14 17:43:25,660 - INFO - Match found: https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M (Year: 1965)
+2026-04-14 17:43:25,738 - INFO - Match found: https://openlibrary.org/works/OL893526W/Dune_Messiah?edition=key%3A/books/OL7525229M (Year: 1969)
+2026-04-14 17:43:25,861 - INFO - Match found: https://openlibrary.org/works/OL472165W/Peril_at_End_House?edition=key%3A/books/OL35638871M (Year: 1932)
+2026-04-14 17:43:25,925 - INFO - Match found: https://openlibrary.org/works/OL274574W/Crónica_de_una_muerte_anunciada?edition=key%3A/books/OL8886573M (Year: 1980)
+2026-04-14 17:43:25,991 - INFO - Match found: https://openlibrary.org/works/OL1105384W/Memoirs_of_a_Revolutionist?edition=key%3A/books/OL16829296M (Year: 1899)
+2026-04-14 17:43:25,993 - INFO - Syncing current library state using ReadingListPage...
+2026-04-14 17:43:55,997 - ERROR - Failed to measure performance for https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M: Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to "https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M", waiting until "networkidle"
+
+2026-04-14 17:43:55,998 - INFO - ADDING: 'https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M' to 'Want to Read'
+2026-04-14 17:43:56,282 - INFO - Screenshot saved for 'https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M' at outputs/screenshots/https___openlibrary_org_works_OL893415W_Dune_editi.png
+2026-04-14 17:43:58,356 - INFO - ADDING: 'https://openlibrary.org/works/OL893526W/Dune_Messiah?edition=key%3A/books/OL7525229M' to 'Want to Read'
+2026-04-14 17:43:59,127 - INFO - ADDING: 'https://openlibrary.org/works/OL472165W/Peril_at_End_House?edition=key%3A/books/OL35638871M' to 'Already Read'
+2026-04-14 17:43:59,901 - INFO - ADDING: 'https://openlibrary.org/works/OL274574W/Crónica_de_una_muerte_anunciada?edition=key%3A/books/OL8886573M' to 'Already Read'
+2026-04-14 17:44:00,679 - INFO - ADDING: 'https://openlibrary.org/works/OL1105384W/Memoirs_of_a_Revolutionist?edition=key%3A/books/OL16829296M' to 'Want to Read'
+2026-04-14 17:44:09,947 - WARNING - PERFORMANCE WARNING: Verify List: want-to-read at https://openlibrary.org/people/user532228/books/want-to-read took 8718ms (Threshold: 2000ms)
+2026-04-14 17:44:09,947 - INFO - Successfully navigated to want-to-read list.
+2026-04-14 17:44:19,950 - WARNING - No books found or page took too long to hydrate for: want-to-read
+2026-04-14 17:44:21,759 - INFO - Successfully navigated to already-read list.
+2026-04-14 17:44:31,760 - WARNING - No books found or page took too long to hydrate for: already-read
+2026-04-14 17:44:31,761 - INFO - Checking count: Expected 5, Found 0
+2026-04-14 17:44:31,761 - ERROR - E2E Execution failed: Count mismatch! Expected at least 5, but found 0
+2026-04-14 17:44:31,761 - INFO - Cleaning up environment...
+2026-04-14 17:44:33,701 - INFO - List want-to-read is already empty.
+2026-04-14 17:44:35,663 - INFO - List already-read is already empty.
+2026-04-14 17:44:35,664 - INFO - Automation finished. Performance report generated.
+2026-04-14 17:44:35,665 - INFO - Report generated: outputs/report.html
+2026-04-14 17:44:58,217 - INFO - Navigating to login page: https://openlibrary.org/account/login
+2026-04-14 17:45:11,275 - INFO - Login form submitted.
+2026-04-14 17:45:41,279 - ERROR - Failed to measure performance for https://openlibrary.org: Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to "https://openlibrary.org/", waiting until "networkidle"
+
+2026-04-14 17:45:44,225 - INFO - Match found: https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M (Year: 1965)
+2026-04-14 17:45:44,284 - INFO - Match found: https://openlibrary.org/works/OL893526W/Dune_Messiah?edition=key%3A/books/OL7525229M (Year: 1969)
+2026-04-14 17:45:44,376 - INFO - Match found: https://openlibrary.org/works/OL472165W/Peril_at_End_House?edition=key%3A/books/OL35638871M (Year: 1932)
+2026-04-14 17:45:44,438 - INFO - Match found: https://openlibrary.org/works/OL274574W/Crónica_de_una_muerte_anunciada?edition=key%3A/books/OL8886573M (Year: 1980)
+2026-04-14 17:45:44,520 - INFO - Match found: https://openlibrary.org/works/OL1105384W/Memoirs_of_a_Revolutionist?edition=key%3A/books/OL16829296M (Year: 1899)
+2026-04-14 17:45:44,520 - INFO - Syncing current library state using ReadingListPage...
+2026-04-14 17:46:14,525 - ERROR - Failed to measure performance for https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M: Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to "https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M", waiting until "networkidle"
+
+2026-04-14 17:46:14,525 - INFO - ADDING: 'https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M' to 'Already Read'
+2026-04-14 17:46:14,793 - INFO - Screenshot saved for 'https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M' at outputs/screenshots/https___openlibrary_org_works_OL893415W_Dune_editi.png
+2026-04-14 17:46:44,796 - ERROR - Failed to measure performance for https://openlibrary.org/works/OL893526W/Dune_Messiah?edition=key%3A/books/OL7525229M: Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to "https://openlibrary.org/works/OL893526W/Dune_Messiah?edition=key%3A/books/OL7525229M", waiting until "networkidle"
+
+2026-04-14 17:46:44,796 - INFO - ADDING: 'https://openlibrary.org/works/OL893526W/Dune_Messiah?edition=key%3A/books/OL7525229M' to 'Want to Read'
+2026-04-14 17:46:45,224 - INFO - Screenshot saved for 'https://openlibrary.org/works/OL893526W/Dune_Messiah?edition=key%3A/books/OL7525229M' at outputs/screenshots/https___openlibrary_org_works_OL893526W_Dune_Messi.png
+2026-04-14 17:47:15,232 - ERROR - Failed to measure performance for https://openlibrary.org/works/OL472165W/Peril_at_End_House?edition=key%3A/books/OL35638871M: Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to "https://openlibrary.org/works/OL472165W/Peril_at_End_House?edition=key%3A/books/OL35638871M", waiting until "networkidle"
+
+2026-04-14 17:47:15,232 - INFO - ADDING: 'https://openlibrary.org/works/OL472165W/Peril_at_End_House?edition=key%3A/books/OL35638871M' to 'Already Read'
+2026-04-14 17:47:15,478 - INFO - Screenshot saved for 'https://openlibrary.org/works/OL472165W/Peril_at_End_House?edition=key%3A/books/OL35638871M' at outputs/screenshots/https___openlibrary_org_works_OL472165W_Peril_at_E.png
+2026-04-14 17:47:29,484 - WARNING - PERFORMANCE WARNING: Load Book: OL8886573M at https://openlibrary.org/works/OL274574W/Crónica_de_una_muerte_anunciada?edition=key%3A/books/OL8886573M took 12053ms (Threshold: 2500ms)
+2026-04-14 17:47:29,485 - INFO - ADDING: 'https://openlibrary.org/works/OL274574W/Crónica_de_una_muerte_anunciada?edition=key%3A/books/OL8886573M' to 'Already Read'
+2026-04-14 17:47:29,678 - INFO - Screenshot saved for 'https://openlibrary.org/works/OL274574W/Crónica_de_una_muerte_anunciada?edition=key%3A/books/OL8886573M' at outputs/screenshots/https___openlibrary_org_works_OL274574W_Crónica_de.png
+2026-04-14 17:47:59,684 - ERROR - Failed to measure performance for https://openlibrary.org/works/OL1105384W/Memoirs_of_a_Revolutionist?edition=key%3A/books/OL16829296M: Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to "https://openlibrary.org/works/OL1105384W/Memoirs_of_a_Revolutionist?edition=key%3A/books/OL16829296M", waiting until "networkidle"
+
+2026-04-14 17:47:59,684 - INFO - ADDING: 'https://openlibrary.org/works/OL1105384W/Memoirs_of_a_Revolutionist?edition=key%3A/books/OL16829296M' to 'Already Read'
+2026-04-14 17:47:59,906 - INFO - Screenshot saved for 'https://openlibrary.org/works/OL1105384W/Memoirs_of_a_Revolutionist?edition=key%3A/books/OL16829296M' at outputs/screenshots/https___openlibrary_org_works_OL1105384W_Memoirs_o.png
+2026-04-14 17:48:29,908 - ERROR - Failed to measure performance for https://openlibrary.org/people/user532228/books/want-to-read: Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to "https://openlibrary.org/people/user532228/books/want-to-read", waiting until "networkidle"
+
+2026-04-14 17:48:29,908 - INFO - Successfully navigated to want-to-read list.
+2026-04-14 17:48:30,018 - INFO - Retrieved 1 titles from want-to-read.
+2026-04-14 17:48:49,155 - WARNING - PERFORMANCE WARNING: Verify List: already-read at https://openlibrary.org/people/user532228/books/already-read took 11801ms (Threshold: 2000ms)
+2026-04-14 17:48:49,155 - INFO - Successfully navigated to already-read list.
+2026-04-14 17:48:49,251 - INFO - Retrieved 4 titles from already-read.
+2026-04-14 17:48:49,251 - INFO - Checking count: Expected 5, Found 5
+2026-04-14 17:48:49,251 - INFO - Cleaning up environment...
+2026-04-14 17:48:51,445 - INFO - List want-to-read is already empty.
+2026-04-14 17:48:53,293 - INFO - List already-read is already empty.
+2026-04-14 17:48:53,293 - INFO - Automation finished. Performance report generated.
+2026-04-14 17:48:53,294 - INFO - Report generated: outputs/report.html
+2026-04-14 18:05:56,094 - INFO - Navigating to login page: https://openlibrary.org/account/login
+2026-04-14 18:06:10,378 - INFO - Login form submitted.
+2026-04-14 18:06:41,412 - WARNING - Timeout: Search results for 'Dune' did not appear.
+2026-04-14 18:06:41,423 - INFO - No more pages available.
+2026-04-14 18:06:41,423 - WARNING - No books found for query 'Dune' under year 1980.
+2026-04-14 18:06:41,423 - WARNING - No matching books found during search.
+2026-04-14 18:06:41,423 - INFO - Cleaning up environment...
+2026-04-14 18:06:55,819 - INFO - Found 2 books to remove from want-to-read
+2026-04-14 18:07:17,571 - INFO - Found 8 books to remove from already-read
+2026-04-14 18:07:21,105 - INFO - Automation finished. Performance report generated.
+2026-04-14 18:07:21,106 - INFO - Report generated: outputs/report.html
+2026-04-14 18:07:27,730 - INFO - Navigating to login page: https://openlibrary.org/account/login
+2026-04-14 18:07:50,027 - INFO - Login form submitted.
+2026-04-14 18:07:59,488 - WARNING - PERFORMANCE FAIL: Homepage Load took 5302ms
+2026-04-14 18:08:03,577 - INFO - Match found: https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M (Year: 1965)
+2026-04-14 18:08:03,620 - INFO - Match found: https://openlibrary.org/works/OL893526W/Dune_Messiah?edition=key%3A/books/OL7525229M (Year: 1969)
+2026-04-14 18:08:03,673 - INFO - Match found: https://openlibrary.org/works/OL472165W/Peril_at_End_House?edition=key%3A/books/OL35638871M (Year: 1932)
+2026-04-14 18:08:03,739 - INFO - Match found: https://openlibrary.org/works/OL274574W/Crónica_de_una_muerte_anunciada?edition=key%3A/books/OL8886573M (Year: 1980)
+2026-04-14 18:08:03,778 - INFO - Match found: https://openlibrary.org/works/OL1105384W/Memoirs_of_a_Revolutionist?edition=key%3A/books/OL16829296M (Year: 1899)
+2026-04-14 18:08:03,778 - INFO - Syncing current library state using ReadingListPage...
+2026-04-14 18:08:33,783 - ERROR - Failed performance measurement: Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to "https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M", waiting until "networkidle"
+
+2026-04-14 18:08:33,784 - INFO - ADDING: 'https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M' to 'Want to Read'
+2026-04-14 18:08:34,027 - INFO - Screenshot saved for 'https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M' at outputs/screenshots/https___openlibrary_org_works_OL893415W_Dune_editi.png
+2026-04-14 18:09:04,028 - ERROR - Failed performance measurement: Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to "https://openlibrary.org/works/OL893526W/Dune_Messiah?edition=key%3A/books/OL7525229M", waiting until "networkidle"
+
+2026-04-14 18:09:04,029 - INFO - ADDING: 'https://openlibrary.org/works/OL893526W/Dune_Messiah?edition=key%3A/books/OL7525229M' to 'Already Read'
+2026-04-14 18:09:04,245 - INFO - Screenshot saved for 'https://openlibrary.org/works/OL893526W/Dune_Messiah?edition=key%3A/books/OL7525229M' at outputs/screenshots/https___openlibrary_org_works_OL893526W_Dune_Messi.png
+2026-04-14 18:09:34,167 - WARNING - PERFORMANCE FAIL: Load Book: OL35638871M took 11085ms
+2026-04-14 18:09:34,167 - INFO - ADDING: 'https://openlibrary.org/works/OL472165W/Peril_at_End_House?edition=key%3A/books/OL35638871M' to 'Already Read'
+2026-04-14 18:09:34,416 - INFO - Screenshot saved for 'https://openlibrary.org/works/OL472165W/Peril_at_End_House?edition=key%3A/books/OL35638871M' at outputs/screenshots/https___openlibrary_org_works_OL472165W_Peril_at_E.png
+2026-04-14 18:10:04,421 - ERROR - Failed performance measurement: Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to "https://openlibrary.org/works/OL274574W/Cr%C3%B3nica_de_una_muerte_anunciada?edition=key%3A/books/OL8886573M", waiting until "networkidle"
+
+2026-04-14 18:10:04,421 - INFO - ADDING: 'https://openlibrary.org/works/OL274574W/Crónica_de_una_muerte_anunciada?edition=key%3A/books/OL8886573M' to 'Want to Read'
+2026-04-14 18:10:04,629 - INFO - Screenshot saved for 'https://openlibrary.org/works/OL274574W/Crónica_de_una_muerte_anunciada?edition=key%3A/books/OL8886573M' at outputs/screenshots/https___openlibrary_org_works_OL274574W_Crónica_de.png
+2026-04-14 18:10:34,632 - ERROR - Failed performance measurement: Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to "https://openlibrary.org/works/OL1105384W/Memoirs_of_a_Revolutionist?edition=key%3A/books/OL16829296M", waiting until "networkidle"
+
+2026-04-14 18:10:34,632 - INFO - ADDING: 'https://openlibrary.org/works/OL1105384W/Memoirs_of_a_Revolutionist?edition=key%3A/books/OL16829296M' to 'Already Read'
+2026-04-14 18:10:34,806 - INFO - Screenshot saved for 'https://openlibrary.org/works/OL1105384W/Memoirs_of_a_Revolutionist?edition=key%3A/books/OL16829296M' at outputs/screenshots/https___openlibrary_org_works_OL1105384W_Memoirs_o.png
+2026-04-14 18:10:58,543 - WARNING - PERFORMANCE FAIL: Verify List: want-to-read took 3553ms
+2026-04-14 18:10:58,543 - INFO - Successfully navigated to want-to-read list.
+2026-04-14 18:10:58,630 - INFO - Retrieved 2 titles from want-to-read.
+2026-04-14 18:11:04,494 - WARNING - PERFORMANCE FAIL: Verify List: already-read took 3093ms
+2026-04-14 18:11:04,494 - INFO - Successfully navigated to already-read list.
+2026-04-14 18:11:04,582 - INFO - Retrieved 3 titles from already-read.
+2026-04-14 18:11:04,582 - INFO - Checking count: Expected 5, Found 5
+2026-04-14 18:11:04,582 - INFO - Cleaning up environment...
+2026-04-14 18:11:07,103 - INFO - Found 4 books to remove from want-to-read
+2026-04-14 18:11:11,053 - INFO - Found 6 books to remove from already-read
+2026-04-14 18:11:13,771 - INFO - Automation finished. Performance report generated.
+2026-04-14 18:11:13,772 - INFO - Report generated: outputs/report.html
+2026-04-14 18:18:12,572 - INFO - Navigating to login page: https://openlibrary.org/account/login
+2026-04-14 18:18:25,373 - INFO - Login form submitted.
+2026-04-14 18:18:25,374 - ERROR - E2E Execution failed: 'SearchPage' object has no attribute 'measure_page_performance'
+2026-04-14 18:18:25,374 - INFO - Cleaning up environment...
+2026-04-14 18:18:27,369 - INFO - List want-to-read is already empty.
+2026-04-14 18:18:29,286 - INFO - List already-read is already empty.
+2026-04-14 18:18:29,287 - INFO - Automation finished. Performance report generated.
+2026-04-14 18:18:29,289 - INFO - Report generated: outputs/report.html
+2026-04-14 18:22:03,600 - INFO - Navigating to login page: https://openlibrary.org/account/login
+2026-04-14 18:22:15,380 - INFO - Login form submitted.
+2026-04-14 18:22:15,381 - ERROR - E2E Execution failed: 'SearchPage' object has no attribute 'measure_page_performance'
+2026-04-14 18:22:15,381 - INFO - Cleaning up environment...
+2026-04-14 18:22:17,661 - INFO - List want-to-read is already empty.
+2026-04-14 18:22:19,805 - INFO - List already-read is already empty.
+2026-04-14 18:22:19,806 - INFO - Automation finished. Performance report generated.
+2026-04-14 18:22:19,808 - INFO - Report generated: outputs/report.html
+2026-04-14 18:24:06,263 - INFO - Navigating to login page: https://openlibrary.org/account/login
+2026-04-14 18:24:23,325 - INFO - Login form submitted.
+2026-04-14 18:24:26,468 - WARNING - PERFORMANCE FAIL: Homepage Load (Threshold exceeded). Took 3114ms
+2026-04-14 18:24:29,245 - INFO - Match found: https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M (Year: 1965)
+2026-04-14 18:24:29,290 - INFO - Match found: https://openlibrary.org/works/OL893526W/Dune_Messiah?edition=key%3A/books/OL7525229M (Year: 1969)
+2026-04-14 18:24:29,348 - INFO - Match found: https://openlibrary.org/works/OL472165W/Peril_at_End_House?edition=key%3A/books/OL35638871M (Year: 1932)
+2026-04-14 18:24:29,470 - INFO - Match found: https://openlibrary.org/works/OL274574W/Crónica_de_una_muerte_anunciada?edition=key%3A/books/OL8886573M (Year: 1980)
+2026-04-14 18:24:29,618 - INFO - Match found: https://openlibrary.org/works/OL1105384W/Memoirs_of_a_Revolutionist?edition=key%3A/books/OL16829296M (Year: 1899)
+2026-04-14 18:24:29,619 - INFO - Syncing current library state using ReadingListPage...
+2026-04-14 18:24:33,817 - WARNING - PERFORMANCE FAIL: Load Book: OL26242482M (Threshold exceeded). Took 4045ms
+2026-04-14 18:24:33,817 - INFO - ADDING: 'https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M' to 'Already Read'
+2026-04-14 18:24:34,209 - INFO - Screenshot saved for 'https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M' at outputs/screenshots/https___openlibrary_org_works_OL893415W_Dune_editi.png
+2026-04-14 18:24:36,699 - INFO - ADDING: 'https://openlibrary.org/works/OL893526W/Dune_Messiah?edition=key%3A/books/OL7525229M' to 'Already Read'
+2026-04-14 18:24:37,037 - INFO - Screenshot saved for 'https://openlibrary.org/works/OL893526W/Dune_Messiah?edition=key%3A/books/OL7525229M' at outputs/screenshots/https___openlibrary_org_works_OL893526W_Dune_Messi.png
+2026-04-14 18:24:40,682 - WARNING - PERFORMANCE FAIL: Load Book: OL35638871M (Threshold exceeded). Took 3616ms
+2026-04-14 18:24:40,682 - INFO - ADDING: 'https://openlibrary.org/works/OL472165W/Peril_at_End_House?edition=key%3A/books/OL35638871M' to 'Want to Read'
+2026-04-14 18:24:40,974 - INFO - Screenshot saved for 'https://openlibrary.org/works/OL472165W/Peril_at_End_House?edition=key%3A/books/OL35638871M' at outputs/screenshots/https___openlibrary_org_works_OL472165W_Peril_at_E.png
+2026-04-14 18:24:45,759 - WARNING - PERFORMANCE FAIL: Load Book: OL8886573M (Threshold exceeded). Took 4754ms
+2026-04-14 18:24:45,759 - INFO - ADDING: 'https://openlibrary.org/works/OL274574W/Crónica_de_una_muerte_anunciada?edition=key%3A/books/OL8886573M' to 'Want to Read'
+2026-04-14 18:24:46,168 - INFO - Screenshot saved for 'https://openlibrary.org/works/OL274574W/Crónica_de_una_muerte_anunciada?edition=key%3A/books/OL8886573M' at outputs/screenshots/https___openlibrary_org_works_OL274574W_Crónica_de.png
+2026-04-14 18:24:48,464 - INFO - ADDING: 'https://openlibrary.org/works/OL1105384W/Memoirs_of_a_Revolutionist?edition=key%3A/books/OL16829296M' to 'Want to Read'
+2026-04-14 18:24:48,814 - INFO - Screenshot saved for 'https://openlibrary.org/works/OL1105384W/Memoirs_of_a_Revolutionist?edition=key%3A/books/OL16829296M' at outputs/screenshots/https___openlibrary_org_works_OL1105384W_Memoirs_o.png
+2026-04-14 18:24:52,724 - WARNING - PERFORMANCE FAIL: Verify List: want-to-read (Threshold exceeded). Took 3885ms
+2026-04-14 18:24:52,725 - INFO - Successfully navigated to want-to-read list.
+2026-04-14 18:24:52,831 - INFO - Retrieved 3 titles from want-to-read.
+2026-04-14 18:24:54,657 - INFO - Successfully navigated to already-read list.
+2026-04-14 18:24:54,758 - INFO - Retrieved 2 titles from already-read.
+2026-04-14 18:24:54,759 - INFO - Checking count: Expected 5, Found 5
+2026-04-14 18:24:54,759 - INFO - Cleaning up environment...
+2026-04-14 18:25:03,141 - INFO - Found 6 books to remove from want-to-read
+2026-04-14 18:25:07,725 - INFO - Found 4 books to remove from already-read
+2026-04-14 18:25:09,536 - INFO - Automation finished. Performance report generated.
+2026-04-14 18:25:09,537 - INFO - Report generated: outputs/report.html

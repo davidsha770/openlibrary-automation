@@ -14,14 +14,16 @@ A high-performance End-to-End (E2E) testing framework for [Open Library](https:/
 
 * **Full POM Decoupling**: 100% separation between test logic and UI selectors, ensuring zero selectors in the test scripts.
 
+* **Post-Action Verification:** Explicit logic to verify login success and confirm list updates before proceeding, ensuring high test reliability
+
 ## 📁 Project Structure
 
 ```text
 .
 ├── config/
-│   └── config.json           # Credentials, test query, and performance thresholds
+│   └── config.json           # Test parameters (search query, performance thresholds)
 ├── pages/
-│   ├── base_page.py          # Core logic for performance measurement
+│   ├── base_page.py          # Abstract Page Object with common actions
 │   ├── login_page.py         # Dedicated login POM
 │   ├── search_page.py        # Search and filtering functionality
 │   ├── book_page.py          # Book-specific actions & JS injections
@@ -30,12 +32,14 @@ A high-performance End-to-End (E2E) testing framework for [Open Library](https:/
 │   └── test_e2e.py           # Test orchestrator (100% Logic, 0% Selectors)
 ├── utils/
 │   ├── logger_helper.py      # Custom logging configuration
+│   ├── performance.py        # Dedicated Performance Monitoring (SRP)
 │   └── report_generator.py   # Logic for HTML report generation
 ├── outputs/
 │   ├── report.html           # Visual HTML report
 │   ├── screenshots/          # Action confirmation captures
 │   └── performance_report.json # Final performance benchmark report
 ├── requirements.txt          # Project dependencies
+├── .env                      # NEW: Secure environment variables (ignored by git)
 └── README.md                 # This file
 
 ```
@@ -64,23 +68,19 @@ playwright install chromium
 ```
 
 ### 3. Configure Credentials
-
-Update the config/config.json file with your Open Library account details:
-```json
-{
-    "credentials": {
-        "username": "your_email@example.com",
-        "password": "your_password"
-    }
-}
+Create a `.env` file in the root directory:
+```env
+OL_USERNAME=your mail
+OL_PASSWORD=your password
+OL_INER_USERNAME=your username
 ```
 
 ## 🚦 Running the Automation
 
-To execute the full E2E flow and generate a visual HTML report:
 
 ```Bash
-python3 run_tests.py
+# Execute the full E2E flow
+python3 -m tests.test_e2e
 ```
 
 This will:
@@ -121,6 +121,8 @@ The framework produces a high-quality audit trail for every execution:
     Web Component Hydration: Open Library uses specialized Web Components that may take time to hydrate. The framework includes a "Smart Wait" mechanism that attempts to scrape the DOM as a fallback if hydration times out.
 
     Data Verification: Implemented a text normalization utility to handle curly quotes and special characters, ensuring robust assertions between search results and the reading list.
+
+    Modern Performance Benchmarking: Instead of deprecated `window.performance.timing`, the framework implements the **Performance Navigation Timing API (Level 2)** via a decoupled utility, ensuring high-accuracy metrics in modern browsers.
 ```
 
 ## 📝 License

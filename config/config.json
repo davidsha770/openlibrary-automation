@@ -1,8 +1,4 @@
 {
-  "credentials": {
-    "username": "<your email>",
-    "password": "<your password>"
-  },
   "test_data": {
     "search_query": "Dune",
     "max_year": 1980,

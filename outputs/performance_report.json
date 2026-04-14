@@ -1,77 +1,91 @@
 [
     {
         "action": "Homepage Load",
-        "url": "https://openlibrary.org/",
+        "url": "https://openlibrary.org",
         "metrics": {
-            "load_time_ms": 4660,
-            "dom_content_loaded_ms": 815,
-            "first_paint_ms": 684
+            "load_time_ms": 3114,
+            "dom_content_loaded_ms": 1458,
+            "first_paint_ms": 1372,
+            "response_time_ms": 281,
+            "status": "Complete"
         },
         "threshold_ms": 3000,
         "status": "Fail"
     },
     {
-        "action": "Load Book: Dune",
+        "action": "Load Book: OL26242482M",
         "url": "https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M",
         "metrics": {
-            "load_time_ms": 2629,
-            "dom_content_loaded_ms": 1064,
-            "first_paint_ms": 1004
+            "load_time_ms": 4045,
+            "dom_content_loaded_ms": 2793,
+            "first_paint_ms": 2708,
+            "response_time_ms": 311,
+            "status": "Complete"
         },
         "threshold_ms": 2500,
         "status": "Fail"
     },
     {
-        "action": "Load Book: Dune Messiah: Dune Chronicles, Book 2",
+        "action": "Load Book: OL7525229M",
         "url": "https://openlibrary.org/works/OL893526W/Dune_Messiah?edition=key%3A/books/OL7525229M",
         "metrics": {
-            "load_time_ms": 1431,
-            "dom_content_loaded_ms": 811,
-            "first_paint_ms": 768
+            "load_time_ms": 2442,
+            "dom_content_loaded_ms": 1898,
+            "first_paint_ms": 1692,
+            "response_time_ms": 239,
+            "status": "Complete"
         },
         "threshold_ms": 2500,
         "status": "Pass"
     },
     {
-        "action": "Load Book: Das Haus an der D\u00fcne",
+        "action": "Load Book: OL35638871M",
         "url": "https://openlibrary.org/works/OL472165W/Peril_at_End_House?edition=key%3A/books/OL35638871M",
         "metrics": {
-            "load_time_ms": 2859,
-            "dom_content_loaded_ms": 899,
-            "first_paint_ms": 848
+            "load_time_ms": 3616,
+            "dom_content_loaded_ms": 2069,
+            "first_paint_ms": 1744,
+            "response_time_ms": 315,
+            "status": "Complete"
         },
         "threshold_ms": 2500,
         "status": "Fail"
     },
     {
-        "action": "Load Book: Autour d'une vie",
+        "action": "Load Book: OL8886573M",
+        "url": "https://openlibrary.org/works/OL274574W/Cr\u00f3nica_de_una_muerte_anunciada?edition=key%3A/books/OL8886573M",
+        "metrics": {
+            "load_time_ms": 4754,
+            "dom_content_loaded_ms": 2049,
+            "first_paint_ms": 1772,
+            "response_time_ms": 316,
+            "status": "Complete"
+        },
+        "threshold_ms": 2500,
+        "status": "Fail"
+    },
+    {
+        "action": "Load Book: OL16829296M",
         "url": "https://openlibrary.org/works/OL1105384W/Memoirs_of_a_Revolutionist?edition=key%3A/books/OL16829296M",
         "metrics": {
-            "load_time_ms": 1052,
-            "dom_content_loaded_ms": 855,
-            "first_paint_ms": 864
+            "load_time_ms": 2193,
+            "dom_content_loaded_ms": 2152,
+            "first_paint_ms": 1908,
+            "response_time_ms": 222,
+            "status": "Complete"
         },
         "threshold_ms": 2500,
         "status": "Pass"
     },
     {
-        "action": "Load Book: Jane Eyre ou M\u00e9moires d'une gouvernante, de Currer-Bell, imit\u00e9s [and abridged] par Old-Nick",
-        "url": "https://openlibrary.org/works/OL1095427W/Jane_Eyre?edition=key%3A/books/OL23443604M",
-        "metrics": {
-            "load_time_ms": 3230,
-            "dom_content_loaded_ms": 1678,
-            "first_paint_ms": 1612
-        },
-        "threshold_ms": 2500,
-        "status": "Fail"
-    },
-    {
         "action": "Verify List: want-to-read",
         "url": "https://openlibrary.org/people/user532228/books/want-to-read",
         "metrics": {
-            "load_time_ms": 7022,
-            "dom_content_loaded_ms": 455,
-            "first_paint_ms": 424
+            "load_time_ms": 3885,
+            "dom_content_loaded_ms": 1453,
+            "first_paint_ms": 1544,
+            "response_time_ms": 211,
+            "status": "Complete"
         },
         "threshold_ms": 2000,
         "status": "Fail"
@@ -80,31 +94,11 @@
         "action": "Verify List: already-read",
         "url": "https://openlibrary.org/people/user532228/books/already-read",
         "metrics": {
-            "load_time_ms": 2079,
-            "dom_content_loaded_ms": 564,
-            "first_paint_ms": 544
-        },
-        "threshold_ms": 2000,
-        "status": "Fail"
-    },
-    {
-        "action": "Verify List: want-to-read",
-        "url": "https://openlibrary.org/people/user532228/books/want-to-read",
-        "metrics": {
-            "load_time_ms": 2057,
-            "dom_content_loaded_ms": 1857,
-            "first_paint_ms": 1812
-        },
-        "threshold_ms": 2000,
-        "status": "Fail"
-    },
-    {
-        "action": "Verify List: already-read",
-        "url": "https://openlibrary.org/people/user532228/books/already-read",
-        "metrics": {
-            "load_time_ms": 1832,
-            "dom_content_loaded_ms": 1058,
-            "first_paint_ms": 1004
+            "load_time_ms": 1807,
+            "dom_content_loaded_ms": 1617,
+            "first_paint_ms": 1740,
+            "response_time_ms": 9,
+            "status": "Complete"
         },
         "threshold_ms": 2000,
         "status": "Pass"
