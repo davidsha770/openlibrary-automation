@@ -31,3 +31,512 @@
 2026-04-15 15:42:18,075 - INFO - Detected 6 books to remove from 'want-to-read'
 2026-04-15 15:42:23,185 - INFO - Detected 4 books to remove from 'already-read'
 2026-04-15 15:42:24,976 - INFO - Reports and performance data generated successfully.
+2026-04-15 15:53:46,614 - INFO - Navigating to login page...
+2026-04-15 15:54:06,535 - INFO - Credentials filled, submitting form...
+2026-04-15 15:54:24,326 - INFO - Cleaning up environment...
+2026-04-15 15:54:24,330 - WARNING - Cleanup failed: Page.goto: Target page, context or browser has been closed
+2026-04-15 15:54:24,331 - INFO - Reports and performance data generated successfully.
+2026-04-15 15:54:28,364 - INFO - Navigating to login page...
+2026-04-15 15:54:47,751 - ERROR - Critical failure during login sequence: Page.wait_for_selector: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("input[name='username']") to be visible
+
+2026-04-15 15:54:47,752 - INFO - Cleaning up environment...
+2026-04-15 15:54:49,655 - INFO - List 'want-to-read' is already clean/empty.
+2026-04-15 15:54:51,367 - INFO - List 'already-read' is already clean/empty.
+2026-04-15 15:54:51,369 - INFO - Reports and performance data generated successfully.
+2026-04-15 15:58:02,574 - INFO - Navigating to login page...
+2026-04-15 15:58:21,603 - ERROR - Critical failure during login sequence: Page.wait_for_selector: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("input[name='username']") to be visible
+
+2026-04-15 15:58:21,604 - INFO - Cleaning up environment...
+2026-04-15 15:58:23,182 - INFO - List 'want-to-read' is already clean/empty.
+2026-04-15 15:58:24,203 - INFO - List 'already-read' is already clean/empty.
+2026-04-15 15:58:24,205 - INFO - Reports and performance data generated successfully.
+2026-04-15 16:03:12,260 - INFO - Navigating to login page...
+2026-04-15 16:03:16,060 - INFO - Security challenge detected. Attempting to verify...
+2026-04-15 16:03:17,165 - INFO - Challenge button clicked. Waiting for verification to complete...
+2026-04-15 16:03:18,461 - INFO - Credentials filled, submitting form...
+2026-04-15 16:03:21,415 - INFO - Verifying session readiness...
+2026-04-15 16:03:21,507 - INFO - Login sequence successfully verified.
+2026-04-15 16:03:25,829 - INFO - Scanning results on page 1...
+2026-04-15 16:03:26,199 - INFO - Match 1: https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M
+2026-04-15 16:03:26,266 - INFO - Match 2: https://openlibrary.org/works/OL893526W/Dune_Messiah?edition=key%3A/books/OL7525229M
+2026-04-15 16:03:26,454 - INFO - Match 3: https://openlibrary.org/works/OL472165W/Peril_at_End_House?edition=key%3A/books/OL35638871M
+2026-04-15 16:03:26,653 - INFO - Match 4: https://openlibrary.org/works/OL274574W/Crónica_de_una_muerte_anunciada?edition=key%3A/books/OL8886573M
+2026-04-15 16:03:26,713 - INFO - Match 5: https://openlibrary.org/works/OL1105384W/Memoirs_of_a_Revolutionist?edition=key%3A/books/OL16829296M
+2026-04-15 16:03:31,011 - WARNING - PERFORMANCE FAIL: Load Book: OL26242482M took 3787ms (Threshold: 2500ms)
+2026-04-15 16:03:31,011 - INFO - ADDING: 'https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M' to list 'Want to Read'
+2026-04-15 16:03:31,301 - INFO - Visual evidence captured for 'https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M' at outputs/screenshots/https___openlibrary_org_works_OL893415W_Dune_editi.png
+2026-04-15 16:03:34,513 - WARNING - PERFORMANCE FAIL: Load Book: OL7525229M took 2684ms (Threshold: 2500ms)
+2026-04-15 16:03:34,514 - INFO - ADDING: 'https://openlibrary.org/works/OL893526W/Dune_Messiah?edition=key%3A/books/OL7525229M' to list 'Already Read'
+2026-04-15 16:03:34,866 - INFO - Visual evidence captured for 'https://openlibrary.org/works/OL893526W/Dune_Messiah?edition=key%3A/books/OL7525229M' at outputs/screenshots/https___openlibrary_org_works_OL893526W_Dune_Messi.png
+2026-04-15 16:03:39,075 - WARNING - PERFORMANCE FAIL: Load Book: OL35638871M took 3692ms (Threshold: 2500ms)
+2026-04-15 16:03:39,076 - INFO - ADDING: 'https://openlibrary.org/works/OL472165W/Peril_at_End_House?edition=key%3A/books/OL35638871M' to list 'Already Read'
+2026-04-15 16:03:39,356 - INFO - Visual evidence captured for 'https://openlibrary.org/works/OL472165W/Peril_at_End_House?edition=key%3A/books/OL35638871M' at outputs/screenshots/https___openlibrary_org_works_OL472165W_Peril_at_E.png
+2026-04-15 16:03:43,584 - WARNING - PERFORMANCE FAIL: Load Book: OL8886573M took 3703ms (Threshold: 2500ms)
+2026-04-15 16:03:43,584 - INFO - ADDING: 'https://openlibrary.org/works/OL274574W/Crónica_de_una_muerte_anunciada?edition=key%3A/books/OL8886573M' to list 'Want to Read'
+2026-04-15 16:03:43,935 - INFO - Visual evidence captured for 'https://openlibrary.org/works/OL274574W/Crónica_de_una_muerte_anunciada?edition=key%3A/books/OL8886573M' at outputs/screenshots/https___openlibrary_org_works_OL274574W_Crónica_de.png
+2026-04-15 16:03:47,037 - WARNING - PERFORMANCE FAIL: Load Book: OL16829296M took 2585ms (Threshold: 2500ms)
+2026-04-15 16:03:47,037 - INFO - ADDING: 'https://openlibrary.org/works/OL1105384W/Memoirs_of_a_Revolutionist?edition=key%3A/books/OL16829296M' to list 'Already Read'
+2026-04-15 16:03:47,376 - INFO - Visual evidence captured for 'https://openlibrary.org/works/OL1105384W/Memoirs_of_a_Revolutionist?edition=key%3A/books/OL16829296M' at outputs/screenshots/https___openlibrary_org_works_OL1105384W_Memoirs_o.png
+2026-04-15 16:03:49,384 - INFO - Navigating to My Books to verify final counts...
+2026-04-15 16:03:51,891 - INFO - Sidebar WantToRead raw text captured: '2'
+2026-04-15 16:03:51,935 - INFO - Sidebar AlreadyRead raw text captured: '3'
+2026-04-15 16:03:51,935 - INFO - Final Assertion: Sidebar combined total is 5 (Expected: 5)
+2026-04-15 16:03:51,935 - INFO - ✅ SUCCESS: Reading list counts match the expected value!
+2026-04-15 16:03:51,935 - INFO - Cleaning up environment...
+2026-04-15 16:03:53,362 - INFO - Detected 4 books to remove from 'want-to-read'
+2026-04-15 16:03:57,461 - INFO - Detected 6 books to remove from 'already-read'
+2026-04-15 16:04:00,179 - INFO - Reports and performance data generated successfully.
+2026-04-15 16:21:59,235 - INFO - Navigating to login page...
+2026-04-15 16:22:04,404 - INFO - Security challenge detected. Attempting to verify...
+2026-04-15 16:22:05,519 - INFO - Challenge button clicked. Waiting for verification to complete...
+2026-04-15 16:22:06,720 - INFO - Credentials filled, submitting form...
+2026-04-15 16:22:12,210 - INFO - Verifying session readiness...
+2026-04-15 16:22:12,261 - INFO - Login sequence successfully verified.
+2026-04-15 16:22:16,935 - WARNING - PERFORMANCE FAIL: Search Page Load took 4153ms (Threshold: 3000ms)
+2026-04-15 16:22:22,348 - INFO - Scanning results on page 1...
+2026-04-15 16:22:22,601 - INFO - Match 1: https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M
+2026-04-15 16:22:22,661 - INFO - Match 2: https://openlibrary.org/works/OL893526W/Dune_Messiah?edition=key%3A/books/OL7525229M
+2026-04-15 16:22:22,757 - INFO - Match 3: https://openlibrary.org/works/OL472165W/Peril_at_End_House?edition=key%3A/books/OL35638871M
+2026-04-15 16:22:22,853 - INFO - Match 4: https://openlibrary.org/works/OL274574W/Crónica_de_una_muerte_anunciada?edition=key%3A/books/OL8886573M
+2026-04-15 16:22:23,134 - INFO - Match 5: https://openlibrary.org/works/OL1105384W/Memoirs_of_a_Revolutionist?edition=key%3A/books/OL16829296M
+2026-04-15 16:22:27,417 - WARNING - PERFORMANCE FAIL: Load Book: OL26242482M took 3769ms (Threshold: 2500ms)
+2026-04-15 16:22:27,418 - INFO - ADDING: 'https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M' to list 'Already Read'
+2026-04-15 16:22:57,423 - ERROR - Failed to add book to list: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator(".reading-log-button .dropdown-toggle")
+
+2026-04-15 16:23:01,472 - WARNING - PERFORMANCE FAIL: Load Book: OL7525229M took 3535ms (Threshold: 2500ms)
+2026-04-15 16:23:01,473 - INFO - ADDING: 'https://openlibrary.org/works/OL893526W/Dune_Messiah?edition=key%3A/books/OL7525229M' to list 'Want to Read'
+2026-04-15 16:23:02,924 - INFO - Visual evidence captured for 'https://openlibrary.org/works/OL893526W/Dune_Messiah?edition=key%3A/books/OL7525229M' at outputs/screenshots/https___openlibrary_org_works_OL893526W_Dune_Messi.png
+2026-04-15 16:23:06,748 - WARNING - PERFORMANCE FAIL: Load Book: OL35638871M took 3299ms (Threshold: 2500ms)
+2026-04-15 16:23:06,749 - INFO - ADDING: 'https://openlibrary.org/works/OL472165W/Peril_at_End_House?edition=key%3A/books/OL35638871M' to list 'Already Read'
+2026-04-15 16:23:36,752 - ERROR - Failed to add book to list: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator(".reading-log-button .dropdown-toggle")
+
+2026-04-15 16:23:42,912 - WARNING - PERFORMANCE FAIL: Load Book: OL8886573M took 5640ms (Threshold: 2500ms)
+2026-04-15 16:23:42,912 - INFO - ADDING: 'https://openlibrary.org/works/OL274574W/Crónica_de_una_muerte_anunciada?edition=key%3A/books/OL8886573M' to list 'Already Read'
+2026-04-15 16:24:12,914 - ERROR - Failed to add book to list: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator(".reading-log-button .dropdown-toggle")
+
+2026-04-15 16:24:15,676 - INFO - ADDING: 'https://openlibrary.org/works/OL1105384W/Memoirs_of_a_Revolutionist?edition=key%3A/books/OL16829296M' to list 'Want to Read'
+2026-04-15 16:24:19,088 - INFO - Visual evidence captured for 'https://openlibrary.org/works/OL1105384W/Memoirs_of_a_Revolutionist?edition=key%3A/books/OL16829296M' at outputs/screenshots/https___openlibrary_org_works_OL1105384W_Memoirs_o.png
+2026-04-15 16:24:22,411 - WARNING - PERFORMANCE FAIL: Reading List Page Load took 2799ms (Threshold: 2000ms)
+2026-04-15 16:24:22,411 - INFO - Navigating to My Books to verify final counts...
+2026-04-15 16:24:24,857 - INFO - Sidebar WantToRead raw text captured: '2'
+2026-04-15 16:24:24,879 - INFO - Sidebar AlreadyRead raw text captured: '0'
+2026-04-15 16:24:24,879 - INFO - Final Assertion: Sidebar combined total is 2 (Expected: 5)
+2026-04-15 16:24:25,148 - INFO - Cleaning up environment...
+2026-04-15 16:24:27,207 - INFO - Detected 4 books to remove from 'want-to-read'
+2026-04-15 16:24:30,100 - INFO - List 'already-read' is already clean/empty.
+2026-04-15 16:24:30,103 - INFO - Reports and performance data generated successfully.
+2026-04-15 16:33:41,854 - INFO - Navigating to login page...
+2026-04-15 16:33:50,568 - INFO - Security challenge detected. Attempting to verify...
+2026-04-15 16:33:51,685 - INFO - Challenge button clicked. Waiting for verification to complete...
+2026-04-15 16:33:52,940 - INFO - Credentials filled, submitting form...
+2026-04-15 16:33:55,595 - INFO - Verifying session readiness...
+2026-04-15 16:33:55,659 - INFO - Login sequence successfully verified.
+2026-04-15 16:34:02,387 - INFO - Scanning results on page 1...
+2026-04-15 16:34:02,645 - INFO - Match 1: https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M
+2026-04-15 16:34:02,720 - INFO - Match 2: https://openlibrary.org/works/OL893526W/Dune_Messiah?edition=key%3A/books/OL7525229M
+2026-04-15 16:34:02,783 - INFO - Match 3: https://openlibrary.org/works/OL472165W/Peril_at_End_House?edition=key%3A/books/OL35638871M
+2026-04-15 16:34:02,845 - INFO - Match 4: https://openlibrary.org/works/OL274574W/Crónica_de_una_muerte_anunciada?edition=key%3A/books/OL8886573M
+2026-04-15 16:34:03,076 - INFO - Match 5: https://openlibrary.org/works/OL1105384W/Memoirs_of_a_Revolutionist?edition=key%3A/books/OL16829296M
+2026-04-15 16:34:06,402 - WARNING - PERFORMANCE FAIL: Load Book: OL26242482M took 2804ms (Threshold: 2500ms)
+2026-04-15 16:34:06,402 - INFO - ADDING: 'https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M' to list 'Want to Read'
+2026-04-15 16:34:16,405 - ERROR - Failed to add book to list 'Want to Read': Locator.wait_for: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator(".reading-log-button").first to be visible
+
+2026-04-15 16:34:20,128 - WARNING - PERFORMANCE FAIL: Load Book: OL7525229M took 2900ms (Threshold: 2500ms)
+2026-04-15 16:34:20,128 - INFO - ADDING: 'https://openlibrary.org/works/OL893526W/Dune_Messiah?edition=key%3A/books/OL7525229M' to list 'Already Read'
+2026-04-15 16:34:30,130 - ERROR - Failed to add book to list 'Already Read': Locator.wait_for: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator(".reading-log-button").first to be visible
+
+2026-04-15 16:34:35,588 - WARNING - PERFORMANCE FAIL: Load Book: OL35638871M took 4675ms (Threshold: 2500ms)
+2026-04-15 16:34:35,588 - INFO - ADDING: 'https://openlibrary.org/works/OL472165W/Peril_at_End_House?edition=key%3A/books/OL35638871M' to list 'Already Read'
+2026-04-15 16:34:45,592 - ERROR - Failed to add book to list 'Already Read': Locator.wait_for: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator(".reading-log-button").first to be visible
+
+2026-04-15 16:34:50,373 - WARNING - PERFORMANCE FAIL: Load Book: OL8886573M took 4015ms (Threshold: 2500ms)
+2026-04-15 16:34:50,374 - INFO - ADDING: 'https://openlibrary.org/works/OL274574W/Crónica_de_una_muerte_anunciada?edition=key%3A/books/OL8886573M' to list 'Already Read'
+2026-04-15 16:35:00,377 - ERROR - Failed to add book to list 'Already Read': Locator.wait_for: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator(".reading-log-button").first to be visible
+
+2026-04-15 16:35:03,717 - WARNING - PERFORMANCE FAIL: Load Book: OL16829296M took 2591ms (Threshold: 2500ms)
+2026-04-15 16:35:03,717 - INFO - ADDING: 'https://openlibrary.org/works/OL1105384W/Memoirs_of_a_Revolutionist?edition=key%3A/books/OL16829296M' to list 'Already Read'
+2026-04-15 16:35:13,718 - ERROR - Failed to add book to list 'Already Read': Locator.wait_for: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator(".reading-log-button").first to be visible
+
+2026-04-15 16:35:15,618 - INFO - Navigating to My Books to verify final counts...
+2026-04-15 16:35:18,480 - INFO - Sidebar WantToRead raw text captured: '0'
+2026-04-15 16:35:18,498 - INFO - Sidebar AlreadyRead raw text captured: '0'
+2026-04-15 16:35:18,498 - INFO - Final Assertion: Sidebar combined total is 0 (Expected: 5)
+2026-04-15 16:35:18,746 - INFO - Cleaning up environment...
+2026-04-15 16:35:19,995 - INFO - List 'want-to-read' is already clean/empty.
+2026-04-15 16:35:21,261 - INFO - List 'already-read' is already clean/empty.
+2026-04-15 16:35:21,263 - INFO - Reports and performance data generated successfully.
+2026-04-15 16:37:18,636 - INFO - Navigating to login page...
+2026-04-15 16:37:22,323 - INFO - Security challenge detected. Attempting to verify...
+2026-04-15 16:37:23,439 - INFO - Challenge button clicked. Waiting for verification to complete...
+2026-04-15 16:37:24,721 - INFO - Credentials filled, submitting form...
+2026-04-15 16:37:27,659 - INFO - Verifying session readiness...
+2026-04-15 16:37:27,727 - INFO - Login sequence successfully verified.
+2026-04-15 16:37:32,028 - INFO - Scanning results on page 1...
+2026-04-15 16:37:32,390 - INFO - Match 1: https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M
+2026-04-15 16:37:32,521 - INFO - Match 2: https://openlibrary.org/works/OL893526W/Dune_Messiah?edition=key%3A/books/OL7525229M
+2026-04-15 16:37:32,590 - INFO - Match 3: https://openlibrary.org/works/OL472165W/Peril_at_End_House?edition=key%3A/books/OL35638871M
+2026-04-15 16:37:32,625 - INFO - Match 4: https://openlibrary.org/works/OL274574W/Crónica_de_una_muerte_anunciada?edition=key%3A/books/OL8886573M
+2026-04-15 16:37:32,663 - INFO - Match 5: https://openlibrary.org/works/OL1105384W/Memoirs_of_a_Revolutionist?edition=key%3A/books/OL16829296M
+2026-04-15 16:37:37,997 - WARNING - PERFORMANCE FAIL: Load Book: OL26242482M took 4810ms (Threshold: 2500ms)
+2026-04-15 16:37:37,998 - INFO - ADDING: 'https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M' to list 'Want to Read'
+2026-04-15 16:37:38,974 - INFO - Successfully added book as: Want to Read
+2026-04-15 16:37:39,297 - INFO - Visual evidence captured for 'https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M' at outputs/screenshots/https___openlibrary_org_works_OL893415W_Dune_editi.png
+2026-04-15 16:37:42,764 - WARNING - PERFORMANCE FAIL: Load Book: OL7525229M took 2943ms (Threshold: 2500ms)
+2026-04-15 16:37:42,765 - INFO - ADDING: 'https://openlibrary.org/works/OL893526W/Dune_Messiah?edition=key%3A/books/OL7525229M' to list 'Already Read'
+2026-04-15 16:38:12,842 - ERROR - Failed to add book to list 'Already Read': Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator(".dropdown-toggle").first
+
+2026-04-15 16:38:18,415 - WARNING - PERFORMANCE FAIL: Load Book: OL35638871M took 4773ms (Threshold: 2500ms)
+2026-04-15 16:38:18,415 - INFO - ADDING: 'https://openlibrary.org/works/OL472165W/Peril_at_End_House?edition=key%3A/books/OL35638871M' to list 'Want to Read'
+2026-04-15 16:38:18,580 - INFO - Successfully added book as: Want to Read
+2026-04-15 16:38:18,920 - INFO - Visual evidence captured for 'https://openlibrary.org/works/OL472165W/Peril_at_End_House?edition=key%3A/books/OL35638871M' at outputs/screenshots/https___openlibrary_org_works_OL472165W_Peril_at_E.png
+2026-04-15 16:38:22,599 - WARNING - PERFORMANCE FAIL: Load Book: OL8886573M took 3161ms (Threshold: 2500ms)
+2026-04-15 16:38:22,599 - INFO - ADDING: 'https://openlibrary.org/works/OL274574W/Crónica_de_una_muerte_anunciada?edition=key%3A/books/OL8886573M' to list 'Want to Read'
+2026-04-15 16:38:23,728 - INFO - Successfully added book as: Want to Read
+2026-04-15 16:38:23,963 - INFO - Visual evidence captured for 'https://openlibrary.org/works/OL274574W/Crónica_de_una_muerte_anunciada?edition=key%3A/books/OL8886573M' at outputs/screenshots/https___openlibrary_org_works_OL274574W_Crónica_de.png
+2026-04-15 16:38:26,248 - INFO - ADDING: 'https://openlibrary.org/works/OL1105384W/Memoirs_of_a_Revolutionist?edition=key%3A/books/OL16829296M' to list 'Already Read'
+2026-04-15 16:38:56,346 - ERROR - Failed to add book to list 'Already Read': Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator(".dropdown-toggle").first
+
+2026-04-15 16:38:59,143 - INFO - Navigating to My Books to verify final counts...
+2026-04-15 16:39:02,327 - INFO - Sidebar WantToRead raw text captured: '3'
+2026-04-15 16:39:02,343 - INFO - Sidebar AlreadyRead raw text captured: '0'
+2026-04-15 16:39:02,343 - INFO - Final Assertion: Sidebar combined total is 3 (Expected: 5)
+2026-04-15 16:39:02,683 - INFO - Cleaning up environment...
+2026-04-15 16:39:04,071 - INFO - Detected 6 books to remove from 'want-to-read'
+2026-04-15 16:39:07,847 - INFO - List 'already-read' is already clean/empty.
+2026-04-15 16:39:07,850 - INFO - Reports and performance data generated successfully.
+2026-04-15 16:43:02,593 - INFO - Navigating to login page...
+2026-04-15 16:43:06,095 - INFO - Security challenge detected. Attempting to verify...
+2026-04-15 16:43:07,229 - INFO - Challenge button clicked. Waiting for verification to complete...
+2026-04-15 16:43:08,725 - INFO - Credentials filled, submitting form...
+2026-04-15 16:43:12,049 - INFO - Verifying session readiness...
+2026-04-15 16:43:12,127 - INFO - Login sequence successfully verified.
+2026-04-15 16:43:16,543 - INFO - Scanning results on page 1...
+2026-04-15 16:43:16,753 - INFO - Match 1: https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M
+2026-04-15 16:43:17,034 - INFO - Match 2: https://openlibrary.org/works/OL893526W/Dune_Messiah?edition=key%3A/books/OL7525229M
+2026-04-15 16:43:17,086 - INFO - Match 3: https://openlibrary.org/works/OL472165W/Peril_at_End_House?edition=key%3A/books/OL35638871M
+2026-04-15 16:43:17,135 - INFO - Match 4: https://openlibrary.org/works/OL274574W/Crónica_de_una_muerte_anunciada?edition=key%3A/books/OL8886573M
+2026-04-15 16:43:17,182 - INFO - Match 5: https://openlibrary.org/works/OL1105384W/Memoirs_of_a_Revolutionist?edition=key%3A/books/OL16829296M
+2026-04-15 16:43:22,045 - WARNING - PERFORMANCE FAIL: Load Book: OL26242482M took 4344ms (Threshold: 2500ms)
+2026-04-15 16:43:22,045 - INFO - ADDING: 'https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M' to list 'Already Read'
+2026-04-15 16:43:27,122 - ERROR - Failed to add book to list 'Already Read': Locator.wait_for: Timeout 5000ms exceeded.
+Call log:
+  - waiting for locator(".reading-log-buttons").first.locator("div.arrow").first to be visible
+
+2026-04-15 16:43:31,256 - WARNING - PERFORMANCE FAIL: Load Book: OL7525229M took 3299ms (Threshold: 2500ms)
+2026-04-15 16:43:31,256 - INFO - ADDING: 'https://openlibrary.org/works/OL893526W/Dune_Messiah?edition=key%3A/books/OL7525229M' to list 'Already Read'
+2026-04-15 16:43:36,347 - ERROR - Failed to add book to list 'Already Read': Locator.wait_for: Timeout 5000ms exceeded.
+Call log:
+  - waiting for locator(".reading-log-buttons").first.locator("div.arrow").first to be visible
+
+2026-04-15 16:43:41,101 - WARNING - PERFORMANCE FAIL: Load Book: OL35638871M took 3968ms (Threshold: 2500ms)
+2026-04-15 16:43:41,101 - INFO - ADDING: 'https://openlibrary.org/works/OL472165W/Peril_at_End_House?edition=key%3A/books/OL35638871M' to list 'Already Read'
+2026-04-15 16:43:46,182 - ERROR - Failed to add book to list 'Already Read': Locator.wait_for: Timeout 5000ms exceeded.
+Call log:
+  - waiting for locator(".reading-log-buttons").first.locator("div.arrow").first to be visible
+
+2026-04-15 16:43:51,212 - WARNING - PERFORMANCE FAIL: Load Book: OL8886573M took 4263ms (Threshold: 2500ms)
+2026-04-15 16:43:51,213 - INFO - ADDING: 'https://openlibrary.org/works/OL274574W/Crónica_de_una_muerte_anunciada?edition=key%3A/books/OL8886573M' to list 'Already Read'
+2026-04-15 16:43:56,297 - ERROR - Failed to add book to list 'Already Read': Locator.wait_for: Timeout 5000ms exceeded.
+Call log:
+  - waiting for locator(".reading-log-buttons").first.locator("div.arrow").first to be visible
+
+2026-04-15 16:43:59,435 - INFO - ADDING: 'https://openlibrary.org/works/OL1105384W/Memoirs_of_a_Revolutionist?edition=key%3A/books/OL16829296M' to list 'Already Read'
+2026-04-15 16:44:04,520 - ERROR - Failed to add book to list 'Already Read': Locator.wait_for: Timeout 5000ms exceeded.
+Call log:
+  - waiting for locator(".reading-log-buttons").first.locator("div.arrow").first to be visible
+
+2026-04-15 16:44:06,827 - INFO - Navigating to My Books to verify final counts...
+2026-04-15 16:44:09,357 - INFO - Sidebar WantToRead raw text captured: '0'
+2026-04-15 16:44:09,378 - INFO - Sidebar AlreadyRead raw text captured: '0'
+2026-04-15 16:44:09,378 - INFO - Final Assertion: Sidebar combined total is 0 (Expected: 5)
+2026-04-15 16:44:09,642 - INFO - Cleaning up environment...
+2026-04-15 16:44:11,047 - INFO - List 'want-to-read' is already clean/empty.
+2026-04-15 16:44:12,978 - INFO - List 'already-read' is already clean/empty.
+2026-04-15 16:44:12,980 - INFO - Reports and performance data generated successfully.
+2026-04-15 16:46:01,203 - INFO - Navigating to login page...
+2026-04-15 16:46:06,219 - INFO - Security challenge detected. Attempting to verify...
+2026-04-15 16:46:07,333 - INFO - Challenge button clicked. Waiting for verification to complete...
+2026-04-15 16:46:08,621 - INFO - Credentials filled, submitting form...
+2026-04-15 16:46:14,669 - INFO - Verifying session readiness...
+2026-04-15 16:46:14,731 - INFO - Login sequence successfully verified.
+2026-04-15 16:46:19,862 - INFO - Scanning results on page 1...
+2026-04-15 16:46:20,034 - INFO - Match 1: https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M
+2026-04-15 16:46:20,239 - INFO - Match 2: https://openlibrary.org/works/OL893526W/Dune_Messiah?edition=key%3A/books/OL7525229M
+2026-04-15 16:46:20,327 - INFO - Match 3: https://openlibrary.org/works/OL472165W/Peril_at_End_House?edition=key%3A/books/OL35638871M
+2026-04-15 16:46:20,396 - INFO - Match 4: https://openlibrary.org/works/OL274574W/Crónica_de_una_muerte_anunciada?edition=key%3A/books/OL8886573M
+2026-04-15 16:46:20,492 - INFO - Match 5: https://openlibrary.org/works/OL1105384W/Memoirs_of_a_Revolutionist?edition=key%3A/books/OL16829296M
+2026-04-15 16:46:25,001 - WARNING - PERFORMANCE FAIL: Load Book: OL26242482M took 3985ms (Threshold: 2500ms)
+2026-04-15 16:46:25,001 - INFO - ADDING: 'https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M' to list 'Already Read'
+2026-04-15 16:46:30,179 - ERROR - Failed to add book to list 'Already Read': Locator.wait_for: Timeout 5000ms exceeded.
+Call log:
+  - waiting for locator(".results, .dropdown-menu").get_by_text("Already Read").first to be visible
+
+2026-04-15 16:46:34,339 - WARNING - PERFORMANCE FAIL: Load Book: OL7525229M took 3362ms (Threshold: 2500ms)
+2026-04-15 16:46:34,339 - INFO - ADDING: 'https://openlibrary.org/works/OL893526W/Dune_Messiah?edition=key%3A/books/OL7525229M' to list 'Already Read'
+2026-04-15 16:46:39,525 - ERROR - Failed to add book to list 'Already Read': Locator.wait_for: Timeout 5000ms exceeded.
+Call log:
+  - waiting for locator(".results, .dropdown-menu").get_by_text("Already Read").first to be visible
+
+2026-04-15 16:46:44,261 - WARNING - PERFORMANCE FAIL: Load Book: OL35638871M took 3922ms (Threshold: 2500ms)
+2026-04-15 16:46:44,261 - INFO - ADDING: 'https://openlibrary.org/works/OL472165W/Peril_at_End_House?edition=key%3A/books/OL35638871M' to list 'Want to Read'
+2026-04-15 16:46:44,403 - INFO - Successfully added book as: Want to Read
+2026-04-15 16:46:44,651 - INFO - Visual evidence captured for 'https://openlibrary.org/works/OL472165W/Peril_at_End_House?edition=key%3A/books/OL35638871M' at outputs/screenshots/https___openlibrary_org_works_OL472165W_Peril_at_E.png
+2026-04-15 16:46:48,702 - WARNING - PERFORMANCE FAIL: Load Book: OL8886573M took 3534ms (Threshold: 2500ms)
+2026-04-15 16:46:48,703 - INFO - ADDING: 'https://openlibrary.org/works/OL274574W/Crónica_de_una_muerte_anunciada?edition=key%3A/books/OL8886573M' to list 'Want to Read'
+2026-04-15 16:46:49,702 - INFO - Successfully added book as: Want to Read
+2026-04-15 16:46:49,934 - INFO - Visual evidence captured for 'https://openlibrary.org/works/OL274574W/Crónica_de_una_muerte_anunciada?edition=key%3A/books/OL8886573M' at outputs/screenshots/https___openlibrary_org_works_OL274574W_Crónica_de.png
+2026-04-15 16:46:52,611 - INFO - ADDING: 'https://openlibrary.org/works/OL1105384W/Memoirs_of_a_Revolutionist?edition=key%3A/books/OL16829296M' to list 'Already Read'
+2026-04-15 16:46:57,763 - ERROR - Failed to add book to list 'Already Read': Locator.wait_for: Timeout 5000ms exceeded.
+Call log:
+  - waiting for locator(".results, .dropdown-menu").get_by_text("Already Read").first to be visible
+
+2026-04-15 16:47:00,637 - WARNING - PERFORMANCE FAIL: Reading List Page Load took 2082ms (Threshold: 2000ms)
+2026-04-15 16:47:00,638 - INFO - Navigating to My Books to verify final counts...
+2026-04-15 16:47:04,012 - INFO - Sidebar WantToRead raw text captured: '2'
+2026-04-15 16:47:04,032 - INFO - Sidebar AlreadyRead raw text captured: '0'
+2026-04-15 16:47:04,033 - INFO - Final Assertion: Sidebar combined total is 2 (Expected: 5)
+2026-04-15 16:47:04,329 - INFO - Cleaning up environment...
+2026-04-15 16:47:05,992 - INFO - Detected 4 books to remove from 'want-to-read'
+2026-04-15 16:47:09,104 - INFO - List 'already-read' is already clean/empty.
+2026-04-15 16:47:09,105 - INFO - Reports and performance data generated successfully.
+2026-04-15 16:49:45,497 - INFO - Navigating to login page...
+2026-04-15 16:49:49,661 - INFO - Security challenge detected. Attempting to verify...
+2026-04-15 16:49:50,762 - INFO - Challenge button clicked. Waiting for verification to complete...
+2026-04-15 16:49:52,376 - INFO - Credentials filled, submitting form...
+2026-04-15 16:49:55,461 - INFO - Verifying session readiness...
+2026-04-15 16:49:55,517 - INFO - Login sequence successfully verified.
+2026-04-15 16:50:00,760 - INFO - Scanning results on page 1...
+2026-04-15 16:50:01,029 - INFO - Match 1: https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M
+2026-04-15 16:50:01,103 - INFO - Match 2: https://openlibrary.org/works/OL893526W/Dune_Messiah?edition=key%3A/books/OL7525229M
+2026-04-15 16:50:01,391 - INFO - Match 3: https://openlibrary.org/works/OL472165W/Peril_at_End_House?edition=key%3A/books/OL35638871M
+2026-04-15 16:50:01,490 - INFO - Match 4: https://openlibrary.org/works/OL274574W/Crónica_de_una_muerte_anunciada?edition=key%3A/books/OL8886573M
+2026-04-15 16:50:01,544 - INFO - Match 5: https://openlibrary.org/works/OL1105384W/Memoirs_of_a_Revolutionist?edition=key%3A/books/OL16829296M
+2026-04-15 16:50:05,133 - WARNING - PERFORMANCE FAIL: Load Book: OL26242482M took 3063ms (Threshold: 2500ms)
+2026-04-15 16:50:05,133 - INFO - ADDING: 'https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M' to list 'Want to Read'
+2026-04-15 16:50:07,338 - INFO - Successfully added book as: Want to Read
+2026-04-15 16:50:07,652 - INFO - Visual evidence captured for 'https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M' at outputs/screenshots/https___openlibrary_org_works_OL893415W_Dune_editi.png
+2026-04-15 16:50:11,361 - WARNING - PERFORMANCE FAIL: Load Book: OL7525229M took 3181ms (Threshold: 2500ms)
+2026-04-15 16:50:11,361 - INFO - ADDING: 'https://openlibrary.org/works/OL893526W/Dune_Messiah?edition=key%3A/books/OL7525229M' to list 'Want to Read'
+2026-04-15 16:50:12,538 - INFO - Successfully added book as: Want to Read
+2026-04-15 16:50:12,804 - INFO - Visual evidence captured for 'https://openlibrary.org/works/OL893526W/Dune_Messiah?edition=key%3A/books/OL7525229M' at outputs/screenshots/https___openlibrary_org_works_OL893526W_Dune_Messi.png
+2026-04-15 16:50:16,591 - WARNING - PERFORMANCE FAIL: Load Book: OL35638871M took 3259ms (Threshold: 2500ms)
+2026-04-15 16:50:16,592 - INFO - ADDING: 'https://openlibrary.org/works/OL472165W/Peril_at_End_House?edition=key%3A/books/OL35638871M' to list 'Want to Read'
+2026-04-15 16:50:17,697 - INFO - Successfully added book as: Want to Read
+2026-04-15 16:50:17,936 - INFO - Visual evidence captured for 'https://openlibrary.org/works/OL472165W/Peril_at_End_House?edition=key%3A/books/OL35638871M' at outputs/screenshots/https___openlibrary_org_works_OL472165W_Peril_at_E.png
+2026-04-15 16:50:21,773 - WARNING - PERFORMANCE FAIL: Load Book: OL8886573M took 3322ms (Threshold: 2500ms)
+2026-04-15 16:50:21,773 - INFO - ADDING: 'https://openlibrary.org/works/OL274574W/Crónica_de_una_muerte_anunciada?edition=key%3A/books/OL8886573M' to list 'Want to Read'
+2026-04-15 16:50:22,774 - INFO - Successfully added book as: Want to Read
+2026-04-15 16:50:23,010 - INFO - Visual evidence captured for 'https://openlibrary.org/works/OL274574W/Crónica_de_una_muerte_anunciada?edition=key%3A/books/OL8886573M' at outputs/screenshots/https___openlibrary_org_works_OL274574W_Crónica_de.png
+2026-04-15 16:50:25,624 - INFO - ADDING: 'https://openlibrary.org/works/OL1105384W/Memoirs_of_a_Revolutionist?edition=key%3A/books/OL16829296M' to list 'Already Read'
+2026-04-15 16:50:28,002 - INFO - Successfully added book as: Already Read
+2026-04-15 16:50:28,294 - INFO - Visual evidence captured for 'https://openlibrary.org/works/OL1105384W/Memoirs_of_a_Revolutionist?edition=key%3A/books/OL16829296M' at outputs/screenshots/https___openlibrary_org_works_OL1105384W_Memoirs_o.png
+2026-04-15 16:50:58,301 - ERROR - Performance measurement error: Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to "https://openlibrary.org/people/user532228/books/want-to-read", waiting until "load"
+
+2026-04-15 16:50:58,301 - INFO - Navigating to My Books to verify final counts...
+2026-04-15 16:51:13,666 - INFO - Sidebar WantToRead raw text captured: '4'
+2026-04-15 16:51:13,680 - INFO - Sidebar AlreadyRead raw text captured: '1'
+2026-04-15 16:51:13,680 - INFO - Final Assertion: Sidebar combined total is 5 (Expected: 5)
+2026-04-15 16:51:13,680 - INFO - ✅ SUCCESS: Reading list counts match the expected value!
+2026-04-15 16:51:13,681 - INFO - Cleaning up environment...
+2026-04-15 16:51:18,058 - INFO - Detected 8 books to remove from 'want-to-read'
+2026-04-15 16:51:25,118 - INFO - Detected 2 books to remove from 'already-read'
+2026-04-15 16:51:26,050 - INFO - Reports and performance data generated successfully.
+2026-04-15 17:00:24,739 - INFO - Navigating to login page...
+2026-04-15 17:00:28,268 - INFO - Security challenge detected. Attempting to verify...
+2026-04-15 17:00:29,381 - INFO - Challenge button clicked. Waiting for verification to complete...
+2026-04-15 17:00:30,928 - INFO - Credentials filled, submitting form...
+2026-04-15 17:00:35,084 - INFO - Verifying session readiness...
+2026-04-15 17:00:35,131 - INFO - Login sequence successfully verified.
+2026-04-15 17:00:42,043 - INFO - Scanning results on page 1...
+2026-04-15 17:00:42,246 - INFO - Match 1: https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M
+2026-04-15 17:00:42,322 - INFO - Match 2: https://openlibrary.org/works/OL893526W/Dune_Messiah?edition=key%3A/books/OL7525229M
+2026-04-15 17:00:42,378 - INFO - Match 3: https://openlibrary.org/works/OL472165W/Peril_at_End_House?edition=key%3A/books/OL35638871M
+2026-04-15 17:00:42,512 - INFO - Match 4: https://openlibrary.org/works/OL274574W/Crónica_de_una_muerte_anunciada?edition=key%3A/books/OL8886573M
+2026-04-15 17:00:42,758 - INFO - Match 5: https://openlibrary.org/works/OL1105384W/Memoirs_of_a_Revolutionist?edition=key%3A/books/OL16829296M
+2026-04-15 17:00:48,996 - WARNING - PERFORMANCE FAIL: Load Book: OL26242482M took 5717ms (Threshold: 2500ms)
+2026-04-15 17:00:48,996 - INFO - ADDING: 'https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M' to list 'Already Read'
+2026-04-15 17:00:49,248 - INFO - Successfully added book as: Already Read
+2026-04-15 17:00:49,559 - INFO - Visual evidence captured for 'https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M' at outputs/screenshots/https___openlibrary_org_works_OL893415W_Dune_editi.png
+2026-04-15 17:00:53,971 - WARNING - PERFORMANCE FAIL: Load Book: OL7525229M took 3893ms (Threshold: 2500ms)
+2026-04-15 17:00:53,972 - INFO - ADDING: 'https://openlibrary.org/works/OL893526W/Dune_Messiah?edition=key%3A/books/OL7525229M' to list 'Want to Read'
+2026-04-15 17:00:55,709 - INFO - Successfully added book as: Want to Read
+2026-04-15 17:00:55,972 - INFO - Visual evidence captured for 'https://openlibrary.org/works/OL893526W/Dune_Messiah?edition=key%3A/books/OL7525229M' at outputs/screenshots/https___openlibrary_org_works_OL893526W_Dune_Messi.png
+2026-04-15 17:01:01,977 - WARNING - PERFORMANCE FAIL: Load Book: OL35638871M took 5489ms (Threshold: 2500ms)
+2026-04-15 17:01:01,978 - INFO - ADDING: 'https://openlibrary.org/works/OL472165W/Peril_at_End_House?edition=key%3A/books/OL35638871M' to list 'Want to Read'
+2026-04-15 17:01:02,095 - INFO - Successfully added book as: Want to Read
+2026-04-15 17:01:02,397 - INFO - Visual evidence captured for 'https://openlibrary.org/works/OL472165W/Peril_at_End_House?edition=key%3A/books/OL35638871M' at outputs/screenshots/https___openlibrary_org_works_OL472165W_Peril_at_E.png
+2026-04-15 17:01:08,000 - WARNING - PERFORMANCE FAIL: Load Book: OL8886573M took 5074ms (Threshold: 2500ms)
+2026-04-15 17:01:08,000 - INFO - ADDING: 'https://openlibrary.org/works/OL274574W/Crónica_de_una_muerte_anunciada?edition=key%3A/books/OL8886573M' to list 'Want to Read'
+2026-04-15 17:01:08,125 - INFO - Successfully added book as: Want to Read
+2026-04-15 17:01:08,443 - INFO - Visual evidence captured for 'https://openlibrary.org/works/OL274574W/Crónica_de_una_muerte_anunciada?edition=key%3A/books/OL8886573M' at outputs/screenshots/https___openlibrary_org_works_OL274574W_Crónica_de.png
+2026-04-15 17:01:11,462 - WARNING - PERFORMANCE FAIL: Load Book: OL16829296M took 2503ms (Threshold: 2500ms)
+2026-04-15 17:01:11,463 - INFO - ADDING: 'https://openlibrary.org/works/OL1105384W/Memoirs_of_a_Revolutionist?edition=key%3A/books/OL16829296M' to list 'Want to Read'
+2026-04-15 17:01:13,422 - INFO - Successfully added book as: Want to Read
+2026-04-15 17:01:13,719 - INFO - Visual evidence captured for 'https://openlibrary.org/works/OL1105384W/Memoirs_of_a_Revolutionist?edition=key%3A/books/OL16829296M' at outputs/screenshots/https___openlibrary_org_works_OL1105384W_Memoirs_o.png
+2026-04-15 17:01:16,593 - WARNING - PERFORMANCE FAIL: Reading List Page Load took 2356ms (Threshold: 2000ms)
+2026-04-15 17:01:16,594 - INFO - Navigating to My Books to verify final counts...
+2026-04-15 17:01:20,533 - INFO - Sidebar WantToRead raw text captured: '4'
+2026-04-15 17:01:20,551 - INFO - Sidebar AlreadyRead raw text captured: '1'
+2026-04-15 17:01:20,551 - INFO - Final Assertion: Sidebar combined total is 5 (Expected: 5)
+2026-04-15 17:01:20,552 - INFO - ✅ SUCCESS: Reading list counts match the expected value!
+2026-04-15 17:01:20,552 - INFO - Cleaning up environment...
+2026-04-15 17:01:23,346 - INFO - Detected 8 books to remove from 'want-to-read'
+2026-04-15 17:01:28,780 - INFO - Detected 2 books to remove from 'already-read'
+2026-04-15 17:01:29,709 - INFO - Reports and performance data generated successfully.
+2026-04-15 17:13:10,492 - INFO - Navigating to login page...
+2026-04-15 17:13:14,056 - INFO - Security challenge detected. Attempting to verify...
+2026-04-15 17:13:15,188 - INFO - Challenge button clicked. Waiting for verification to complete...
+2026-04-15 17:13:16,636 - INFO - Credentials filled, submitting form...
+2026-04-15 17:13:20,926 - INFO - Verifying session readiness...
+2026-04-15 17:13:20,989 - INFO - Login sequence successfully verified.
+2026-04-15 17:13:26,597 - WARNING - PERFORMANCE FAIL: Search Page Load took 5075ms (Threshold: 3000ms)
+2026-04-15 17:13:30,201 - INFO - Scanning results on page 1...
+2026-04-15 17:13:30,358 - INFO - Match 1: https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M
+2026-04-15 17:13:30,475 - INFO - Match 2: https://openlibrary.org/works/OL893526W/Dune_Messiah?edition=key%3A/books/OL7525229M
+2026-04-15 17:13:30,529 - INFO - Match 3: https://openlibrary.org/works/OL472165W/Peril_at_End_House?edition=key%3A/books/OL35638871M
+2026-04-15 17:13:30,593 - INFO - Match 4: https://openlibrary.org/works/OL274574W/Crónica_de_una_muerte_anunciada?edition=key%3A/books/OL8886573M
+2026-04-15 17:13:30,658 - INFO - Match 5: https://openlibrary.org/works/OL1105384W/Memoirs_of_a_Revolutionist?edition=key%3A/books/OL16829296M
+2026-04-15 17:13:35,330 - WARNING - PERFORMANCE FAIL: Load Book: OL26242482M took 4148ms (Threshold: 2500ms)
+2026-04-15 17:13:35,330 - INFO - ADDING: 'https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M' to list 'Want to Read'
+2026-04-15 17:13:36,956 - INFO - Successfully added book as: Want to Read
+2026-04-15 17:13:37,220 - INFO - Visual evidence captured for 'https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M' at outputs/screenshots/https___openlibrary_org_works_OL893415W_Dune_editi.png
+2026-04-15 17:13:42,092 - WARNING - PERFORMANCE FAIL: Load Book: OL7525229M took 4357ms (Threshold: 2500ms)
+2026-04-15 17:13:42,093 - INFO - ADDING: 'https://openlibrary.org/works/OL893526W/Dune_Messiah?edition=key%3A/books/OL7525229M' to list 'Want to Read'
+2026-04-15 17:13:43,180 - INFO - Successfully added book as: Want to Read
+2026-04-15 17:13:43,462 - INFO - Visual evidence captured for 'https://openlibrary.org/works/OL893526W/Dune_Messiah?edition=key%3A/books/OL7525229M' at outputs/screenshots/https___openlibrary_org_works_OL893526W_Dune_Messi.png
+2026-04-15 17:13:50,862 - WARNING - PERFORMANCE FAIL: Load Book: OL35638871M took 6883ms (Threshold: 2500ms)
+2026-04-15 17:13:50,863 - INFO - ADDING: 'https://openlibrary.org/works/OL472165W/Peril_at_End_House?edition=key%3A/books/OL35638871M' to list 'Want to Read'
+2026-04-15 17:13:50,975 - INFO - Successfully added book as: Want to Read
+2026-04-15 17:13:51,241 - INFO - Visual evidence captured for 'https://openlibrary.org/works/OL472165W/Peril_at_End_House?edition=key%3A/books/OL35638871M' at outputs/screenshots/https___openlibrary_org_works_OL472165W_Peril_at_E.png
+2026-04-15 17:13:56,722 - WARNING - PERFORMANCE FAIL: Load Book: OL8886573M took 4964ms (Threshold: 2500ms)
+2026-04-15 17:13:56,722 - INFO - ADDING: 'https://openlibrary.org/works/OL274574W/Crónica_de_una_muerte_anunciada?edition=key%3A/books/OL8886573M' to list 'Want to Read'
+2026-04-15 17:13:56,853 - INFO - Successfully added book as: Want to Read
+2026-04-15 17:13:57,086 - INFO - Visual evidence captured for 'https://openlibrary.org/works/OL274574W/Crónica_de_una_muerte_anunciada?edition=key%3A/books/OL8886573M' at outputs/screenshots/https___openlibrary_org_works_OL274574W_Crónica_de.png
+2026-04-15 17:14:00,867 - WARNING - PERFORMANCE FAIL: Load Book: OL16829296M took 3264ms (Threshold: 2500ms)
+2026-04-15 17:14:00,867 - INFO - ADDING: 'https://openlibrary.org/works/OL1105384W/Memoirs_of_a_Revolutionist?edition=key%3A/books/OL16829296M' to list 'Want to Read'
+2026-04-15 17:14:05,709 - INFO - Successfully added book as: Want to Read
+2026-04-15 17:14:05,983 - INFO - Visual evidence captured for 'https://openlibrary.org/works/OL1105384W/Memoirs_of_a_Revolutionist?edition=key%3A/books/OL16829296M' at outputs/screenshots/https___openlibrary_org_works_OL1105384W_Memoirs_o.png
+2026-04-15 17:14:09,294 - WARNING - PERFORMANCE FAIL: Reading List Page Load took 2795ms (Threshold: 2000ms)
+2026-04-15 17:14:09,295 - INFO - Navigating to My Books to verify final counts...
+2026-04-15 17:14:11,992 - INFO - Sidebar WantToRead raw text captured: '5'
+2026-04-15 17:14:12,032 - INFO - Sidebar AlreadyRead raw text captured: '0'
+2026-04-15 17:14:12,032 - INFO - Final Assertion: Sidebar combined total is 5 (Expected: 5)
+2026-04-15 17:14:12,033 - INFO - ✅ SUCCESS: Reading list counts match the expected value!
+2026-04-15 17:14:12,033 - INFO - Cleaning up environment...
+2026-04-15 17:14:13,586 - INFO - Detected 10 books to remove from 'want-to-read'
+2026-04-15 17:14:19,251 - INFO - List 'already-read' is already clean/empty.
+2026-04-15 17:14:19,252 - INFO - Reports and performance data generated successfully.
+2026-04-15 17:14:28,016 - INFO - Navigating to login page...
+2026-04-15 17:14:31,769 - INFO - Security challenge detected. Attempting to verify...
+2026-04-15 17:14:33,655 - INFO - Challenge button clicked. Waiting for verification to complete...
+2026-04-15 17:14:35,915 - INFO - Credentials filled, submitting form...
+2026-04-15 17:14:42,489 - INFO - Verifying session readiness...
+2026-04-15 17:14:42,556 - INFO - Login sequence successfully verified.
+2026-04-15 17:14:48,752 - INFO - Scanning results on page 1...
+2026-04-15 17:14:49,178 - INFO - Match 1: https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M
+2026-04-15 17:14:49,179 - INFO - Attempting to navigate to page 2...
+2026-04-15 17:14:56,136 - INFO - Scanning results on page 2...
+2026-04-15 17:14:56,272 - INFO - Match 1: https://openlibrary.org/works/OL17761452W/Little_men?edition=key%3A/books/OL35075814M
+2026-04-15 17:14:56,305 - INFO - Match 2: https://openlibrary.org/works/OL1157252W/Les_Liaisons_dangereuses?edition=key%3A/books/OL20845786M
+2026-04-15 17:14:56,352 - INFO - Match 3: https://openlibrary.org/works/OL362706W/Sonnets?edition=key%3A/books/OL4982843M
+2026-04-15 17:14:56,392 - INFO - Match 4: https://openlibrary.org/works/OL1527356W/Le_avventure_di_Pinocchio?edition=key%3A/books/OL31615621M
+2026-04-15 17:15:00,171 - WARNING - PERFORMANCE FAIL: Load Book: OL26242482M took 3258ms (Threshold: 2500ms)
+2026-04-15 17:15:00,171 - INFO - ADDING: 'https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M' to list 'Want to Read'
+2026-04-15 17:15:01,142 - INFO - Successfully added book as: Want to Read
+2026-04-15 17:15:01,428 - INFO - Visual evidence captured for 'https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M' at outputs/screenshots/https___openlibrary_org_works_OL893415W_Dune_editi.png
+2026-04-15 17:15:04,663 - WARNING - PERFORMANCE FAIL: Load Book: OL35075814M took 2716ms (Threshold: 2500ms)
+2026-04-15 17:15:04,663 - INFO - ADDING: 'https://openlibrary.org/works/OL17761452W/Little_men?edition=key%3A/books/OL35075814M' to list 'Want to Read'
+2026-04-15 17:15:06,832 - INFO - Successfully added book as: Want to Read
+2026-04-15 17:15:07,129 - INFO - Visual evidence captured for 'https://openlibrary.org/works/OL17761452W/Little_men?edition=key%3A/books/OL35075814M' at outputs/screenshots/https___openlibrary_org_works_OL17761452W_Little_m.png
+2026-04-15 17:15:09,880 - INFO - ADDING: 'https://openlibrary.org/works/OL1157252W/Les_Liaisons_dangereuses?edition=key%3A/books/OL20845786M' to list 'Want to Read'
+2026-04-15 17:15:12,475 - INFO - Successfully added book as: Want to Read
+2026-04-15 17:15:12,774 - INFO - Visual evidence captured for 'https://openlibrary.org/works/OL1157252W/Les_Liaisons_dangereuses?edition=key%3A/books/OL20845786M' at outputs/screenshots/https___openlibrary_org_works_OL1157252W_Les_Liais.png
+2026-04-15 17:15:16,033 - WARNING - PERFORMANCE FAIL: Load Book: OL4982843M took 2735ms (Threshold: 2500ms)
+2026-04-15 17:15:16,034 - INFO - ADDING: 'https://openlibrary.org/works/OL362706W/Sonnets?edition=key%3A/books/OL4982843M' to list 'Already Read'
+2026-04-15 17:15:17,902 - INFO - Successfully added book as: Already Read
+2026-04-15 17:15:18,142 - INFO - Visual evidence captured for 'https://openlibrary.org/works/OL362706W/Sonnets?edition=key%3A/books/OL4982843M' at outputs/screenshots/https___openlibrary_org_works_OL362706W_Sonnets_ed.png
+2026-04-15 17:15:21,940 - WARNING - PERFORMANCE FAIL: Load Book: OL31615621M took 3275ms (Threshold: 2500ms)
+2026-04-15 17:15:21,940 - INFO - ADDING: 'https://openlibrary.org/works/OL1527356W/Le_avventure_di_Pinocchio?edition=key%3A/books/OL31615621M' to list 'Already Read'
+2026-04-15 17:15:23,123 - INFO - Successfully added book as: Already Read
+2026-04-15 17:15:23,356 - INFO - Visual evidence captured for 'https://openlibrary.org/works/OL1527356W/Le_avventure_di_Pinocchio?edition=key%3A/books/OL31615621M' at outputs/screenshots/https___openlibrary_org_works_OL1527356W_Le_avvent.png
+2026-04-15 17:15:25,842 - INFO - Navigating to My Books to verify final counts...
+2026-04-15 17:15:28,865 - INFO - Sidebar WantToRead raw text captured: '3'
+2026-04-15 17:15:28,893 - INFO - Sidebar AlreadyRead raw text captured: '2'
+2026-04-15 17:15:28,894 - INFO - Final Assertion: Sidebar combined total is 5 (Expected: 5)
+2026-04-15 17:15:28,894 - INFO - ✅ SUCCESS: Reading list counts match the expected value!
+2026-04-15 17:15:28,894 - INFO - Cleaning up environment...
+2026-04-15 17:15:31,386 - INFO - Detected 6 books to remove from 'want-to-read'
+2026-04-15 17:15:37,949 - INFO - Detected 4 books to remove from 'already-read'
+2026-04-15 17:15:39,785 - INFO - Reports and performance data generated successfully.
+2026-04-15 18:11:12,523 - INFO - Navigating to login page...
+2026-04-15 18:11:25,999 - INFO - Security challenge detected. Attempting to verify...
+2026-04-15 18:11:27,680 - INFO - Challenge button clicked. Waiting for verification to complete...
+2026-04-15 18:11:32,416 - INFO - Credentials filled, submitting form...
+2026-04-15 18:11:36,414 - INFO - Verifying session readiness...
+2026-04-15 18:11:36,556 - INFO - Login sequence successfully verified.
+2026-04-15 18:11:43,397 - INFO - Scanning results on page 1...
+2026-04-15 18:11:43,546 - INFO - Match 1: https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M
+2026-04-15 18:11:43,579 - INFO - Match 2: https://openlibrary.org/works/OL893526W/Dune_Messiah?edition=key%3A/books/OL7525229M
+2026-04-15 18:11:43,630 - INFO - Match 3: https://openlibrary.org/works/OL472165W/Peril_at_End_House?edition=key%3A/books/OL35638871M
+2026-04-15 18:11:43,849 - INFO - Match 4: https://openlibrary.org/works/OL274574W/Crónica_de_una_muerte_anunciada?edition=key%3A/books/OL8886573M
+2026-04-15 18:11:43,978 - INFO - Match 5: https://openlibrary.org/works/OL1105384W/Memoirs_of_a_Revolutionist?edition=key%3A/books/OL16829296M
+2026-04-15 18:11:50,619 - WARNING - PERFORMANCE FAIL: Load Book: OL26242482M took 6118ms (Threshold: 2500ms)
+2026-04-15 18:11:50,619 - INFO - ADDING: 'https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M' to list 'Want to Read'
+2026-04-15 18:11:50,756 - INFO - Successfully added book as: Want to Read
+2026-04-15 18:11:52,661 - INFO - Visual evidence captured for 'https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M' at outputs/screenshots/https___openlibrary_org_works_OL893415W_Dune_editi.png
+2026-04-15 18:11:52,797 - INFO - Visual evidence attached to Allure for 'https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M'
+2026-04-15 18:11:57,125 - WARNING - PERFORMANCE FAIL: Load Book: OL7525229M took 3807ms (Threshold: 2500ms)
+2026-04-15 18:11:57,125 - INFO - ADDING: 'https://openlibrary.org/works/OL893526W/Dune_Messiah?edition=key%3A/books/OL7525229M' to list 'Already Read'
+2026-04-15 18:11:59,298 - INFO - Successfully added book as: Already Read
+2026-04-15 18:11:59,555 - INFO - Visual evidence captured for 'https://openlibrary.org/works/OL893526W/Dune_Messiah?edition=key%3A/books/OL7525229M' at outputs/screenshots/https___openlibrary_org_works_OL893526W_Dune_Messi.png
+2026-04-15 18:11:59,556 - INFO - Visual evidence attached to Allure for 'https://openlibrary.org/works/OL893526W/Dune_Messiah?edition=key%3A/books/OL7525229M'
+2026-04-15 18:12:05,281 - WARNING - PERFORMANCE FAIL: Load Book: OL35638871M took 5199ms (Threshold: 2500ms)
+2026-04-15 18:12:05,281 - INFO - ADDING: 'https://openlibrary.org/works/OL472165W/Peril_at_End_House?edition=key%3A/books/OL35638871M' to list 'Want to Read'
+2026-04-15 18:12:05,402 - INFO - Successfully added book as: Want to Read
+2026-04-15 18:12:05,682 - INFO - Visual evidence captured for 'https://openlibrary.org/works/OL472165W/Peril_at_End_House?edition=key%3A/books/OL35638871M' at outputs/screenshots/https___openlibrary_org_works_OL472165W_Peril_at_E.png
+2026-04-15 18:12:05,683 - INFO - Visual evidence attached to Allure for 'https://openlibrary.org/works/OL472165W/Peril_at_End_House?edition=key%3A/books/OL35638871M'
+2026-04-15 18:12:10,411 - WARNING - PERFORMANCE FAIL: Load Book: OL8886573M took 4202ms (Threshold: 2500ms)
+2026-04-15 18:12:10,411 - INFO - ADDING: 'https://openlibrary.org/works/OL274574W/Crónica_de_una_muerte_anunciada?edition=key%3A/books/OL8886573M' to list 'Want to Read'
+2026-04-15 18:12:11,482 - INFO - Successfully added book as: Want to Read
+2026-04-15 18:12:11,752 - INFO - Visual evidence captured for 'https://openlibrary.org/works/OL274574W/Crónica_de_una_muerte_anunciada?edition=key%3A/books/OL8886573M' at outputs/screenshots/https___openlibrary_org_works_OL274574W_Crónica_de.png
+2026-04-15 18:12:11,752 - INFO - Visual evidence attached to Allure for 'https://openlibrary.org/works/OL274574W/Crónica_de_una_muerte_anunciada?edition=key%3A/books/OL8886573M'
+2026-04-15 18:12:14,735 - INFO - ADDING: 'https://openlibrary.org/works/OL1105384W/Memoirs_of_a_Revolutionist?edition=key%3A/books/OL16829296M' to list 'Already Read'
+2026-04-15 18:12:19,562 - INFO - Successfully added book as: Already Read
+2026-04-15 18:12:20,066 - INFO - Visual evidence captured for 'https://openlibrary.org/works/OL1105384W/Memoirs_of_a_Revolutionist?edition=key%3A/books/OL16829296M' at outputs/screenshots/https___openlibrary_org_works_OL1105384W_Memoirs_o.png
+2026-04-15 18:12:20,067 - INFO - Visual evidence attached to Allure for 'https://openlibrary.org/works/OL1105384W/Memoirs_of_a_Revolutionist?edition=key%3A/books/OL16829296M'
+2026-04-15 18:12:22,678 - WARNING - PERFORMANCE FAIL: Reading List Page Load took 2092ms (Threshold: 2000ms)
+2026-04-15 18:12:22,678 - INFO - Navigating to My Books to verify final counts...
+2026-04-15 18:12:25,048 - INFO - Sidebar WantToRead raw text captured: '3'
+2026-04-15 18:12:25,064 - INFO - Sidebar AlreadyRead raw text captured: '2'
+2026-04-15 18:12:25,064 - INFO - Final Assertion: Sidebar combined total is 5 (Expected: 5)
+2026-04-15 18:12:25,065 - INFO - ✅ SUCCESS: Reading list counts match the expected value!
+2026-04-15 18:12:25,065 - INFO - Cleaning up environment...
+2026-04-15 18:12:26,512 - INFO - Detected 6 books to remove from 'want-to-read'
+2026-04-15 18:12:32,340 - INFO - Detected 4 books to remove from 'already-read'
+2026-04-15 18:12:34,127 - INFO - Reports and performance data generated successfully.

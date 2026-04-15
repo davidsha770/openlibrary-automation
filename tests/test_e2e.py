@@ -11,108 +11,115 @@ from pages.book_page import BookPage
 from pages.reading_list_page import ReadingListPage
 from pages.login_page import LoginPage
 
-# Load environment variables and initialize logger
+# Load environment variables and initialize global logger
 load_dotenv()
 logger = setup_logger()
 
-@pytest.mark.asyncio
-async def test_open_library_e2e(page):
+class TestOpenLibrary:
     """
-    Main E2E Test Case for OpenLibrary.
-    Demonstrates POM, OOP, and Data-Driven architecture.
+    E2E Test Suite for OpenLibrary.
+    Organized as a class to allow helper methods to share state via 'self'
+    while maintaining clean signatures according to the Spec.
     """
-    # 1. Load configuration (Data-Driven approach)
-    config_path = os.path.join("config", "config.json")
-    with open(config_path, "r") as f:
-        config = json.load(f)
-    
-    data = config["test_data"]
-    urls = config["urls"]
-    thresholds = config["performance_thresholds"]
 
-    # 2. Initialize Page Objects
-    login_page = LoginPage(page, logger)
-    search_page = SearchPage(page, logger)
-    book_page = BookPage(page, logger)
-    reading_list_page = ReadingListPage(page, logger)
+    async def _setup_config(self):
+        """Helper to load configuration files."""
+        config_path = os.path.join("config", "config.json")
+        with open(config_path, "r") as f:
+            config = json.load(f)
+        self.data = config["test_data"]
+        self.urls = config["urls"]
+        self.thresholds = config["performance_thresholds"]
 
-    # --- Defining required functions based on the test signature ---
+    # --- Spec Compliant Helper Methods ---
 
-    async def search_books_by_title_under_year(query: str, max_year: int, limit: int = 5) -> list[str]:
-        """Search for books and filter by publication year."""
-        # Measure performance for the Home/Search page load
-        await search_page.measure_page_performance(urls["base_url"], thresholds["search_page"], "Search Page Load")
-        await search_page.execute_search(query)
-        
-        # Filtering logic and Pagination are encapsulated within the Page Object
-        return await search_page.get_filtered_books(urls["base_url"], max_year, limit)
+    async def search_books_by_title_under_year(self, query: str, max_year: int, limit: int = 5) -> list[str]:
+        """Matches Spec: Only takes query, max_year, and limit."""
+        await self.search_page.measure_page_performance(
+            self.urls["base_url"], 
+            self.thresholds["search_page"], 
+            "Search Page Load"
+        )
+        await self.search_page.execute_search(query)
+        return await self.search_page.get_filtered_books(self.urls["base_url"], max_year, limit)
 
-    async def add_books_to_reading_list(book_urls: list[str]) -> None:
-        """Add books to random reading lists (Want to Read / Already Read)."""
+    async def add_books_to_reading_list(self, book_urls: list[str]) -> None:
+        """Matches Spec: Only takes book_urls list."""
         for url in book_urls:
-            # Navigate to each URL and measure performance
             label = url.split('/')[-1]
-            await book_page.measure_page_performance(url, thresholds["book_page"], f"Load Book: {label}")
+            await self.book_page.measure_page_performance(
+                url, 
+                self.thresholds["book_page"], 
+                f"Load Book: {label}"
+            )
             
-            # Randomize the target list
             target_status = random.choice(["Want to Read", "Already Read"])
             logger.info(f"ADDING: '{url}' to list '{target_status}'")
             
-            success = await book_page.add_to_list_specific(target_status)
+            success = await self.book_page.add_to_list_specific(target_status)
             if success != "Failed":
-                # Capture screenshot and log for each added book
-                await book_page.capture_book_addition(url)
+                await self.book_page.capture_book_addition(url)
 
-    async def assert_reading_list_count(expected_count: int) -> None:
-        """Verify the total count of books in the reading list including page load performance."""
-        # 1. Navigate to the reading list page and measure its load time
+    async def assert_reading_list_count(self, expected_count: int) -> None:
+        """Matches Spec: Only takes expected_count."""
         user_handle = os.getenv("OL_INER_USERNAME")
-        list_url = f"{urls['base_url']}/people/{user_handle}/books/want-to-read"
+        list_url = f"{self.urls['base_url']}/people/{user_handle}/books/want-to-read"
         
-        await reading_list_page.measure_page_performance(
+        await self.reading_list_page.measure_page_performance(
             list_url, 
-            thresholds.get("reading_list_page", 5000), 
+            self.thresholds["reading_list"], 
             "Reading List Page Load"
         )
+        await self.reading_list_page.assert_reading_list_count(expected_count)
 
-        # 2. Execute the logical verification (Assert)
-        await reading_list_page.assert_reading_list_count(expected_count)
+    # --- Main Test Case ---
 
-    # --- E2E Scenario Execution ---
-    try:
-        # A. Login (Prerequisite for list management)
-        await login_page.login(os.getenv("OL_USERNAME"), os.getenv("OL_PASSWORD"))
+    @pytest.mark.asyncio
+    async def test_open_library_e2e(self, page):
+        """
+        Main E2E Scenario execution.
+        """
+        # 1. Initialize data and Page Objects
+        await self._setup_config()
+        self.page = page
+        self.login_page = LoginPage(page, logger)
+        self.search_page = SearchPage(page, logger)
+        self.book_page = BookPage(page, logger)
+        self.reading_list_page = ReadingListPage(page, logger)
 
-        # B. Search and Filter
-        found_books = await search_books_by_title_under_year(
-            data["search_query"], 
-            data["max_year"], 
-            data.get("results_limit", 5)
-        )
-        
-        assert len(found_books) > 0, f"No books found under year {data['max_year']}!"
-
-        # C. Add to Lists
-        await add_books_to_reading_list(found_books)
-
-        # D. Final Verification
-        await assert_reading_list_count(len(found_books))
-
-    finally:
-        # E. Cleanup and Reporting
-        logger.info("Cleaning up environment...")
         try:
-            # Remove added books to maintain a clean state for the next run
-            await reading_list_page.clear_reading_lists(os.getenv("OL_INER_USERNAME"))
-        except Exception as e:
-            logger.warning(f"Cleanup failed: {e}")
+            # A. Login
+            await self.login_page.login(os.getenv("OL_USERNAME"), os.getenv("OL_PASSWORD"))
 
-        # Aggregate performance data and generate reports
-        final_perf_results = (
-            search_page.performance_data + 
-            book_page.performance_data + 
-            reading_list_page.performance_data
-        )
-        save_performance_report(final_perf_results)
-        generate_html_report(final_perf_results)
-        logger.info("Reports and performance data generated successfully.")
+            # B. Search & Filter (Using the clean spec methods)
+            found_books = await self.search_books_by_title_under_year(
+                self.data["search_query"], 
+                self.data["max_year"], 
+                self.data.get("results_limit", 5)
+            )
+            
+            assert len(found_books) > 0, f"No books found under year {self.data['max_year']}!"
+
+            # C. Add to Lists
+            await self.add_books_to_reading_list(found_books)
+
+            # D. Final Verification
+            await self.assert_reading_list_count(len(found_books))
+
+        finally:
+            # E. Cleanup and Reporting
+            logger.info("Cleaning up environment...")
+            try:
+                await self.reading_list_page.clear_reading_lists(os.getenv("OL_INER_USERNAME"))
+            except Exception as e:
+                logger.warning(f"Cleanup failed: {e}")
+
+            # Performance reporting
+            final_perf_results = (
+                self.search_page.performance_data + 
+                self.book_page.performance_data + 
+                self.reading_list_page.performance_data
+            )
+            save_performance_report(final_perf_results)
+            generate_html_report(final_perf_results)
+            logger.info("Reports and performance data generated successfully.")

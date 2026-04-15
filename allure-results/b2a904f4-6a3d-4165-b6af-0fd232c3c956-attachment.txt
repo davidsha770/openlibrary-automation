@@ -1,0 +1,42 @@
+[32mINFO    [0m automation_logger:login_page.py:25 Navigating to login page...
+[32mINFO    [0m automation_logger:login_page.py:32 Security challenge detected. Attempting to verify...
+[32mINFO    [0m automation_logger:login_page.py:40 Challenge button clicked. Waiting for verification to complete...
+[32mINFO    [0m automation_logger:login_page.py:48 Credentials filled, submitting form...
+[32mINFO    [0m automation_logger:login_page.py:54 Verifying session readiness...
+[32mINFO    [0m automation_logger:login_page.py:58 Login sequence successfully verified.
+[32mINFO    [0m automation_logger:search_page.py:42 Scanning results on page 1...
+[32mINFO    [0m automation_logger:search_page.py:89 Match 1: https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M
+[32mINFO    [0m automation_logger:search_page.py:97 Attempting to navigate to page 2...
+[32mINFO    [0m automation_logger:search_page.py:42 Scanning results on page 2...
+[32mINFO    [0m automation_logger:search_page.py:89 Match 1: https://openlibrary.org/works/OL17761452W/Little_men?edition=key%3A/books/OL35075814M
+[32mINFO    [0m automation_logger:search_page.py:89 Match 2: https://openlibrary.org/works/OL1157252W/Les_Liaisons_dangereuses?edition=key%3A/books/OL20845786M
+[32mINFO    [0m automation_logger:search_page.py:89 Match 3: https://openlibrary.org/works/OL362706W/Sonnets?edition=key%3A/books/OL4982843M
+[32mINFO    [0m automation_logger:search_page.py:89 Match 4: https://openlibrary.org/works/OL1527356W/Le_avventure_di_Pinocchio?edition=key%3A/books/OL31615621M
+[33mWARNING [0m automation_logger:performance.py:48 PERFORMANCE FAIL: Load Book: OL26242482M took 3258ms (Threshold: 2500ms)
+[32mINFO    [0m automation_logger:test_e2e.py:57 ADDING: 'https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M' to list 'Want to Read'
+[32mINFO    [0m automation_logger:book_page.py:53 Successfully added book as: Want to Read
+[32mINFO    [0m automation_logger:book_page.py:76 Visual evidence captured for 'https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M' at outputs/screenshots/https___openlibrary_org_works_OL893415W_Dune_editi.png
+[33mWARNING [0m automation_logger:performance.py:48 PERFORMANCE FAIL: Load Book: OL35075814M took 2716ms (Threshold: 2500ms)
+[32mINFO    [0m automation_logger:test_e2e.py:57 ADDING: 'https://openlibrary.org/works/OL17761452W/Little_men?edition=key%3A/books/OL35075814M' to list 'Want to Read'
+[32mINFO    [0m automation_logger:book_page.py:53 Successfully added book as: Want to Read
+[32mINFO    [0m automation_logger:book_page.py:76 Visual evidence captured for 'https://openlibrary.org/works/OL17761452W/Little_men?edition=key%3A/books/OL35075814M' at outputs/screenshots/https___openlibrary_org_works_OL17761452W_Little_m.png
+[32mINFO    [0m automation_logger:test_e2e.py:57 ADDING: 'https://openlibrary.org/works/OL1157252W/Les_Liaisons_dangereuses?edition=key%3A/books/OL20845786M' to list 'Want to Read'
+[32mINFO    [0m automation_logger:book_page.py:53 Successfully added book as: Want to Read
+[32mINFO    [0m automation_logger:book_page.py:76 Visual evidence captured for 'https://openlibrary.org/works/OL1157252W/Les_Liaisons_dangereuses?edition=key%3A/books/OL20845786M' at outputs/screenshots/https___openlibrary_org_works_OL1157252W_Les_Liais.png
+[33mWARNING [0m automation_logger:performance.py:48 PERFORMANCE FAIL: Load Book: OL4982843M took 2735ms (Threshold: 2500ms)
+[32mINFO    [0m automation_logger:test_e2e.py:57 ADDING: 'https://openlibrary.org/works/OL362706W/Sonnets?edition=key%3A/books/OL4982843M' to list 'Already Read'
+[32mINFO    [0m automation_logger:book_page.py:53 Successfully added book as: Already Read
+[32mINFO    [0m automation_logger:book_page.py:76 Visual evidence captured for 'https://openlibrary.org/works/OL362706W/Sonnets?edition=key%3A/books/OL4982843M' at outputs/screenshots/https___openlibrary_org_works_OL362706W_Sonnets_ed.png
+[33mWARNING [0m automation_logger:performance.py:48 PERFORMANCE FAIL: Load Book: OL31615621M took 3275ms (Threshold: 2500ms)
+[32mINFO    [0m automation_logger:test_e2e.py:57 ADDING: 'https://openlibrary.org/works/OL1527356W/Le_avventure_di_Pinocchio?edition=key%3A/books/OL31615621M' to list 'Already Read'
+[32mINFO    [0m automation_logger:book_page.py:53 Successfully added book as: Already Read
+[32mINFO    [0m automation_logger:book_page.py:76 Visual evidence captured for 'https://openlibrary.org/works/OL1527356W/Le_avventure_di_Pinocchio?edition=key%3A/books/OL31615621M' at outputs/screenshots/https___openlibrary_org_works_OL1527356W_Le_avvent.png
+[32mINFO    [0m automation_logger:reading_list_page.py:41 Navigating to My Books to verify final counts...
+[32mINFO    [0m automation_logger:reading_list_page.py:26 Sidebar WantToRead raw text captured: '3'
+[32mINFO    [0m automation_logger:reading_list_page.py:26 Sidebar AlreadyRead raw text captured: '2'
+[32mINFO    [0m automation_logger:reading_list_page.py:49 Final Assertion: Sidebar combined total is 5 (Expected: 5)
+[32mINFO    [0m automation_logger:reading_list_page.py:56 ✅ SUCCESS: Reading list counts match the expected value!
+[32mINFO    [0m automation_logger:test_e2e.py:111 Cleaning up environment...
+[32mINFO    [0m automation_logger:reading_list_page.py:82 Detected 6 books to remove from 'want-to-read'
+[32mINFO    [0m automation_logger:reading_list_page.py:82 Detected 4 books to remove from 'already-read'
+[32mINFO    [0m automation_logger:test_e2e.py:125 Reports and performance data generated successfully.

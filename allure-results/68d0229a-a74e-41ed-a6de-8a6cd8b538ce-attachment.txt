@@ -1,0 +1,9 @@
+[32mINFO    [0m automation_logger:login_page.py:23 Navigating to login page...
+[31m[1mERROR   [0m automation_logger:login_page.py:54 Critical failure during login sequence: Page.wait_for_selector: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("input[name='username']") to be visible
+
+[32mINFO    [0m automation_logger:test_e2e.py:103 Cleaning up environment...
+[32mINFO    [0m automation_logger:reading_list_page.py:79 List 'want-to-read' is already clean/empty.
+[32mINFO    [0m automation_logger:reading_list_page.py:79 List 'already-read' is already clean/empty.
+[32mINFO    [0m automation_logger:test_e2e.py:118 Reports and performance data generated successfully.

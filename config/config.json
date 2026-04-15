@@ -5,8 +5,7 @@
     "results_limit": 5
   },
   "urls": {
-    "base_url": "https://openlibrary.org",
-    "reading_list_url": "https://openlibrary.org/people/user532228/books/want-to-read"
+    "base_url": "https://openlibrary.org"
   },
   "performance_thresholds": {
     "search_page": 3000,
