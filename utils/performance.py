@@ -1,48 +1,68 @@
 import time
+import os
+import json
 from playwright.async_api import Page
 
-class PerformanceMonitor:
+async def capture_modern_metrics(page: Page) -> dict:
     """
-    Utility class for capturing detailed web performance metrics using 
-    Performance Navigation Timing (Level 2).
+    Extracts high-accuracy performance metrics from the browser.
+    Includes a short delay to ensure Paint events are registered by the browser.
     """
-    @staticmethod
-    async def capture_modern_metrics(page: Page) -> dict:
-        """
-        Executes JavaScript in the browser context to capture precise timing metrics.
-        Includes protections for cases where metrics are not yet fully updated by the browser.
-        """
-        metrics_js = """
-        () => {
-            const [nav] = performance.getEntriesByType("navigation");
-            const paint = performance.getEntriesByType('paint');
-            const firstPaint = paint.find(entry => entry.name === 'first-paint');
+    # Allow the browser a moment to register paint events
+    await page.wait_for_timeout(500) 
+    
+    metrics_js = """
+    () => {
+        const [nav] = performance.getEntriesByType("navigation");
+        const paint = performance.getEntriesByType('paint');
+        const fp = paint.find(entry => entry.name === 'first-paint');
+        
+        if (!nav) return null;
+        
+        return {
+            "load_time_ms": Math.round(nav.loadEventEnd),
+            "dom_content_loaded_ms": Math.round(nav.domContentLoadedEventEnd),
+            "first_paint_ms": fp ? Math.round(fp.startTime) : 0,
+            "status": nav.loadEventEnd > 0 ? "Complete" : "Incomplete"
+        };
+    }
+    """
+    return await page.evaluate(metrics_js)
+
+async def measure_performance(page: Page, url: str, threshold: int, label: str, logger) -> dict:
+    """
+    REQUIRED FUNCTION: Standalone performance measurement utility.
+    Complies with technical specifications and Single Responsibility Principle (SRP).
+    """
+    try:
+        # Navigate to URL if not already present
+        if page.url != url:
+            await page.goto(url, wait_until="load", timeout=30000)
+        
+        metrics = await capture_modern_metrics(page)
+        load_time = metrics.get('load_time_ms', 0)
+        
+        # Determine pass/fail status based on threshold
+        status = "Pass" if load_time <= threshold else "Fail"
+        if status == "Fail":
+            logger.warning(f"PERFORMANCE FAIL: {label} took {load_time}ms (Threshold: {threshold}ms)")
             
-            if (!nav) return null;
-
-            // If loadEventEnd is 0, the browser hasn't officially closed the event.
-            // We use performance.now() as a fallback approximation to avoid reporting 0ms.
-            const loadTime = nav.loadEventEnd > 0 
-                ? nav.loadEventEnd - nav.startTime 
-                : performance.now() - nav.startTime;
-
-            return {
-                "load_time_ms": Math.round(loadTime),
-                "dom_content_loaded_ms": Math.round(nav.domContentLoadedEventEnd - nav.startTime),
-                "first_paint_ms": firstPaint ? Math.round(firstPaint.startTime) : 0,
-                "response_time_ms": Math.round(nav.responseEnd - nav.responseStart),
-                "status": nav.loadEventEnd > 0 ? "Complete" : "Incomplete"
-            };
+        return {
+            "action": label,
+            "url": url,
+            "metrics": metrics,
+            "status": status,
+            "threshold_ms": threshold
         }
-        """
-        try:
-            # Execute the JS snippet with a short timeout to prevent blocking the test
-            metrics = await page.evaluate(metrics_js)
-            
-            if not metrics:
-                return {"error": "No navigation entries found"}
-                
-            return metrics
-        except Exception as e:
-            # Handle potential JS errors or page disconnections
-            return {"error": str(e), "load_time_ms": 0}
+    except Exception as e:
+        logger.error(f"Performance measurement error: {e}")
+        return {"action": label, "status": "Error", "error": str(e)}
+    
+def save_performance_report(performance_data: list, file_path: str = "outputs/performance_report.json"):
+    """
+    Exports the captured metrics list to a structured JSON file.
+    Automatically creates the output directory if it does not exist.
+    """
+    os.makedirs(os.path.dirname(file_path), exist_ok=True)
+    with open(file_path, "w", encoding="utf-8") as f:
+        json.dump(performance_data, f, indent=4)

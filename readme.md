@@ -10,8 +10,7 @@ A high-performance End-to-End (E2E) testing framework for [Open Library](https:/
 * **Shadow DOM Handling**: Utilizes advanced recursive JavaScript injection to interact with complex Web Components.
 * **Smart Library Sync**: Logic to detect current book status (Want to Read / Already Read) to avoid redundant actions.
 * **Headless Execution**: Configured to run in the background for efficiency.
-* **Advanced Reporting Engine**: Custom-built HTML reporting tool that aggregates performance data and visual evidence (screenshots) into a single, shareable file.
-
+* **Comprehensive Reporting**: Generates both a custom-built performance HTML report and professional Allure reports for detailed test execution analytics.
 * **Full POM Decoupling**: 100% separation between test logic and UI selectors, ensuring zero selectors in the test scripts.
 
 * **Post-Action Verification:** Explicit logic to verify login success and confirm list updates before proceeding, ensuring high test reliability
@@ -39,7 +38,11 @@ A high-performance End-to-End (E2E) testing framework for [Open Library](https:/
 │   ├── screenshots/          # Action confirmation captures
 │   └── performance_report.json # Final performance benchmark report
 ├── requirements.txt          # Project dependencies
-├── .env                      # NEW: Secure environment variables (ignored by git)
+├── conftest.py               # Shared fixtures and Playwright setup
+├── pytest.ini                # Pytest configuration (Async mode, etc.)
+├── ReadMeAIBugs.md           # Static analysis report
+├── .env                      # Secure environment variables (ignored by git)
+├── .env.example
 └── README.md                 # This file
 
 ```
@@ -79,8 +82,11 @@ OL_INER_USERNAME=your username
 
 
 ```Bash
-# Execute the full E2E flow
-python3 -m tests.test_e2e
+# Execute the full E2E flow with Pytest
+pytest -v -s --alluredir=allure-results
+
+# To view the Allure report after execution:
+allure serve allure-results
 ```
 
 This will:
@@ -113,10 +119,14 @@ The framework produces a high-quality audit trail for every execution:
 * **Screenshots**: Automatically saved to `outputs/screenshots/` upon successful actions or verification steps.
 * **Logs**: Comprehensive execution logs are streamed to the console for real-time monitoring.
 
+* **Test Runner**: Powered by Pytest with pytest-playwright integration for robust fixture management and test orchestration.
+
+* **Dynamic Configuration**: Environment-aware execution using python-dotenv for sensitive credentials and config.json for test parameters
+
 ```markdown
 🧩 Challenges & Solutions
 
-    Asynchronous Flow Management: Leveraged Python's native asyncio and Playwright's async API to manage execution flow, avoiding the overhead of external testing frameworks while maintaining full control over the browser lifecycle
+    Advanced Test Orchestration: Integrated Playwright's asynchronous API with the Pytest framework. This allows for high-speed execution while leveraging professional testing features like fixtures, assertions, and standardized reporting.
 
     Web Component Hydration: Open Library uses specialized Web Components that may take time to hydrate. The framework includes a "Smart Wait" mechanism that attempts to scrape the DOM as a fallback if hydration times out.
 
@@ -130,5 +140,10 @@ This project is for educational and testing purposes.
 
 ## 📋 Requirements
 * Python 3.9+
+* Pytest 8.0+
 * Playwright 1.40+
+* Allure-Pytest
 * Open Library Account (for Login/List functionality)
+
+## 🔍 Source Code Analysis
+A detailed static analysis of the original boilerplate code, including identified bugs (Critical/Major) and structural improvements, can be found in [ReadMeAIBugs.md](./ReadMeAIBugs.md).

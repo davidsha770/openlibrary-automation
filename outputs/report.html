@@ -1,7 +1,7 @@
 
     <html>
     <head>
-        <title>E2E Test Report</title>
+        <title>E2E Execution Report</title>
         <style>
             body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 40px; background-color: #f8f9fa; color: #333; }
             .container { max-width: 1000px; margin: auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
@@ -12,145 +12,136 @@
             .pass { color: #27ae60; font-weight: bold; }
             .fail { color: #e74c3c; font-weight: bold; }
             .screenshot-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; margin-top: 30px; }
-            .screenshot-card { border: 1px solid #ddd; padding: 10px; border-radius: 5px; text-align: center; background: #fff; }
-            img { width: 100%; border-radius: 3px; border: 1px solid #eee; }
+            .screenshot-card { border: 1px solid #ddd; padding: 10px; border-radius: 5px; text-align: center; background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+            img { width: 100%; border-radius: 3px; border: 1px solid #eee; transition: transform 0.2s; }
+            img:hover { transform: scale(1.05); } /* Subtle hover effect for better UX */
         </style>
     </head>
     <body>
         <div class="container">
-            <h1>E2E Execution Report</h1>
-            <p><strong>Run Date:</strong> 2026-04-14 21:29:53</p>
+            <h1>E2E Test Execution Summary</h1>
+            <p><strong>Run Date:</strong> 2026-04-15 15:42:24</p>
             
             <table>
                 <thead>
                     <tr>
-                        <th>Page/Action</th>
-                        <th>Duration (ms)</th>
-                        <th>Limit (ms)</th>
+                        <th>Page/Action Scope</th>
+                        <th>Performance Metrics</th>
+                        <th>Threshold</th>
                         <th>Status</th>
                     </tr>
                 </thead>
                 <tbody>
     
             <tr>
-                <td><strong>Homepage Load</strong><br><small>https://openlibrary.org</small></td>
+                <td><strong>Search Page Load</strong><br><small>https://openlibrary.org</small></td>
                 <td>
-                    Load: 3645ms<br>
-                    <small>DOM: 1772ms | Paint: 3112ms</small>
+                    <strong>Load: 2131ms</strong><br>
+                    <small>DOM: 1433ms | First Paint: 1348ms</small>
                 </td>
                 <td>3000ms</td>
-                <td class="fail">WARN (Slow)</td>
+                <td class="pass">PASSED</td>
             </tr>
         
             <tr>
                 <td><strong>Load Book: OL26242482M</strong><br><small>https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M</small></td>
                 <td>
-                    Load: 6085ms<br>
-                    <small>DOM: 3188ms | Paint: 0ms</small>
+                    <strong>Load: 4666ms</strong><br>
+                    <small>DOM: 3358ms | First Paint: 3504ms</small>
                 </td>
                 <td>2500ms</td>
-                <td class="fail">WARN (Slow)</td>
+                <td class="fail">FAIL (SLA Breach)</td>
             </tr>
         
             <tr>
-                <td><strong>Load Book: OL35075814M</strong><br><small>https://openlibrary.org/works/OL17761452W/Little_men?edition=key%3A/books/OL35075814M</small></td>
+                <td><strong>Load Book: OL7525229M</strong><br><small>https://openlibrary.org/works/OL893526W/Dune_Messiah?edition=key%3A/books/OL7525229M</small></td>
                 <td>
-                    Load: 3289ms<br>
-                    <small>DOM: 3048ms | Paint: 0ms</small>
-                </td>
-                <td>2500ms</td>
-                <td class="fail">WARN (Slow)</td>
-            </tr>
-        
-            <tr>
-                <td><strong>Load Book: OL20845786M</strong><br><small>https://openlibrary.org/works/OL1157252W/Les_Liaisons_dangereuses?edition=key%3A/books/OL20845786M</small></td>
-                <td>
-                    Load: 2456ms<br>
-                    <small>DOM: 2277ms | Paint: 0ms</small>
+                    <strong>Load: 2306ms</strong><br>
+                    <small>DOM: 1739ms | First Paint: 1824ms</small>
                 </td>
                 <td>2500ms</td>
                 <td class="pass">PASSED</td>
             </tr>
         
             <tr>
-                <td><strong>Load Book: OL4982843M</strong><br><small>https://openlibrary.org/works/OL362706W/Sonnets?edition=key%3A/books/OL4982843M</small></td>
+                <td><strong>Load Book: OL35638871M</strong><br><small>https://openlibrary.org/works/OL472165W/Peril_at_End_House?edition=key%3A/books/OL35638871M</small></td>
                 <td>
-                    Load: 2837ms<br>
-                    <small>DOM: 2652ms | Paint: 0ms</small>
+                    <strong>Load: 3452ms</strong><br>
+                    <small>DOM: 2153ms | First Paint: 2096ms</small>
                 </td>
                 <td>2500ms</td>
-                <td class="fail">WARN (Slow)</td>
+                <td class="fail">FAIL (SLA Breach)</td>
             </tr>
         
             <tr>
-                <td><strong>Load Book: OL31615621M</strong><br><small>https://openlibrary.org/works/OL1527356W/Le_avventure_di_Pinocchio?edition=key%3A/books/OL31615621M</small></td>
+                <td><strong>Load Book: OL8886573M</strong><br><small>https://openlibrary.org/works/OL274574W/Crónica_de_una_muerte_anunciada?edition=key%3A/books/OL8886573M</small></td>
                 <td>
-                    Load: 9411ms<br>
-                    <small>DOM: 2067ms | Paint: 0ms</small>
+                    <strong>Load: 3821ms</strong><br>
+                    <small>DOM: 2481ms | First Paint: 2508ms</small>
                 </td>
                 <td>2500ms</td>
-                <td class="fail">WARN (Slow)</td>
+                <td class="fail">FAIL (SLA Breach)</td>
             </tr>
         
             <tr>
-                <td><strong>Verify List: want-to-read</strong><br><small>https://openlibrary.org/people/user532228/books/want-to-read</small></td>
+                <td><strong>Load Book: OL16829296M</strong><br><small>https://openlibrary.org/works/OL1105384W/Memoirs_of_a_Revolutionist?edition=key%3A/books/OL16829296M</small></td>
                 <td>
-                    Load: 3478ms<br>
-                    <small>DOM: 2404ms | Paint: 0ms</small>
+                    <strong>Load: 2916ms</strong><br>
+                    <small>DOM: 2762ms | First Paint: 2716ms</small>
                 </td>
-                <td>2000ms</td>
-                <td class="fail">WARN (Slow)</td>
+                <td>2500ms</td>
+                <td class="fail">FAIL (SLA Breach)</td>
             </tr>
         
             <tr>
-                <td><strong>Verify List: already-read</strong><br><small>https://openlibrary.org/people/user532228/books/already-read</small></td>
+                <td><strong>Reading List Page Load</strong><br><small>https://openlibrary.org/people/user532228/books/want-to-read</small></td>
                 <td>
-                    Load: 3312ms<br>
-                    <small>DOM: 1691ms | Paint: 0ms</small>
+                    <strong>Load: 2170ms</strong><br>
+                    <small>DOM: 1947ms | First Paint: 1956ms</small>
                 </td>
-                <td>2000ms</td>
-                <td class="fail">WARN (Slow)</td>
+                <td>5000ms</td>
+                <td class="pass">PASSED</td>
             </tr>
         
                 </tbody>
             </table>
             
-            <h2>Visual Evidence</h2>
+            <h2>Visual Evidence (Screenshots)</h2>
             <div class="screenshot-grid">
     
                 <div class="screenshot-card">
-                    <a href="screenshots/https___openlibrary_org_works_OL1157252W_Les_Liais.png" target="_blank">
-                        <img src="screenshots/https___openlibrary_org_works_OL1157252W_Les_Liais.png">
+                    <a href="screenshots/https___openlibrary_org_works_OL1105384W_Memoirs_o.png" target="_blank">
+                        <img src="screenshots/https___openlibrary_org_works_OL1105384W_Memoirs_o.png" alt="https___openlibrary_org_works_OL1105384W_Memoirs_o.png">
                     </a>
-                    <p style="font-size: 12px; margin-top: 5px;">https___openlibrary_org_works_OL1157252W_Les_Liais.png</p>
+                    <p style="font-size: 11px; margin-top: 8px; color: #666;">https___openlibrary_org_works_OL1105384W_Memoirs_o.png</p>
                 </div>
                 
                 <div class="screenshot-card">
-                    <a href="screenshots/https___openlibrary_org_works_OL1527356W_Le_avvent.png" target="_blank">
-                        <img src="screenshots/https___openlibrary_org_works_OL1527356W_Le_avvent.png">
+                    <a href="screenshots/https___openlibrary_org_works_OL274574W_Crónica_de.png" target="_blank">
+                        <img src="screenshots/https___openlibrary_org_works_OL274574W_Crónica_de.png" alt="https___openlibrary_org_works_OL274574W_Crónica_de.png">
                     </a>
-                    <p style="font-size: 12px; margin-top: 5px;">https___openlibrary_org_works_OL1527356W_Le_avvent.png</p>
+                    <p style="font-size: 11px; margin-top: 8px; color: #666;">https___openlibrary_org_works_OL274574W_Crónica_de.png</p>
                 </div>
                 
                 <div class="screenshot-card">
-                    <a href="screenshots/https___openlibrary_org_works_OL17761452W_Little_m.png" target="_blank">
-                        <img src="screenshots/https___openlibrary_org_works_OL17761452W_Little_m.png">
+                    <a href="screenshots/https___openlibrary_org_works_OL472165W_Peril_at_E.png" target="_blank">
+                        <img src="screenshots/https___openlibrary_org_works_OL472165W_Peril_at_E.png" alt="https___openlibrary_org_works_OL472165W_Peril_at_E.png">
                     </a>
-                    <p style="font-size: 12px; margin-top: 5px;">https___openlibrary_org_works_OL17761452W_Little_m.png</p>
-                </div>
-                
-                <div class="screenshot-card">
-                    <a href="screenshots/https___openlibrary_org_works_OL362706W_Sonnets_ed.png" target="_blank">
-                        <img src="screenshots/https___openlibrary_org_works_OL362706W_Sonnets_ed.png">
-                    </a>
-                    <p style="font-size: 12px; margin-top: 5px;">https___openlibrary_org_works_OL362706W_Sonnets_ed.png</p>
+                    <p style="font-size: 11px; margin-top: 8px; color: #666;">https___openlibrary_org_works_OL472165W_Peril_at_E.png</p>
                 </div>
                 
                 <div class="screenshot-card">
                     <a href="screenshots/https___openlibrary_org_works_OL893415W_Dune_editi.png" target="_blank">
-                        <img src="screenshots/https___openlibrary_org_works_OL893415W_Dune_editi.png">
+                        <img src="screenshots/https___openlibrary_org_works_OL893415W_Dune_editi.png" alt="https___openlibrary_org_works_OL893415W_Dune_editi.png">
                     </a>
-                    <p style="font-size: 12px; margin-top: 5px;">https___openlibrary_org_works_OL893415W_Dune_editi.png</p>
+                    <p style="font-size: 11px; margin-top: 8px; color: #666;">https___openlibrary_org_works_OL893415W_Dune_editi.png</p>
+                </div>
+                
+                <div class="screenshot-card">
+                    <a href="screenshots/https___openlibrary_org_works_OL893526W_Dune_Messi.png" target="_blank">
+                        <img src="screenshots/https___openlibrary_org_works_OL893526W_Dune_Messi.png" alt="https___openlibrary_org_works_OL893526W_Dune_Messi.png">
+                    </a>
+                    <p style="font-size: 11px; margin-top: 8px; color: #666;">https___openlibrary_org_works_OL893526W_Dune_Messi.png</p>
                 </div>
                 
             </div>
