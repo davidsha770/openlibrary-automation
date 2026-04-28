@@ -7,13 +7,14 @@ A high-performance End-to-End (E2E) testing framework for [Open Library](https:/
 * **Asynchronous Architecture**: Built with `asyncio` for fast, non-blocking execution.
 * **Page Object Model (POM)**: Organized into reusable and maintainable page classes.
 * **Performance Tracking**: Captures real-time metrics (Load Time, DOM Content Loaded, First Paint) using the Browser Navigation Timing API.
-* **Shadow DOM Handling**: Utilizes advanced recursive JavaScript injection to interact with complex Web Components.
-* **Smart Library Sync**: Logic to detect current book status (Want to Read / Already Read) to avoid redundant actions.
+* **Dynamic Element Handling**: Employs Playwright’s native auto-waiting and semantic locators to reliably interact with complex, asynchronous UI components without the need for fragile scripts.
+* **State-Aware Cleanup Mechanism**: Includes a robust teardown suite that programmatically clears user reading lists, ensuring environmental consistency and idempotent test execution.
 * **Headless Execution**: Configured to run in the background for efficiency.
 * **Comprehensive Reporting**: Generates both a custom-built performance HTML report and professional Allure reports for detailed test execution analytics.
 * **Full POM Decoupling**: 100% separation between test logic and UI selectors, ensuring zero selectors in the test scripts.
 
 * **Post-Action Verification:** Explicit logic to verify login success and confirm list updates before proceeding, ensuring high test reliability
+* **Automated Authentication Resilience**: Features a dedicated security challenge handler that detects and manages bot-prevention overlays (e.g., Turnstile/Cloudflare) to ensure uninterrupted CI/CD flows.
 
 ## 📁 Project Structure
 
@@ -30,6 +31,7 @@ A high-performance End-to-End (E2E) testing framework for [Open Library](https:/
 ├── tests/
 │   └── test_e2e.py           # Test orchestrator (100% Logic, 0% Selectors)
 ├── utils/
+│   ├── utils/decorators.py   # Custom Python decorators for retry logic
 │   ├── logger_helper.py      # Custom logging configuration
 │   ├── performance.py        # Dedicated Performance Monitoring (SRP)
 │   └── report_generator.py   # Logic for HTML report generation
@@ -75,7 +77,7 @@ Create a `.env` file in the root directory:
 ```env
 OL_USERNAME=your mail
 OL_PASSWORD=your password
-OL_INER_USERNAME=your username
+OL_DISPLAY_NAME=your username
 ```
 
 ## 🚦 Running the Automation
@@ -87,6 +89,9 @@ pytest -v -s --alluredir=allure-results
 
 # To view the Allure report after execution:
 allure serve allure-results
+
+# Generate a static Allure report
+allure generate allure-results --clean -o allure-report
 ```
 
 This will:
@@ -123,16 +128,25 @@ The framework produces a high-quality audit trail for every execution:
 
 * **Dynamic Configuration**: Environment-aware execution using python-dotenv for sensitive credentials and config.json for test parameters
 
+## 🛡️ Stability & Resilience Patterns
+
+This framework implements a multi-layered approach to handle the inherent flakiness of web automation:
+
+* **Logic-Based Retries**: Critical actions (Login, Book Addition) are wrapped in a custom `@retry_on_failure` decorator to mitigate transient network issues or UI lags.
+* **State-Change Verification**: Instead of simple visibility checks, the suite validates UI state transitions (e.g., verifying the `.activated` CSS class) to ensure the backend has processed the request.
+* **Synchronized Polling**: The assertion logic for reading list counts employs a smart-polling strategy with periodic page reloads to ensure the DOM is synced with the server-side state.
+* **Normalized URL Navigation**: A custom navigation utility prevents redundant page reloads by normalizing URLs (handling trailing slashes and query parameters), optimizing both speed and performance metric accuracy.
+
 ```markdown
 🧩 Challenges & Solutions
 
-    Advanced Test Orchestration: Integrated Playwright's asynchronous API with the Pytest framework. This allows for high-speed execution while leveraging professional testing features like fixtures, assertions, and standardized reporting.
+    Advanced Async Orchestration: Integrated Playwright's asynchronous API with a class-based Pytest structure. This leverages professional fixtures for clean setup/teardown while maintaining high-speed, non-blocking execution.
 
-    Web Component Hydration: Open Library uses specialized Web Components that may take time to hydrate. The framework includes a "Smart Wait" mechanism that attempts to scrape the DOM as a fallback if hydration times out.
+    Authentication Resilience: Open Library implements Cloudflare/Turnstile challenges. The framework features a dedicated _handle_security_challenges utility that detects and interacts with verification overlays to ensure uninterrupted CI/CD flows.
 
-    Data Verification: Implemented a text normalization utility to handle curly quotes and special characters, ensuring robust assertions between search results and the reading list.
+    State-Aware Teardown & Idempotency: To ensure environmental consistency, the framework implements a robust cleanup mechanism that programmatically clears reading lists. Instead of fixed timers, it utilizes a Smart-Wait strategy—combining Playwright’s Web-First Assertions with periodic Page Refreshes. This handles "eventual consistency" issues where the UI might lag behind server-side updates, ensuring a pristine state for subsequent test cycles and preventing data pollution.
 
-    Modern Performance Benchmarking: Instead of deprecated `window.performance.timing`, the framework implements the **Performance Navigation Timing API (Level 2)** via a decoupled utility, ensuring high-accuracy metrics in modern browsers.
+    High-Accuracy Benchmarking: Instead of deprecated methods, the suite implements the Navigation Timing API (Level 2). It calculates durations by subtracting startTime from event timestamps, providing precise, modern metrics for performance auditing.
 ```
 
 ## 📝 License

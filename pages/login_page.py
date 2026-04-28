@@ -1,69 +1,86 @@
-from pages.base_page import BasePage
-import asyncio
+from playwright.async_api import expect
+import re
+import logging
+from playwright.async_api import Page
+from .base_page import BasePage
+from utils.decorators import retry_on_failure
 
 class LoginPage(BasePage):
     """
     Handles authentication flows for Open Library.
-    Includes automated handling for 'Verify you are human' challenges and robust session verification.
+    Optimized for bypassing security challenges and robust session verification.
     """
-    # Selectors
-    USERNAME_INPUT = "input[name='username']"
+    def __init__(self, page: Page, logger: logging.Logger, config: dict):
+        super().__init__(page, logger, config)
+
+    # Selectors - Using multiple options for email/username to handle UI variations
+    EMAIL_INPUT = "input[name='email'], input[name='username'], input[id='username']"
     PASSWORD_INPUT = "input[name='password']"
     SUBMIT_BUTTON = "button[name='login']"
     
-    # Challenge Handling
-    VERIFY_HUMAN_BTN = "#verify-human-btn"
+    # Expanded Challenge Selectors
+    CHALLENGE_SELECTORS = [
+        "button:has-text('Verify')", 
+        "button:has-text('human')", 
+        "#cf-turnstile-identity",
+        "div.ctp-checkbox-container"
+    ]
     
-    # Combined success indicators
-    SUCCESS_INDICATOR = ".manage-menu-button, #user-menu-button, a[href*='/people/']"
+    SUCCESS_INDICATOR = "a[href*='/people/'], .manage-menu-button, button:has-text('Log Out')"
 
-    async def login(self, username, password):
+    @retry_on_failure(times=2, delay=5)
+    async def login(self, email, password):
         """
-        Executes the full login sequence, including automated handling of security challenges.
+        Authenticates the user with built-in retry logic and detailed error reporting.
+        The decorator will re-run this entire method if an exception is raised.
         """
         try:
             self.logger.info("Navigating to login page...")
-            await self.page.goto("https://openlibrary.org/account/login", wait_until="networkidle")
-            
-            # --- Handling the 'Verify you are human' challenge ---
-            # We check if the verification button is present before proceeding to login
-            verify_btn = self.page.locator(self.VERIFY_HUMAN_BTN)
-            if await verify_btn.is_visible(timeout=5000):
-                self.logger.info("Security challenge detected. Attempting to verify...")
-                
-                # We use a deliberate wait and scroll to simulate human-like interaction
-                await verify_btn.scroll_into_view_if_needed()
-                await asyncio.sleep(1) 
-                await verify_btn.click()
-                
-                # Wait for the challenge to resolve and redirect/refresh
-                self.logger.info("Challenge button clicked. Waiting for verification to complete...")
-                await self.page.wait_for_load_state("networkidle")
+            login_url = f"{self.config['urls']['base_url'].rstrip('/')}/account/login"
+            await self.page.goto(login_url, wait_until="domcontentloaded")
 
-            # --- Standard Login Flow ---
-            await self.page.wait_for_selector(self.USERNAME_INPUT, state="visible", timeout=15000)
-            await self.page.fill(self.USERNAME_INPUT, username)
-            await self.page.fill(self.PASSWORD_INPUT, password)
-            
-            self.logger.info("Credentials filled, submitting form...")
-            
-            async with self.page.expect_navigation(wait_until="domcontentloaded", timeout=45000):
-                await self.page.click(self.SUBMIT_BUTTON)
-
-            # Session Verification
-            self.logger.info("Verifying session readiness...")
-            success_element = self.page.locator(self.SUCCESS_INDICATOR).first
-            await success_element.wait_for(state="visible", timeout=15000)
-            
+            await self._handle_security_challenges()
+                
+            email_field = self.page.locator(self.EMAIL_INPUT).first
+            self.logger.info("Waiting for login inputs to become ready...")
+                
+            try:
+                await expect(email_field).to_be_visible(timeout=30000)
+            except AssertionError:
+                self.logger.warning("Email input not found. Final attempt to clear challenge...")
+                await self._handle_security_challenges()
+                await expect(email_field).to_be_visible(timeout=15000)
+                
+            await email_field.fill(email)
+            await self.page.locator(self.PASSWORD_INPUT).fill(password)
+            await self.page.click(self.SUBMIT_BUTTON)
+                
+            # Verification logic
+            await expect(self.page).to_have_url(re.compile(r".*/(account|people|books).*"), timeout=20000)
+            await expect(self.page.locator(self.SUCCESS_INDICATOR).first).to_be_visible(timeout=15000)
             self.logger.info("Login sequence successfully verified.")
 
         except Exception as e:
-            # Fallback for failed verification or wrong credentials
-            error_locator = self.page.locator(".error, .alert-danger")
-            if await error_locator.is_visible():
-                msg = await error_locator.inner_text()
-                self.logger.error(f"Application-level error: {msg}")
-            
-            await self.page.screenshot(path="outputs/login_error.png")
-            self.logger.error(f"Critical failure during login sequence: {e}")
+            await self.report_error(e, "Login sequence failed", "login_failure")
             raise e
+
+    async def _handle_security_challenges(self):
+        """
+        Attempts to find and interact with human-verification elements.
+        """
+        for selector in self.CHALLENGE_SELECTORS:
+            # Check for selectors inside iframes as well
+            locators = self.page.locator(selector)
+            count = await locators.count()
+            
+            for i in range(count):
+                locator = locators.nth(i)
+                if await locator.is_visible():
+                    self.logger.info(f"Security challenge found: {selector}. Clicking...")
+                    try:
+                        # Use force=True to click elements that might be partially covered
+                        await locator.click(timeout=5000, force=True)
+                        # Wait for potential reload
+                        await self.page.wait_for_timeout(2000) 
+                    except Exception as e:
+                        self.logger.debug(f"Could not click challenge element: {e}")

@@ -3,8 +3,10 @@ import os
 
 def setup_logger(name="automation_logger"):
     """
-    Requirement: Logging & Evidence Collection.
-    Configures a centralized logger that outputs to both the console and a persistent log file.
+    Refactored Logger:
+    - Writes to a file for persistent evidence.
+    - Propagates logs to Pytest for consistent Live Logging.
+    - Avoids duplicate console output.
     """
     # Ensure the directory for log artifacts exists
     os.makedirs("outputs/logs", exist_ok=True)
@@ -17,11 +19,6 @@ def setup_logger(name="automation_logger"):
     if not logger.handlers:
         # Define a consistent format for timestamps and log levels
         formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
-
-        # Console Handler: Provides real-time feedback during local test execution
-        console_handler = logging.StreamHandler()
-        console_handler.setFormatter(formatter)
-        logger.addHandler(console_handler)
 
         # File Handler: Stores execution history for post-run analysis and CI/CD artifacts
         file_handler = logging.FileHandler("outputs/logs/test_run.log")

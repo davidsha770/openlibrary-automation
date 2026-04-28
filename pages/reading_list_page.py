@@ -1,4 +1,7 @@
 import re
+from playwright.async_api import expect, Page
+import logging
+import asyncio
 from .base_page import BasePage
 
 class ReadingListPage(BasePage):
@@ -6,21 +9,31 @@ class ReadingListPage(BasePage):
     Page Object for the Reading List pages.
     Handles sidebar count verification and automated cleanup of reading lists.
     """
+    def __init__(self, page: Page, logger: logging.Logger, config: dict):
+        super().__init__(page, logger, config)
     # Dynamic selector using a template for different list tracking IDs
     SIDEBAR_COUNT_SPAN = "a[data-ol-link-track='MyBooksSidebar|{list_id}'] span.li-count"
-    LIST_URL_TEMPLATE = "https://openlibrary.org/people/{user_name}/books/{list_type}"
+    LIST_PATH_TEMPLATE = "/people/{user_name}/books/{list_type}"
+    MY_BOOKS_PATH = "/account/books"
 
     async def get_sidebar_count(self, list_id: str) -> int:
         """
         Extracts the numeric count from the sidebar for a specific list.
-        list_id: 'WantToRead' or 'AlreadyRead' (based on site tracking data).
+        
+        Args:
+            list_id: 'WantToRead' or 'AlreadyRead' based on site tracking attributes.
+        Returns:
+            The integer count found in the sidebar, or 0 if retrieval fails.
         """
         try:
             selector = self.SIDEBAR_COUNT_SPAN.format(list_id=list_id)
             element = self.page.locator(selector)
+
+            if await element.count() == 0:
+                return 0
             
-            # Explicit wait for the sidebar component to hydrate and become visible
-            await element.wait_for(state="visible", timeout=5000)
+            # Ensure the sidebar element is visible and populated
+            await expect(element).to_be_visible(timeout=5000)
             
             text = await element.inner_text()
             self.logger.info(f"Sidebar {list_id} raw text captured: '{text}'")
@@ -29,64 +42,95 @@ class ReadingListPage(BasePage):
             match = re.search(r'\d+', text)
             return int(match.group()) if match else 0
         except Exception as e:
-            self.logger.warning(f"Could not retrieve sidebar count for {list_id}: {e}")
+            await self.report_error(e, f"Failed to retrieve sidebar count for {list_id}", level="warning")
             return 0
+        
+    async def get_aggregate_count(self) -> int:
+        """Helper to sum both lists."""
+        want_count = await self.get_sidebar_count("WantToRead")
+        read_count = await self.get_sidebar_count("AlreadyRead")
+        return want_count + read_count
 
     async def assert_reading_list_count(self, expected_count: int):
         """
-        Orchestrates the final verification by navigating to 'My Books' 
-        and aggregating counts from both 'Want to Read' and 'Already Read' lists.
+        Verifies that the aggregate count of all reading lists matches expectations.
+        Ensures proper navigation and URL validation before assertion.
         """
-        # 1. Navigate to the main books account page to ensure the sidebar is refreshed
-        self.logger.info("Navigating to My Books to verify final counts...")
-        await self.page.goto("https://openlibrary.org/account/books", wait_until="networkidle")
+        self.logger.info("Navigating to 'My Books' for final count verification.")
         
-        # 2. Retrieve counts using tracking IDs
-        want_count = await self.get_sidebar_count("WantToRead")
-        read_count = await self.get_sidebar_count("AlreadyRead")
+        # Explicit navigation if the current URL does not match the target
+        target_url = f"{self.config['urls']['base_url'].rstrip('/')}{self.MY_BOOKS_PATH}"
+        if self.page.url != target_url:
+            await self.page.goto(target_url, wait_until="domcontentloaded")
         
-        total = want_count + read_count
-        self.logger.info(f"Final Assertion: Sidebar combined total is {total} (Expected: {expected_count})")
+        # Validate that we are indeed on the books management page
+        await expect(self.page).to_have_url(re.compile(r".*/books.*"))
+
+        max_retries = 10
+        actual_total = 0
         
-        # 3. Assert match and capture evidence on failure
-        if total != expected_count:
-            await self.page.screenshot(path="outputs/sidebar_mismatch.png")
-            raise AssertionError(f"Count mismatch! Sidebar total is {total}, but expected {expected_count}")
+        for attempt in range(max_retries):
+            actual_total = await self.get_aggregate_count()
+            if actual_total == expected_count:
+                self.logger.info(f"Success: Count reached {expected_count} after {attempt} retries.")
+                return
+            
+            if attempt > 0 and attempt % 3 == 0:
+                self.logger.debug(f"Attempt {attempt}: Syncing with server via page reload...")
+                await self.page.reload(wait_until="domcontentloaded")
         
-        self.logger.info("✅ SUCCESS: Reading list counts match the expected value!")
+            self.logger.debug(f"Attempt {attempt+1}: Count is {actual_total}, waiting for {expected_count}...")
+            await asyncio.sleep(1)
+        
+        if actual_total != expected_count:
+            await self.report_error(
+                AssertionError(f"Expected {expected_count}, got {actual_total}"), 
+                "Final count verification failed", 
+                "sidebar_mismatch"
+            )
+            raise AssertionError(f"Count mismatch: Sidebar total is {actual_total}, expected {expected_count}")
+        
+        self.logger.info("Verification Successful: Reading list counts match.")
 
     async def clear_reading_lists(self, user_name: str):
         """
-        Bulk cleanup: Removes all books from the user's lists by toggling the active status buttons.
-        This ensures a clean test environment for subsequent executions.
+        Iterates through reading lists and removes all items to ensure a clean state.
+        Uses a dynamic wait strategy to optimize speed and prevents infinite loops.
         """
-        # Map internal list identifiers to the button text present on the UI
-        list_map = {
-            "want-to-read": "Want to Read",
-            "already-read": "Already Read"
-        }
+        list_map = {"want-to-read": "Want to Read", "already-read": "Already Read"}
 
         for list_id, btn_text in list_map.items():
-            target_url = self.LIST_URL_TEMPLATE.format(user_name=user_name, list_type=list_id)
+            path = self.LIST_PATH_TEMPLATE.format(user_name=user_name, list_type=list_id)
+            target_url = f"{self.config['urls']['base_url'].rstrip('/')}{path}"
+            await self.page.goto(target_url, wait_until="domcontentloaded")
             
-            # Standard navigation to the specific list page
-            await self.page.goto(target_url, wait_until="load")
-            
-            # Locate all buttons that represent an 'active' status for the current list
-            active_buttons = await self.page.locator(f"button:has-text('{btn_text}')").all()
+            # Target buttons that represent an active state for the current list
+            active_toggles = self.page.locator(f"button.book-progress-btn.activated:has-text('{btn_text}')")
 
-            if not active_buttons:
-                self.logger.info(f"List '{list_id}' is already clean/empty.")
+            try:
+                await active_toggles.first.wait_for(state="visible", timeout=5000)
+            except:
+                self.logger.debug(f"List {list_id} check finished: {e}")
+                self.logger.info(f"List {list_id} is empty, skipping cleanup.")
                 continue
+            
+            # Safety limit to prevent infinite loops in CI environments
+            max_cleanup_attempts = 20
+            attempts = 0
+            
+            while attempts < max_cleanup_attempts:
+                count = await active_toggles.count()
+                if count == 0:
+                    break
 
-            self.logger.info(f"Detected {len(active_buttons)} books to remove from '{list_id}'")
-
-            for btn in active_buttons:
+                attempts += 1
                 try:
-                    # Defensive check: ensure button is still in viewport before clicking
-                    if await btn.is_visible():
-                        await btn.click()
-                        # Brief stabilization delay to allow AJAX request processing
-                        await self.page.wait_for_timeout(800) 
+                    await active_toggles.first.click()
+                    await expect(active_toggles).to_have_count(count - 1, timeout=5000)
+
                 except Exception as e:
-                    self.logger.error(f"Failed to remove book via button '{btn_text}': {e}")
+                    # Specific recovery logic: reload and re-locate elements
+                    await self.report_error(e, f"Interruption during cleanup of {list_id}", level="debug")
+                    await self.page.reload(wait_until="domcontentloaded")
+                    # Re-bind the locator after reload to avoid 'Stale Element' issues
+                    active_toggles = self.page.locator(f"button.book-progress-btn.activated:has-text('{btn_text}')")

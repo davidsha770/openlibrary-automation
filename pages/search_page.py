@@ -1,132 +1,108 @@
 import re
-import os
+import logging
+from playwright.async_api import expect, Page
 from .base_page import BasePage
 
 class SearchPage(BasePage):
     """
     Handles interactions with the Open Library search results page.
-    Includes optimized pagination and result filtering logic based on publication years.
+    Utilizes resilient Locators and efficient filtering for high-performance automation.
     """
+    def __init__(self, page: Page, logger: logging.Logger, config: dict):
+        super().__init__(page, logger, config)
     
-    # Centralized selectors for easy maintenance and robustness
     SEARCH_INPUT = "input[name='q'], input[aria-label='Search']"
     RESULT_ITEMS = ".searchResultItem"
     BOOK_TITLE_LINK = "h3.booktitle > a"
-    # Selectors for extracting metadata like publication date
     PUBLICATION_YEAR_TEXT = ".resultDetails, .bookEditions"
 
     async def execute_search(self, query: str):
         """
-        Inputs the search query and submits the search using the keyboard.
-        Waits for result items to appear to ensure the search was successful.
+        Executes search and waits for content visibility using built-in assertions.
         """
-        await self.page.wait_for_selector(self.SEARCH_INPUT, state="visible", timeout=10000)
-        await self.page.fill(self.SEARCH_INPUT, query)
+        input_field = self.page.locator(self.SEARCH_INPUT)
+        await expect(input_field).to_be_visible(timeout=10000)
+        
+        await input_field.fill(query)
         await self.page.keyboard.press("Enter")
         
-        try:
-            # Explicit wait for at least one result item to load
-            await self.page.wait_for_selector(self.RESULT_ITEMS, timeout=15000)
-        except Exception:
-            self.logger.warning(f"Timeout: Search results for '{query}' did not appear.")
+        # Ensure results are populated before continuing
+        await expect(self.page.locator(self.RESULT_ITEMS).first).to_be_visible(timeout=15000)
 
-    async def get_filtered_books(self, base_url: str, max_year: int, limit: int):
+    async def get_filtered_books(self, max_year: int, limit: int):
         """
-        Main orchestration method: iterates through multiple result pages 
-        to collect books matching the year criteria until the requested limit is met.
+        Main orchestration: iterates through result pages until the limit is met.
         """
         found_books = []
         current_page = 1
+
+        domain = self.config['urls']['base_url'].rstrip('/')
         
         while len(found_books) < limit:
             self.logger.info(f"Scanning results on page {current_page}...")
             
-            # 1. Parse current page results and collect matches
-            page_matches = await self._parse_results_on_page(base_url, max_year, limit - len(found_books))
+            # Extract matches from current page
+            page_matches = await self._parse_results_on_page(max_year, limit - len(found_books))
             found_books.extend(page_matches)
             
-            # Exit loop if limit reached
             if len(found_books) >= limit:
                 break
 
-            # 2. Handle Pagination: attempt to navigate to the next result page
             current_page += 1
-            navigation_success = await self._navigate_to_page(current_page)
-            if not navigation_success:
-                # Break if no further pages are available
+            if not await self._navigate_to_page(current_page):
                 break
 
         return found_books
 
-    async def _parse_results_on_page(self, base_url: str, max_year: int, remaining_limit: int):
+    async def _parse_results_on_page(self, max_year: int, remaining_limit: int):
         """
-        Helper method to iterate over book items on the current page.
-        Filters books based on the first identified year in the metadata text.
+        Parses results using the Locator API for stability.
         """
         matches = []
-        await self.page.wait_for_selector(self.RESULT_ITEMS, timeout=10000)
-        results = await self.page.query_selector_all(self.RESULT_ITEMS)
+        results = await self.page.locator(self.RESULT_ITEMS).all()
+
+        domain = self.config['urls']['base_url'].rstrip('/')
 
         for item in results:
             if len(matches) >= remaining_limit:
                 break
 
-            # Extract publication info text
-            year_el = await item.query_selector(self.PUBLICATION_YEAR_TEXT)
-            if not year_el:
+            year_locator = item.locator(self.PUBLICATION_YEAR_TEXT)
+            if await year_locator.count() == 0:
                 continue
 
-            year_text = await year_el.inner_text()
+            year_text = await year_locator.first.inner_text()
             year = self._extract_year(year_text)
             
-            # Filter condition: year must be less than or equal to max_year
             if year and year <= max_year:
-                link_el = await item.query_selector(self.BOOK_TITLE_LINK)
-                if link_el:
-                    href = await link_el.get_attribute("href")
-                    full_url = base_url + href
+                link_locator = item.locator(self.BOOK_TITLE_LINK)
+                if await link_locator.count() > 0:
+                    href = await link_locator.get_attribute("href")
+                    if not href:
+                        self.logger.warning("Link found but href attribute is missing. Skipping.")
+                        continue
+
+                    full_url = f"{domain}{href}"
                     matches.append(full_url)
-                    self.logger.info(f"Match {len(matches)}: {full_url}")
+                    self.logger.info(f"Match found ({year}): {full_url}")
+                    
         return matches
 
     async def _navigate_to_page(self, page_num: int):
         """
-        Handles complex pagination by targeting ARIA labels and text content.
-        Uses a fallback selector strategy for high reliability.
+        Handles pagination with reliable hydration waiting.
         """
-        self.logger.info(f"Attempting to navigate to page {page_num}...")
-        
-        # Primary: Aria-label for accessibility; Fallback: exact text match within pagination links
-        selector = f"a[aria-label='Go to page {page_num}'], a.pagination-item:has-text('{page_num}')"
+        pagination_link = self.page.locator(f"a[aria-label='Go to page {page_num}'], a.pagination-item").filter(has_text=str(page_num))
         
         try:
-            btn = await self.page.wait_for_selector(selector, state="visible", timeout=5000)
-            await btn.click()
-            
-            # Wait for both network stability and a fixed timeout to allow content hydration
-            await self.page.wait_for_load_state("load")
-            await self.page.wait_for_timeout(2000) 
+            await expect(pagination_link.first).to_be_visible(timeout=5000)
+            await pagination_link.first.click()
+            await expect(self.page.locator(self.RESULT_ITEMS).first).to_be_visible(timeout=10000)
             return True
         except Exception:
-            self.logger.warning(f"Page {page_num} not found or unreachable. Ending search traversal.")
+            self.logger.info(f"Pagination stopped: Page {page_num} not found or results exhausted.")
             return False
 
     def _extract_year(self, text: str):
-        """
-        Utility to extract a 4-digit year from a string using Regex.
-        Returns the first match found or None if no year is detected.
-        """
         match = re.search(r'\d{4}', text)
         return int(match.group()) if match else None
-
-    async def dump_page_html(self, filename="search_debug.html"):
-        """
-        Saves current page HTML to the outputs directory for debugging purposes.
-        Useful for analyzing DOM structure during failures.
-        """
-        os.makedirs("outputs", exist_ok=True)
-        content = await self.page.content()
-        file_path = os.path.join("outputs", filename)
-        with open(file_path, "w", encoding="utf-8") as f:
-            f.write(content)
-        self.logger.info(f"HTML debug dump saved to: {file_path}")

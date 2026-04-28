@@ -1,11 +1,15 @@
 import os
-import allure
+import logging
+from playwright.async_api import Page, expect
 from .base_page import BasePage
+from utils.decorators import retry_on_failure
 
 class BookPage(BasePage):
     """
     Handles book-specific interactions on the Open Library book detail page.
     """
+    def __init__(self, page: Page, logger: logging.Logger, config: dict):
+        super().__init__(page, logger, config)
 
     # --- Locators ---
     # Main button for 'Want to Read'
@@ -13,10 +17,9 @@ class BookPage(BasePage):
     # The arrow/trigger to open the lists dropdown
     DROPDOWN_TRIGGER = "a.generic-dropper__dropclick"
     # The specific button inside the dropdown for 'Already Read'
-    ALREADY_READ_BTN = "button.nostyle-btn"
-    # Container for dropdown options to ensure visibility
-    DROPDOWN_MENU = ".results, .dropdown-menu"
+    ALREADY_READ_BTN = "button[data-track='AlreadyRead'], button:has-text('Already Read')"
 
+    @retry_on_failure(times=2, delay=2)
     async def add_to_list_specific(self, status: str) -> str:
         """
         Adds a book to a specific reading list (Want to Read or Already Read).
@@ -30,33 +33,35 @@ class BookPage(BasePage):
         try:
             # Locate the primary button to ensure page is loaded
             primary_btn = self.page.locator(self.WANT_TO_READ_BTN).first
-            await primary_btn.wait_for(state="attached", timeout=15000)
+            await primary_btn.wait_for(state="visible", timeout=15000)
 
             if status == "Already Read":
                 # 1. Open the dropdown menu
                 trigger = self.page.locator(self.DROPDOWN_TRIGGER).first
-                await trigger.wait_for(state="visible", timeout=5000)
                 await trigger.click()
-                
-                # 2. Select 'Already Read' from the opened menu
-                # Using exact=True to avoid partial matches with other list names
-                option = self.page.locator(self.ALREADY_READ_BTN).get_by_text("Already Read", exact=True).first
+
+                # 2. Click the option
+                option = self.page.locator(self.ALREADY_READ_BTN).first
                 await option.wait_for(state="visible", timeout=5000)
                 await option.click()
+                
+                success_indicator = self.page.locator(f"button.book-progress-btn.activated:has-text('{status}')")
             else:
                 # Direct click for the default 'Want to Read' action
                 await primary_btn.click()
+                success_indicator = self.page.locator("button.book-progress-btn.activated:has-text('Want to Read')")
 
-            # Ensure the request is processed before moving on
-            await self.page.wait_for_load_state("networkidle")
-            self.logger.info(f"Successfully added book as: {status}")
+            await expect(success_indicator.first).to_be_visible(timeout=10000)
+            
+            # Final sync to ensure DB/API update is reflected
+            await self.page.wait_for_load_state("networkidle") 
+            
+            self.logger.info(f"State change verified: Book is now '{status}'")
             return status
 
         except Exception as e:
-            self.logger.error(f"Failed to add book to list '{status}': {e}")
-            # Capture error state for debugging
-            await self.page.screenshot(path=f"outputs/error_book_{status}.png")
-            return "Failed"
+            await self.report_error(e, f"Failed to add book to '{status}'", f"error_book_{status}")
+            raise e
         
     async def capture_book_addition(self, book_title: str):
         """
@@ -73,10 +78,4 @@ class BookPage(BasePage):
         
         await self.page.screenshot(path=screenshot_path)
         self.logger.info(f"Visual evidence captured for '{book_title}' at {screenshot_path}")
-
-        allure.attach.file(
-            screenshot_path, 
-            name=f"Screenshot: {book_title}", 
-            attachment_type=allure.attachment_type.PNG
-        )
-        self.logger.info(f"Visual evidence attached to Allure for '{book_title}'")
+        return screenshot_path

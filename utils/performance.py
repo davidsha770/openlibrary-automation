@@ -1,7 +1,7 @@
-import time
 import os
 import json
 from playwright.async_api import Page
+from urllib.parse import urljoin, urlparse
 
 async def capture_modern_metrics(page: Page) -> dict:
     """
@@ -9,7 +9,10 @@ async def capture_modern_metrics(page: Page) -> dict:
     Includes a short delay to ensure Paint events are registered by the browser.
     """
     # Allow the browser a moment to register paint events
-    await page.wait_for_timeout(500) 
+    await page.wait_for_function(
+        "() => performance.getEntriesByType('navigation')[0]?.loadEventEnd > 0",
+        timeout=10000
+    )
     
     metrics_js = """
     () => {
@@ -17,11 +20,13 @@ async def capture_modern_metrics(page: Page) -> dict:
         const paint = performance.getEntriesByType('paint');
         const fp = paint.find(entry => entry.name === 'first-paint');
         
-        if (!nav) return null;
+        if (!nav) return {};
+
+        const startTime = nav.startTime;
         
         return {
-            "load_time_ms": Math.round(nav.loadEventEnd),
-            "dom_content_loaded_ms": Math.round(nav.domContentLoadedEventEnd),
+            "load_time_ms": Math.round(nav.loadEventEnd - startTime),
+            "dom_content_loaded_ms": Math.round(nav.domContentLoadedEventEnd - startTime),
             "first_paint_ms": fp ? Math.round(fp.startTime) : 0,
             "status": nav.loadEventEnd > 0 ? "Complete" : "Incomplete"
         };
@@ -36,8 +41,10 @@ async def measure_performance(page: Page, url: str, threshold: int, label: str, 
     """
     try:
         # Navigate to URL if not already present
-        if page.url != url:
-            await page.goto(url, wait_until="load", timeout=30000)
+        current_path = urlparse(page.url).path.rstrip('/')
+        target_path = urlparse(url).path.rstrip('/')
+        if current_path != target_path:
+            await page.goto(url, wait_until="domcontentloaded")
         
         metrics = await capture_modern_metrics(page)
         load_time = metrics.get('load_time_ms', 0)
