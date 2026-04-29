@@ -14,7 +14,9 @@ class SearchPage(BasePage):
     SEARCH_INPUT = "input[name='q'], input[aria-label='Search']"
     RESULT_ITEMS = ".searchResultItem"
     BOOK_TITLE_LINK = "h3.booktitle > a"
-    PUBLICATION_YEAR_TEXT = ".resultDetails, .bookEditions"
+    PUBLICATION_YEAR_DETAILS = ".resultDetails"
+    PUBLICATION_YEAR_EDITIONS = ".bookEditions"
+    PAGINATION_PAGE_TEMPLATE = "a[aria-label='Go to page {0}'], a.pagination-item:has-text('{0}')"
 
     async def execute_search(self, query: str):
         """
@@ -35,9 +37,7 @@ class SearchPage(BasePage):
         """
         found_books = []
         current_page = 1
-
-        domain = self.config['urls']['base_url'].rstrip('/')
-        
+       
         while len(found_books) < limit:
             self.logger.info(f"Scanning results on page {current_page}...")
             
@@ -67,11 +67,11 @@ class SearchPage(BasePage):
             if len(matches) >= remaining_limit:
                 break
 
-            year_locator = item.locator(self.PUBLICATION_YEAR_TEXT)
-            if await year_locator.count() == 0:
-                continue
+            year_element = item.locator(self.PUBLICATION_YEAR_DETAILS)
+            if await year_element.count() == 0:
+                year_element = item.locator(self.PUBLICATION_YEAR_EDITIONS)
 
-            year_text = await year_locator.first.inner_text()
+            year_text = await year_element.first.inner_text()
             year = self._extract_year(year_text)
             
             if year and year <= max_year:
@@ -92,11 +92,12 @@ class SearchPage(BasePage):
         """
         Handles pagination with reliable hydration waiting.
         """
-        pagination_link = self.page.locator(f"a[aria-label='Go to page {page_num}'], a.pagination-item").filter(has_text=str(page_num))
+        selector = self.PAGINATION_PAGE_TEMPLATE.format(page_num)
+        pagination_link = self.page.locator(selector).first
         
         try:
-            await expect(pagination_link.first).to_be_visible(timeout=5000)
-            await pagination_link.first.click()
+            await expect(pagination_link).to_be_visible(timeout=5000)
+            await pagination_link.click()
             await expect(self.page.locator(self.RESULT_ITEMS).first).to_be_visible(timeout=10000)
             return True
         except Exception:

@@ -48,11 +48,14 @@ async def measure_performance(page: Page, url: str, threshold: int, label: str, 
         
         metrics = await capture_modern_metrics(page)
         load_time = metrics.get('load_time_ms', 0)
-        
-        # Determine pass/fail status based on threshold
-        status = "Pass" if load_time <= threshold else "Fail"
-        if status == "Fail":
-            logger.warning(f"PERFORMANCE FAIL: {label} took {load_time}ms (Threshold: {threshold}ms)")
+        if load_time <= 0:
+            status = "Error"
+            logger.error(f"PERFORMANCE ERROR: Captured invalid load time (0ms) for {label}. Check page state.")
+        else:
+            # Determine pass/fail status based on threshold
+            status = "Pass" if load_time <= threshold else "Fail"
+            if status == "Fail":
+                logger.warning(f"PERFORMANCE FAIL: {label} took {load_time}ms (Threshold: {threshold}ms)")
             
         return {
             "action": label,

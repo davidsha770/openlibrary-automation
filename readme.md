@@ -31,7 +31,7 @@ A high-performance End-to-End (E2E) testing framework for [Open Library](https:/
 ├── tests/
 │   └── test_e2e.py           # Test orchestrator (100% Logic, 0% Selectors)
 ├── utils/
-│   ├── utils/decorators.py   # Custom Python decorators for retry logic
+│   ├── decorators.py   # Custom Python decorators for retry logic
 │   ├── logger_helper.py      # Custom logging configuration
 │   ├── performance.py        # Dedicated Performance Monitoring (SRP)
 │   └── report_generator.py   # Logic for HTML report generation

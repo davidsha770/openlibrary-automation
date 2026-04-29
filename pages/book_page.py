@@ -18,6 +18,7 @@ class BookPage(BasePage):
     DROPDOWN_TRIGGER = "a.generic-dropper__dropclick"
     # The specific button inside the dropdown for 'Already Read'
     ALREADY_READ_BTN = "button[data-track='AlreadyRead'], button:has-text('Already Read')"
+    SUCCESS_INDICATOR_TEMPLATE = "button.book-progress-btn.activated:has-text('{0}')"
 
     @retry_on_failure(times=2, delay=2)
     async def add_to_list_specific(self, status: str) -> str:
@@ -44,17 +45,17 @@ class BookPage(BasePage):
                 option = self.page.locator(self.ALREADY_READ_BTN).first
                 await option.wait_for(state="visible", timeout=5000)
                 await option.click()
-                
-                success_indicator = self.page.locator(f"button.book-progress-btn.activated:has-text('{status}')")
             else:
                 # Direct click for the default 'Want to Read' action
                 await primary_btn.click()
-                success_indicator = self.page.locator("button.book-progress-btn.activated:has-text('Want to Read')")
+
+            selector = self.SUCCESS_INDICATOR_TEMPLATE.format(status)
+            success_indicator = self.page.locator(selector)
 
             await expect(success_indicator.first).to_be_visible(timeout=10000)
             
             # Final sync to ensure DB/API update is reflected
-            await self.page.wait_for_load_state("networkidle") 
+            await self.page.wait_for_load_state("domcontentloaded") 
             
             self.logger.info(f"State change verified: Book is now '{status}'")
             return status

@@ -3,9 +3,9 @@
         "action": "Search Page Load",
         "url": "https://openlibrary.org",
         "metrics": {
-            "load_time_ms": 1762,
-            "dom_content_loaded_ms": 1023,
-            "first_paint_ms": 1020,
+            "load_time_ms": 1701,
+            "dom_content_loaded_ms": 1018,
+            "first_paint_ms": 972,
             "status": "Complete"
         },
         "status": "Pass",
@@ -15,9 +15,9 @@
         "action": "Load Book: OL26242482M",
         "url": "https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M",
         "metrics": {
-            "load_time_ms": 3036,
-            "dom_content_loaded_ms": 1645,
-            "first_paint_ms": 1768,
+            "load_time_ms": 3841,
+            "dom_content_loaded_ms": 2476,
+            "first_paint_ms": 2428,
             "status": "Complete"
         },
         "status": "Fail",
@@ -27,45 +27,45 @@
         "action": "Load Book: OL7525229M",
         "url": "https://openlibrary.org/works/OL893526W/Dune_Messiah?edition=key%3A/books/OL7525229M",
         "metrics": {
-            "load_time_ms": 2330,
-            "dom_content_loaded_ms": 1807,
-            "first_paint_ms": 1828,
-            "status": "Complete"
-        },
-        "status": "Pass",
-        "threshold_ms": 2500
-    },
-    {
-        "action": "Load Book: OL35638871M",
-        "url": "https://openlibrary.org/works/OL472165W/Peril_at_End_House?edition=key%3A/books/OL35638871M",
-        "metrics": {
-            "load_time_ms": 3178,
-            "dom_content_loaded_ms": 1830,
-            "first_paint_ms": 1768,
+            "load_time_ms": 4285,
+            "dom_content_loaded_ms": 3218,
+            "first_paint_ms": 3172,
             "status": "Complete"
         },
         "status": "Fail",
         "threshold_ms": 2500
     },
     {
-        "action": "Load Book: OL8886573M",
-        "url": "https://openlibrary.org/works/OL274574W/Cr\u00f3nica_de_una_muerte_anunciada?edition=key%3A/books/OL8886573M",
+        "action": "Load Book: OL7524870M",
+        "url": "https://openlibrary.org/works/OL893516W/Children_of_Dune?edition=key%3A/books/OL7524870M",
         "metrics": {
-            "load_time_ms": 6369,
-            "dom_content_loaded_ms": 4267,
-            "first_paint_ms": 4000,
+            "load_time_ms": 3101,
+            "dom_content_loaded_ms": 1739,
+            "first_paint_ms": 1700,
             "status": "Complete"
         },
         "status": "Fail",
         "threshold_ms": 2500
     },
     {
-        "action": "Load Book: OL16829296M",
-        "url": "https://openlibrary.org/works/OL1105384W/Memoirs_of_a_Revolutionist?edition=key%3A/books/OL16829296M",
+        "action": "Load Book: OL29370280M",
+        "url": "https://openlibrary.org/works/OL893444W/The_Great_Dune_Trilogy?edition=key%3A/books/OL29370280M",
         "metrics": {
-            "load_time_ms": 2523,
-            "dom_content_loaded_ms": 2385,
-            "first_paint_ms": 2176,
+            "load_time_ms": 4412,
+            "dom_content_loaded_ms": 2792,
+            "first_paint_ms": 0,
+            "status": "Complete"
+        },
+        "status": "Fail",
+        "threshold_ms": 2500
+    },
+    {
+        "action": "Load Book: OL12509175M",
+        "url": "https://openlibrary.org/works/OL264729W/Go_Ask_Alice?edition=key%3A/books/OL12509175M",
+        "metrics": {
+            "load_time_ms": 3052,
+            "dom_content_loaded_ms": 1678,
+            "first_paint_ms": 0,
             "status": "Complete"
         },
         "status": "Fail",
@@ -75,9 +75,9 @@
         "action": "Reading List Page Load",
         "url": "https://openlibrary.org/people/user532228/books",
         "metrics": {
-            "load_time_ms": 1923,
-            "dom_content_loaded_ms": 1601,
-            "first_paint_ms": 1544,
+            "load_time_ms": 1951,
+            "dom_content_loaded_ms": 1786,
+            "first_paint_ms": 0,
             "status": "Complete"
         },
         "status": "Pass",

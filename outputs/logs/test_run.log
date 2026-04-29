@@ -1,40 +1,41 @@
-2026-04-28 17:25:27,392 - INFO - Navigating to login page...
-2026-04-28 17:25:36,984 - INFO - Security challenge found: button:has-text('Verify'). Clicking...
-2026-04-28 17:25:39,104 - INFO - Waiting for login inputs to become ready...
-2026-04-28 17:25:44,539 - INFO - Login sequence successfully verified.
-2026-04-28 17:25:49,448 - INFO - Scanning results on page 1...
-2026-04-28 17:25:49,722 - INFO - Match found (1965): https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M
-2026-04-28 17:25:49,780 - INFO - Match found (1969): https://openlibrary.org/works/OL893526W/Dune_Messiah?edition=key%3A/books/OL7525229M
-2026-04-28 17:25:49,846 - INFO - Match found (1932): https://openlibrary.org/works/OL472165W/Peril_at_End_House?edition=key%3A/books/OL35638871M
-2026-04-28 17:25:49,883 - INFO - Match found (1980): https://openlibrary.org/works/OL274574W/Crónica_de_una_muerte_anunciada?edition=key%3A/books/OL8886573M
-2026-04-28 17:25:49,996 - INFO - Match found (1899): https://openlibrary.org/works/OL1105384W/Memoirs_of_a_Revolutionist?edition=key%3A/books/OL16829296M
-2026-04-28 17:25:53,074 - WARNING - PERFORMANCE FAIL: Load Book: OL26242482M took 3036ms (Threshold: 2500ms)
-2026-04-28 17:25:53,075 - INFO - ADDING: 'https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M' to list 'Want to Read'
-2026-04-28 17:25:54,177 - INFO - State change verified: Book is now 'Want to Read'
-2026-04-28 17:25:54,484 - INFO - Visual evidence captured for 'OL26242482M' at outputs/screenshots/OL26242482M.png
-2026-04-28 17:25:54,486 - INFO - Visual evidence attached to Allure for 'OL26242482M'
-2026-04-28 17:25:56,850 - INFO - ADDING: 'https://openlibrary.org/works/OL893526W/Dune_Messiah?edition=key%3A/books/OL7525229M' to list 'Already Read'
-2026-04-28 17:25:58,749 - INFO - State change verified: Book is now 'Already Read'
-2026-04-28 17:25:59,051 - INFO - Visual evidence captured for 'OL7525229M' at outputs/screenshots/OL7525229M.png
-2026-04-28 17:25:59,052 - INFO - Visual evidence attached to Allure for 'OL7525229M'
-2026-04-28 17:26:02,259 - WARNING - PERFORMANCE FAIL: Load Book: OL35638871M took 3178ms (Threshold: 2500ms)
-2026-04-28 17:26:02,259 - INFO - ADDING: 'https://openlibrary.org/works/OL472165W/Peril_at_End_House?edition=key%3A/books/OL35638871M' to list 'Want to Read'
-2026-04-28 17:26:06,522 - INFO - State change verified: Book is now 'Want to Read'
-2026-04-28 17:26:06,763 - INFO - Visual evidence captured for 'OL35638871M' at outputs/screenshots/OL35638871M.png
-2026-04-28 17:26:06,764 - INFO - Visual evidence attached to Allure for 'OL35638871M'
-2026-04-28 17:26:13,158 - WARNING - PERFORMANCE FAIL: Load Book: OL8886573M took 6369ms (Threshold: 2500ms)
-2026-04-28 17:26:13,159 - INFO - ADDING: 'https://openlibrary.org/works/OL274574W/Crónica_de_una_muerte_anunciada?edition=key%3A/books/OL8886573M' to list 'Already Read'
-2026-04-28 17:26:14,230 - INFO - State change verified: Book is now 'Already Read'
-2026-04-28 17:26:14,497 - INFO - Visual evidence captured for 'OL8886573M' at outputs/screenshots/OL8886573M.png
-2026-04-28 17:26:14,498 - INFO - Visual evidence attached to Allure for 'OL8886573M'
-2026-04-28 17:26:17,069 - WARNING - PERFORMANCE FAIL: Load Book: OL16829296M took 2523ms (Threshold: 2500ms)
-2026-04-28 17:26:17,071 - INFO - ADDING: 'https://openlibrary.org/works/OL1105384W/Memoirs_of_a_Revolutionist?edition=key%3A/books/OL16829296M' to list 'Want to Read'
-2026-04-28 17:26:20,445 - INFO - State change verified: Book is now 'Want to Read'
-2026-04-28 17:26:20,749 - INFO - Visual evidence captured for 'OL16829296M' at outputs/screenshots/OL16829296M.png
-2026-04-28 17:26:20,751 - INFO - Visual evidence attached to Allure for 'OL16829296M'
-2026-04-28 17:26:22,708 - INFO - Navigating to 'My Books' for final count verification.
-2026-04-28 17:26:24,267 - INFO - Sidebar WantToRead raw text captured: '3'
-2026-04-28 17:26:24,297 - INFO - Sidebar AlreadyRead raw text captured: '2'
-2026-04-28 17:26:24,298 - INFO - Success: Count reached 5 after 0 retries.
-2026-04-28 17:26:24,301 - INFO - Fixture Teardown: Clearing reading lists...
-2026-04-28 17:26:28,431 - INFO - Browser context and playwright instance closed.
+2026-04-29 09:39:08,749 - INFO - Navigating to login page...
+2026-04-29 09:39:11,542 - INFO - Security challenge found: button:has-text('Verify'). Clicking...
+2026-04-29 09:39:13,626 - INFO - Waiting for login inputs to become ready...
+2026-04-29 09:39:17,043 - INFO - Login sequence successfully verified.
+2026-04-29 09:39:22,052 - INFO - Scanning results on page 1...
+2026-04-29 09:39:22,268 - INFO - Match found (1965): https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M
+2026-04-29 09:39:22,334 - INFO - Match found (1969): https://openlibrary.org/works/OL893526W/Dune_Messiah?edition=key%3A/books/OL7525229M
+2026-04-29 09:39:22,385 - INFO - Match found (1976): https://openlibrary.org/works/OL893516W/Children_of_Dune?edition=key%3A/books/OL7524870M
+2026-04-29 09:39:22,505 - INFO - Match found (1977): https://openlibrary.org/works/OL893444W/The_Great_Dune_Trilogy?edition=key%3A/books/OL29370280M
+2026-04-29 09:39:22,567 - INFO - Match found (1971): https://openlibrary.org/works/OL264729W/Go_Ask_Alice?edition=key%3A/books/OL12509175M
+2026-04-29 09:39:26,449 - WARNING - PERFORMANCE FAIL: Load Book: OL26242482M took 3841ms (Threshold: 2500ms)
+2026-04-29 09:39:26,449 - INFO - ADDING: 'https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M' to list 'Want to Read'
+2026-04-29 09:39:27,016 - INFO - State change verified: Book is now 'Want to Read'
+2026-04-29 09:39:27,309 - INFO - Visual evidence captured for 'OL26242482M' at outputs/screenshots/OL26242482M.png
+2026-04-29 09:39:27,310 - INFO - Visual evidence attached to Allure for 'OL26242482M'
+2026-04-29 09:39:31,629 - WARNING - PERFORMANCE FAIL: Load Book: OL7525229M took 4285ms (Threshold: 2500ms)
+2026-04-29 09:39:31,630 - INFO - ADDING: 'https://openlibrary.org/works/OL893526W/Dune_Messiah?edition=key%3A/books/OL7525229M' to list 'Want to Read'
+2026-04-29 09:39:32,713 - INFO - State change verified: Book is now 'Want to Read'
+2026-04-29 09:39:32,970 - INFO - Visual evidence captured for 'OL7525229M' at outputs/screenshots/OL7525229M.png
+2026-04-29 09:39:32,971 - INFO - Visual evidence attached to Allure for 'OL7525229M'
+2026-04-29 09:39:36,099 - WARNING - PERFORMANCE FAIL: Load Book: OL7524870M took 3101ms (Threshold: 2500ms)
+2026-04-29 09:39:36,100 - INFO - ADDING: 'https://openlibrary.org/works/OL893516W/Children_of_Dune?edition=key%3A/books/OL7524870M' to list 'Already Read'
+2026-04-29 09:39:37,251 - INFO - State change verified: Book is now 'Already Read'
+2026-04-29 09:39:37,548 - INFO - Visual evidence captured for 'OL7524870M' at outputs/screenshots/OL7524870M.png
+2026-04-29 09:39:37,549 - INFO - Visual evidence attached to Allure for 'OL7524870M'
+2026-04-29 09:39:41,997 - WARNING - PERFORMANCE FAIL: Load Book: OL29370280M took 4412ms (Threshold: 2500ms)
+2026-04-29 09:39:41,998 - INFO - ADDING: 'https://openlibrary.org/works/OL893444W/The_Great_Dune_Trilogy?edition=key%3A/books/OL29370280M' to list 'Want to Read'
+2026-04-29 09:39:43,017 - INFO - State change verified: Book is now 'Want to Read'
+2026-04-29 09:39:43,301 - INFO - Visual evidence captured for 'OL29370280M' at outputs/screenshots/OL29370280M.png
+2026-04-29 09:39:43,302 - INFO - Visual evidence attached to Allure for 'OL29370280M'
+2026-04-29 09:39:46,387 - WARNING - PERFORMANCE FAIL: Load Book: OL12509175M took 3052ms (Threshold: 2500ms)
+2026-04-29 09:39:46,387 - INFO - ADDING: 'https://openlibrary.org/works/OL264729W/Go_Ask_Alice?edition=key%3A/books/OL12509175M' to list 'Want to Read'
+2026-04-29 09:39:47,423 - INFO - State change verified: Book is now 'Want to Read'
+2026-04-29 09:39:47,689 - INFO - Visual evidence captured for 'OL12509175M' at outputs/screenshots/OL12509175M.png
+2026-04-29 09:39:47,690 - INFO - Visual evidence attached to Allure for 'OL12509175M'
+2026-04-29 09:39:49,741 - INFO - Navigating to 'My Books' for final count verification.
+2026-04-29 09:39:51,948 - INFO - Sidebar WantToRead raw text captured: '4'
+2026-04-29 09:39:51,987 - INFO - Sidebar AlreadyRead raw text captured: '1'
+2026-04-29 09:39:51,987 - INFO - Success: Count reached 5 after 0 retries.
+2026-04-29 09:39:51,989 - INFO - Fixture Teardown: Clearing reading lists...
+2026-04-29 09:39:56,448 - INFO - Browser context and playwright instance closed.

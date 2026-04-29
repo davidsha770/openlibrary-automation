@@ -15,6 +15,7 @@ class ReadingListPage(BasePage):
     SIDEBAR_COUNT_SPAN = "a[data-ol-link-track='MyBooksSidebar|{list_id}'] span.li-count"
     LIST_PATH_TEMPLATE = "/people/{user_name}/books/{list_type}"
     MY_BOOKS_PATH = "/account/books"
+    ACTIVE_STATUS_BTN_TEMPLATE = "button.book-progress-btn.activated:has-text('{0}')"
 
     async def get_sidebar_count(self, list_id: str) -> int:
         """
@@ -105,11 +106,12 @@ class ReadingListPage(BasePage):
             await self.page.goto(target_url, wait_until="domcontentloaded")
             
             # Target buttons that represent an active state for the current list
-            active_toggles = self.page.locator(f"button.book-progress-btn.activated:has-text('{btn_text}')")
+            selector = self.ACTIVE_STATUS_BTN_TEMPLATE.format(btn_text)
+            active_toggles = self.page.locator(selector)
 
             try:
                 await active_toggles.first.wait_for(state="visible", timeout=5000)
-            except:
+            except Exception as e:
                 self.logger.debug(f"List {list_id} check finished: {e}")
                 self.logger.info(f"List {list_id} is empty, skipping cleanup.")
                 continue
@@ -133,4 +135,5 @@ class ReadingListPage(BasePage):
                     await self.report_error(e, f"Interruption during cleanup of {list_id}", level="debug")
                     await self.page.reload(wait_until="domcontentloaded")
                     # Re-bind the locator after reload to avoid 'Stale Element' issues
-                    active_toggles = self.page.locator(f"button.book-progress-btn.activated:has-text('{btn_text}')")
+                    selector = self.ACTIVE_STATUS_BTN_TEMPLATE.format(btn_text)
+                    active_toggles = self.page.locator(selector)
