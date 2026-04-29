@@ -8,34 +8,34 @@
 [32mINFO    [0m automation_logger:search_page.py:87 Match found (1976): https://openlibrary.org/works/OL893516W/Children_of_Dune?edition=key%3A/books/OL7524870M
 [32mINFO    [0m automation_logger:search_page.py:87 Match found (1977): https://openlibrary.org/works/OL893444W/The_Great_Dune_Trilogy?edition=key%3A/books/OL29370280M
 [32mINFO    [0m automation_logger:search_page.py:87 Match found (1971): https://openlibrary.org/works/OL264729W/Go_Ask_Alice?edition=key%3A/books/OL12509175M
-[33mWARNING [0m automation_logger:performance.py:58 PERFORMANCE FAIL: Load Book: OL26242482M took 3841ms (Threshold: 2500ms)
-[32mINFO    [0m automation_logger:test_e2e.py:85 ADDING: 'https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M' to list 'Want to Read'
+[33mWARNING [0m automation_logger:performance.py:58 PERFORMANCE FAIL: Load Book: OL26242482M took 6810ms (Threshold: 2500ms)
+[32mINFO    [0m automation_logger:workflows.py:41 Adding https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M to Want to Read
 [32mINFO    [0m automation_logger:book_page.py:60 State change verified: Book is now 'Want to Read'
 [32mINFO    [0m automation_logger:book_page.py:81 Visual evidence captured for 'OL26242482M' at outputs/screenshots/OL26242482M.png
-[32mINFO    [0m automation_logger:test_e2e.py:96 Visual evidence attached to Allure for 'OL26242482M'
-[33mWARNING [0m automation_logger:performance.py:58 PERFORMANCE FAIL: Load Book: OL7525229M took 4285ms (Threshold: 2500ms)
-[32mINFO    [0m automation_logger:test_e2e.py:85 ADDING: 'https://openlibrary.org/works/OL893526W/Dune_Messiah?edition=key%3A/books/OL7525229M' to list 'Want to Read'
-[32mINFO    [0m automation_logger:book_page.py:60 State change verified: Book is now 'Want to Read'
+[32mINFO    [0m automation_logger:workflows.py:48 Visual evidence attached to Allure for 'OL26242482M'
+[32mINFO    [0m automation_logger:workflows.py:41 Adding https://openlibrary.org/works/OL893526W/Dune_Messiah?edition=key%3A/books/OL7525229M to Already Read
+[32mINFO    [0m automation_logger:book_page.py:60 State change verified: Book is now 'Already Read'
 [32mINFO    [0m automation_logger:book_page.py:81 Visual evidence captured for 'OL7525229M' at outputs/screenshots/OL7525229M.png
-[32mINFO    [0m automation_logger:test_e2e.py:96 Visual evidence attached to Allure for 'OL7525229M'
-[33mWARNING [0m automation_logger:performance.py:58 PERFORMANCE FAIL: Load Book: OL7524870M took 3101ms (Threshold: 2500ms)
-[32mINFO    [0m automation_logger:test_e2e.py:85 ADDING: 'https://openlibrary.org/works/OL893516W/Children_of_Dune?edition=key%3A/books/OL7524870M' to list 'Already Read'
+[32mINFO    [0m automation_logger:workflows.py:48 Visual evidence attached to Allure for 'OL7525229M'
+[33mWARNING [0m automation_logger:performance.py:58 PERFORMANCE FAIL: Load Book: OL7524870M took 5346ms (Threshold: 2500ms)
+[32mINFO    [0m automation_logger:workflows.py:41 Adding https://openlibrary.org/works/OL893516W/Children_of_Dune?edition=key%3A/books/OL7524870M to Already Read
 [32mINFO    [0m automation_logger:book_page.py:60 State change verified: Book is now 'Already Read'
 [32mINFO    [0m automation_logger:book_page.py:81 Visual evidence captured for 'OL7524870M' at outputs/screenshots/OL7524870M.png
-[32mINFO    [0m automation_logger:test_e2e.py:96 Visual evidence attached to Allure for 'OL7524870M'
-[33mWARNING [0m automation_logger:performance.py:58 PERFORMANCE FAIL: Load Book: OL29370280M took 4412ms (Threshold: 2500ms)
-[32mINFO    [0m automation_logger:test_e2e.py:85 ADDING: 'https://openlibrary.org/works/OL893444W/The_Great_Dune_Trilogy?edition=key%3A/books/OL29370280M' to list 'Want to Read'
+[32mINFO    [0m automation_logger:workflows.py:48 Visual evidence attached to Allure for 'OL7524870M'
+[33mWARNING [0m automation_logger:performance.py:58 PERFORMANCE FAIL: Load Book: OL29370280M took 3287ms (Threshold: 2500ms)
+[32mINFO    [0m automation_logger:workflows.py:41 Adding https://openlibrary.org/works/OL893444W/The_Great_Dune_Trilogy?edition=key%3A/books/OL29370280M to Want to Read
 [32mINFO    [0m automation_logger:book_page.py:60 State change verified: Book is now 'Want to Read'
 [32mINFO    [0m automation_logger:book_page.py:81 Visual evidence captured for 'OL29370280M' at outputs/screenshots/OL29370280M.png
-[32mINFO    [0m automation_logger:test_e2e.py:96 Visual evidence attached to Allure for 'OL29370280M'
-[33mWARNING [0m automation_logger:performance.py:58 PERFORMANCE FAIL: Load Book: OL12509175M took 3052ms (Threshold: 2500ms)
-[32mINFO    [0m automation_logger:test_e2e.py:85 ADDING: 'https://openlibrary.org/works/OL264729W/Go_Ask_Alice?edition=key%3A/books/OL12509175M' to list 'Want to Read'
+[32mINFO    [0m automation_logger:workflows.py:48 Visual evidence attached to Allure for 'OL29370280M'
+[33mWARNING [0m automation_logger:performance.py:58 PERFORMANCE FAIL: Load Book: OL12509175M took 4562ms (Threshold: 2500ms)
+[32mINFO    [0m automation_logger:workflows.py:41 Adding https://openlibrary.org/works/OL264729W/Go_Ask_Alice?edition=key%3A/books/OL12509175M to Want to Read
 [32mINFO    [0m automation_logger:book_page.py:60 State change verified: Book is now 'Want to Read'
 [32mINFO    [0m automation_logger:book_page.py:81 Visual evidence captured for 'OL12509175M' at outputs/screenshots/OL12509175M.png
-[32mINFO    [0m automation_logger:test_e2e.py:96 Visual evidence attached to Allure for 'OL12509175M'
+[32mINFO    [0m automation_logger:workflows.py:48 Visual evidence attached to Allure for 'OL12509175M'
+[33mWARNING [0m automation_logger:performance.py:58 PERFORMANCE FAIL: Reading List Load took 2251ms (Threshold: 2000ms)
 [32mINFO    [0m automation_logger:reading_list_page.py:60 Navigating to 'My Books' for final count verification.
-[32mINFO    [0m automation_logger:reading_list_page.py:40 Sidebar WantToRead raw text captured: '4'
-[32mINFO    [0m automation_logger:reading_list_page.py:40 Sidebar AlreadyRead raw text captured: '1'
+[32mINFO    [0m automation_logger:reading_list_page.py:40 Sidebar WantToRead raw text captured: '3'
+[32mINFO    [0m automation_logger:reading_list_page.py:40 Sidebar AlreadyRead raw text captured: '2'
 [32mINFO    [0m automation_logger:reading_list_page.py:76 Success: Count reached 5 after 0 retries.
-[32mINFO    [0m automation_logger:test_e2e.py:45 Fixture Teardown: Clearing reading lists...
-[32mINFO    [0m automation_logger:conftest.py:60 Browser context and playwright instance closed.
+[32mINFO    [0m automation_logger:test_e2e.py:50 Teardown: Reverting account state for user: user532228
+[32mINFO    [0m automation_logger:conftest.py:72 Browser context and playwright instance closed.

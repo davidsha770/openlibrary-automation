@@ -13,7 +13,7 @@ A high-performance End-to-End (E2E) testing framework for [Open Library](https:/
 * **Comprehensive Reporting**: Generates both a custom-built performance HTML report and professional Allure reports for detailed test execution analytics.
 * **Full POM Decoupling**: 100% separation between test logic and UI selectors, ensuring zero selectors in the test scripts.
 
-* **Post-Action Verification:** Explicit logic to verify login success and confirm list updates before proceeding, ensuring high test reliability
+* **Post-Action Verification:** Explicit logic to verify login success and confirm list updates before proceeding, ensuring high test reliability.
 * **Automated Authentication Resilience**: Features a dedicated security challenge handler that detects and manages bot-prevention overlays (e.g., Turnstile/Cloudflare) to ensure uninterrupted CI/CD flows.
 
 ## 📁 Project Structure
@@ -29,9 +29,10 @@ A high-performance End-to-End (E2E) testing framework for [Open Library](https:/
 │   ├── book_page.py          # Book-specific actions & JS injections
 │   └── reading_list_page.py  # Reading list hydration and verification
 ├── tests/
-│   └── test_e2e.py           # Test orchestrator (100% Logic, 0% Selectors)
+│   ├── test_e2e.py           # Test orchestrator (100% Logic, 0% Selectors)
+│   └── conftest.py           # Shared fixtures and Playwright setup
 ├── utils/
-│   ├── decorators.py   # Custom Python decorators for retry logic
+│   ├── decorators.py         # Custom Python decorators for retry logic
 │   ├── logger_helper.py      # Custom logging configuration
 │   ├── performance.py        # Dedicated Performance Monitoring (SRP)
 │   └── report_generator.py   # Logic for HTML report generation
@@ -40,7 +41,7 @@ A high-performance End-to-End (E2E) testing framework for [Open Library](https:/
 │   ├── screenshots/          # Action confirmation captures
 │   └── performance_report.json # Final performance benchmark report
 ├── requirements.txt          # Project dependencies
-├── conftest.py               # Shared fixtures and Playwright setup
+├── workflows.py
 ├── pytest.ini                # Pytest configuration (Async mode, etc.)
 ├── ReadMeAIBugs.md           # Static analysis report
 ├── .env                      # Secure environment variables (ignored by git)
@@ -140,14 +141,25 @@ This framework implements a multi-layered approach to handle the inherent flakin
 ```markdown
 🧩 Challenges & Solutions
 
-    Advanced Async Orchestration: Integrated Playwright's asynchronous API with a class-based Pytest structure. This leverages professional fixtures for clean setup/teardown while maintaining high-speed, non-blocking execution.
+    Advanced Async Orchestration: Integrated Playwright's asynchronous API with a class-based Pytest structure while invoking standalone workflow functions. This ensures 100% decoupling between test logic and UI orchestration[cite: 16, 20, 114].
 
-    Authentication Resilience: Open Library implements Cloudflare/Turnstile challenges. The framework features a dedicated _handle_security_challenges utility that detects and interacts with verification overlays to ensure uninterrupted CI/CD flows.
+    Authentication Resilience: Open Library implements Cloudflare/Turnstile challenges. The framework features a dedicated security challenge handler that detects and interacts with verification overlays to ensure uninterrupted CI/CD flows.
 
-    State-Aware Teardown & Idempotency: To ensure environmental consistency, the framework implements a robust cleanup mechanism that programmatically clears reading lists. Instead of fixed timers, it utilizes a Smart-Wait strategy—combining Playwright’s Web-First Assertions with periodic Page Refreshes. This handles "eventual consistency" issues where the UI might lag behind server-side updates, ensuring a pristine state for subsequent test cycles and preventing data pollution.
+    State-Aware Teardown & Idempotency: To ensure environmental consistency, the framework implements a robust cleanup mechanism using standalone workflow functions. Instead of fixed timers, it utilizes a Smart-Wait strategy—combining Playwright’s Web-First Assertions with periodic Page Refreshes only when necessary. This handles "eventual consistency" issues where the UI might lag behind server-side updates, ensuring a pristine state for subsequent test cycles and preventing data pollution.
 
-    High-Accuracy Benchmarking: Instead of deprecated methods, the suite implements the Navigation Timing API (Level 2). It calculates durations by subtracting startTime from event timestamps, providing precise, modern metrics for performance auditing.
+    High-Accuracy Benchmarking: Instead of deprecated methods, the suite implements the Navigation Timing API (Level 2). It calculates durations by subtracting startTime from event timestamps, providing precise, modern metrics while programmatically sanitizing sensitive PII (like usernames) from performance logs
 ```
+
+## Limitations
+
+
+* **Rate Limiting**: Aggressive automated runs may trigger 429 errors from Open Library.  
+
+
+* **Dynamic UI**: Significant UI refactors by the site may require selector updates in search_page.py.  
+
+
+* **CAPTCHA**: Persistent image-based CAPTCHAs are outside the scope of this automated suite.
 
 ## 📝 License
 This project is for educational and testing purposes.

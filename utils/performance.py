@@ -73,6 +73,13 @@ def save_performance_report(performance_data: list, file_path: str = "outputs/pe
     Exports the captured metrics list to a structured JSON file.
     Automatically creates the output directory if it does not exist.
     """
+    clean_data = []
+    for entry in performance_data:
+        if 'url' in entry:
+            import re
+            entry['url'] = re.sub(r'/people/[^/]+/', '/people/USER/', entry['url'])
+        clean_data.append(entry)
+
     os.makedirs(os.path.dirname(file_path), exist_ok=True)
     with open(file_path, "w", encoding="utf-8") as f:
         json.dump(performance_data, f, indent=4)

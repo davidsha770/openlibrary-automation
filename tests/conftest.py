@@ -17,7 +17,19 @@ load_dotenv()
 @pytest.fixture(scope="session")
 def config():
     with open("config/config.json", "r") as f:
-        return json.load(f)
+        cfg = json.load(f)
+
+    cfg["auth"] = {
+        "username": os.getenv("OL_USERNAME"),
+        "password": os.getenv("OL_PASSWORD"),
+        "display_name": os.getenv("OL_DISPLAY_NAME")
+    }
+
+    missing = [k for k, v in cfg["auth"].items() if not v]
+    if missing:
+        raise RuntimeError(f"Critical: Missing environment variables: {missing}")
+        
+    return cfg
 
 @pytest.fixture(scope="session")
 def logger():

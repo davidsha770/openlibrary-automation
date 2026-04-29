@@ -56,7 +56,7 @@ def generate_html_report(perf_results, screenshot_dir="outputs/screenshots"):
         threshold = res.get('threshold_ms', 0)
         
         # Validation Logic: Determine if the page load meets the defined SLA (Threshold)
-        is_pass = load_time <= threshold
+        is_pass = res.get('status') == 'Pass'
         status_text = "PASSED" if is_pass else "FAIL (SLA Breach)"
         status_class = "pass" if is_pass else "fail"
         

@@ -2,7 +2,7 @@ import asyncio
 import functools
 import logging
 
-logger = logging.getLogger("automation")
+logger = logging.getLogger("automation_logger")
 
 def retry_on_failure(times=3, delay=2):
     """
