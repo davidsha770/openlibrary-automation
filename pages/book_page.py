@@ -64,19 +64,3 @@ class BookPage(BasePage):
             await self.report_error(e, f"Failed to add book to '{status}'", f"error_book_{status}")
             raise e
         
-    async def capture_book_addition(self, book_title: str):
-        """
-        Captures a visual confirmation screenshot.
-        Sanitizes the book title to create a valid filesystem filename.
-        """
-        screenshot_dir = os.path.join("outputs", "screenshots")
-        if not os.path.exists(screenshot_dir):
-            os.makedirs(screenshot_dir)
-            
-        # Replace non-alphanumeric characters with underscores for safe filenames
-        safe_name = "".join([c if c.isalnum() else "_" for c in book_title])[:50]
-        screenshot_path = os.path.join(screenshot_dir, f"{safe_name}.png")
-        
-        await self.page.screenshot(path=screenshot_path)
-        self.logger.info(f"Visual evidence captured for '{book_title}' at {screenshot_path}")
-        return screenshot_path

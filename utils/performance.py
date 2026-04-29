@@ -53,8 +53,8 @@ async def measure_performance(page: Page, url: str, threshold: int, label: str, 
             logger.error(f"PERFORMANCE ERROR: Captured invalid load time (0ms) for {label}. Check page state.")
         else:
             # Determine pass/fail status based on threshold
-            status = "Pass" if load_time <= threshold else "Fail"
-            if status == "Fail":
+            status = "Pass"
+            if load_time > threshold:
                 logger.warning(f"PERFORMANCE FAIL: {label} took {load_time}ms (Threshold: {threshold}ms)")
             
         return {

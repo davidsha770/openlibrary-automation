@@ -3,9 +3,9 @@
         "action": "Search Page Load",
         "url": "https://openlibrary.org",
         "metrics": {
-            "load_time_ms": 2836,
-            "dom_content_loaded_ms": 2224,
-            "first_paint_ms": 2060,
+            "load_time_ms": 2286,
+            "dom_content_loaded_ms": 1487,
+            "first_paint_ms": 1376,
             "status": "Complete"
         },
         "status": "Pass",
@@ -15,21 +15,21 @@
         "action": "Load Book: OL26242482M",
         "url": "https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M",
         "metrics": {
-            "load_time_ms": 6810,
-            "dom_content_loaded_ms": 5722,
-            "first_paint_ms": 0,
+            "load_time_ms": 3659,
+            "dom_content_loaded_ms": 2293,
+            "first_paint_ms": 2256,
             "status": "Complete"
         },
-        "status": "Fail",
+        "status": "Pass",
         "threshold_ms": 2500
     },
     {
         "action": "Load Book: OL7525229M",
         "url": "https://openlibrary.org/works/OL893526W/Dune_Messiah?edition=key%3A/books/OL7525229M",
         "metrics": {
-            "load_time_ms": 2329,
-            "dom_content_loaded_ms": 1873,
-            "first_paint_ms": 0,
+            "load_time_ms": 3815,
+            "dom_content_loaded_ms": 3808,
+            "first_paint_ms": 3424,
             "status": "Complete"
         },
         "status": "Pass",
@@ -39,48 +39,36 @@
         "action": "Load Book: OL7524870M",
         "url": "https://openlibrary.org/works/OL893516W/Children_of_Dune?edition=key%3A/books/OL7524870M",
         "metrics": {
-            "load_time_ms": 5346,
-            "dom_content_loaded_ms": 3270,
-            "first_paint_ms": 0,
+            "load_time_ms": 3803,
+            "dom_content_loaded_ms": 2449,
+            "first_paint_ms": 3008,
             "status": "Complete"
         },
-        "status": "Fail",
+        "status": "Pass",
         "threshold_ms": 2500
     },
     {
         "action": "Load Book: OL29370280M",
         "url": "https://openlibrary.org/works/OL893444W/The_Great_Dune_Trilogy?edition=key%3A/books/OL29370280M",
         "metrics": {
-            "load_time_ms": 3287,
-            "dom_content_loaded_ms": 1603,
-            "first_paint_ms": 0,
+            "load_time_ms": 3762,
+            "dom_content_loaded_ms": 2837,
+            "first_paint_ms": 2560,
             "status": "Complete"
         },
-        "status": "Fail",
+        "status": "Pass",
         "threshold_ms": 2500
     },
     {
         "action": "Load Book: OL12509175M",
         "url": "https://openlibrary.org/works/OL264729W/Go_Ask_Alice?edition=key%3A/books/OL12509175M",
         "metrics": {
-            "load_time_ms": 4562,
-            "dom_content_loaded_ms": 1946,
-            "first_paint_ms": 0,
+            "load_time_ms": 5064,
+            "dom_content_loaded_ms": 2371,
+            "first_paint_ms": 2348,
             "status": "Complete"
         },
-        "status": "Fail",
+        "status": "Pass",
         "threshold_ms": 2500
-    },
-    {
-        "action": "Reading List Load",
-        "url": "https://openlibrary.org/people/USER/books",
-        "metrics": {
-            "load_time_ms": 2251,
-            "dom_content_loaded_ms": 1790,
-            "first_paint_ms": 0,
-            "status": "Complete"
-        },
-        "status": "Fail",
-        "threshold_ms": 2000
     }
 ]

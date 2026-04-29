@@ -1,17 +1,18 @@
 import re
 from playwright.async_api import expect, Page
 import logging
-import asyncio
 from .base_page import BasePage
 
 class ReadingListPage(BasePage):
     """
     Page Object for the Reading List pages.
-    Handles sidebar count verification and automated cleanup of reading lists.
+    Handles technical interactions, data extraction, and navigation for user books.
     """
     def __init__(self, page: Page, logger: logging.Logger, config: dict):
         super().__init__(page, logger, config)
-    # Dynamic selector using a template for different list tracking IDs
+
+    # --- Selectors ---
+    # Dynamic selector template for list tracking IDs in the sidebar
     SIDEBAR_COUNT_SPAN = "a[data-ol-link-track='MyBooksSidebar|{list_id}'] span.li-count"
     LIST_PATH_TEMPLATE = "/people/{user_name}/books/{list_type}"
     MY_BOOKS_PATH = "/account/books"
@@ -33,107 +34,59 @@ class ReadingListPage(BasePage):
             if await element.count() == 0:
                 return 0
             
-            # Ensure the sidebar element is visible and populated
+            # Ensure the sidebar element is visible and populated before extraction
             await expect(element).to_be_visible(timeout=5000)
             
             text = await element.inner_text()
             self.logger.info(f"Sidebar {list_id} raw text captured: '{text}'")
             
-            # Use Regex to extract only digits from the captured text (e.g., "(5)" -> 5)
+            # Extract digits using Regex (e.g., handles formats like "(5)" or "5 items")
             match = re.search(r'\d+', text)
             return int(match.group()) if match else 0
         except Exception as e:
-            await self.report_error(e, f"Failed to retrieve sidebar count for {list_id}", level="warning")
+            await self.report_error(e, f"Technical failure retrieving sidebar count for {list_id}", level="warning")
             return 0
         
     async def get_aggregate_count(self) -> int:
-        """Helper to sum both lists."""
+        """Technical Utility: Sums the counts of both primary reading lists."""
         want_count = await self.get_sidebar_count("WantToRead")
         read_count = await self.get_sidebar_count("AlreadyRead")
         return want_count + read_count
 
-    async def assert_reading_list_count(self, expected_count: int):
+    async def get_total_reading_list_count(self) -> int:
         """
-        Verifies that the aggregate count of all reading lists matches expectations.
-        Ensures proper navigation and URL validation before assertion.
-        """
-        self.logger.info("Navigating to 'My Books' for final count verification.")
-        
-        # Explicit navigation if the current URL does not match the target
+        Technical Action: Navigates to the Books Overview and retrieves the aggregate count.
+        No business logic or retry loops are implemented here.
+        """      
         target_url = f"{self.config['urls']['base_url'].rstrip('/')}{self.MY_BOOKS_PATH}"
         if self.page.url != target_url:
             await self.page.goto(target_url, wait_until="domcontentloaded")
         
-        # Validate that we are indeed on the books management page
+        # Verify page state before data extraction
         await expect(self.page).to_have_url(re.compile(r".*/books.*"))
+        return await self.get_aggregate_count()
 
-        max_retries = 10
-        actual_total = 0
-        
-        for attempt in range(max_retries):
-            actual_total = await self.get_aggregate_count()
-            if actual_total == expected_count:
-                self.logger.info(f"Success: Count reached {expected_count} after {attempt} retries.")
-                return
-            
-            if attempt > 0 and attempt % 3 == 0:
-                self.logger.debug(f"Attempt {attempt}: Syncing with server via page reload...")
-                await self.page.reload(wait_until="domcontentloaded")
-        
-            self.logger.debug(f"Attempt {attempt+1}: Count is {actual_total}, waiting for {expected_count}...")
-            await asyncio.sleep(1)
-        
-        if actual_total != expected_count:
-            await self.report_error(
-                AssertionError(f"Expected {expected_count}, got {actual_total}"), 
-                "Final count verification failed", 
-                "sidebar_mismatch"
-            )
-            raise AssertionError(f"Count mismatch: Sidebar total is {actual_total}, expected {expected_count}")
-        
-        self.logger.info("Verification Successful: Reading list counts match.")
+    async def navigate_to_specific_list(self, user_name: str, list_type: str):
+        """Technical Action: Performs direct navigation to a specific sub-list."""
+        path = self.LIST_PATH_TEMPLATE.format(user_name=user_name, list_type=list_type)
+        target_url = f"{self.config['urls']['base_url'].rstrip('/')}{path}"
+        await self.page.goto(target_url, wait_until="domcontentloaded")
 
-    async def clear_reading_lists(self, user_name: str):
+    async def get_active_toggle_count(self, list_name_text: str) -> int:
+        """Technical Utility: Returns the number of active list-status buttons on the page."""
+        selector = self.ACTIVE_STATUS_BTN_TEMPLATE.format(list_name_text)
+        return await self.page.locator(selector).count()
+
+    async def remove_first_item_from_list(self, list_name_text: str):
         """
-        Iterates through reading lists and removes all items to ensure a clean state.
-        Uses a dynamic wait strategy to optimize speed and prevents infinite loops.
+        Technical Action: Clicks the first active removal button.
+        Uses a technical assertion to ensure UI stability before returning control.
         """
-        list_map = {"want-to-read": "Want to Read", "already-read": "Already Read"}
-
-        for list_id, btn_text in list_map.items():
-            path = self.LIST_PATH_TEMPLATE.format(user_name=user_name, list_type=list_id)
-            target_url = f"{self.config['urls']['base_url'].rstrip('/')}{path}"
-            await self.page.goto(target_url, wait_until="domcontentloaded")
-            
-            # Target buttons that represent an active state for the current list
-            selector = self.ACTIVE_STATUS_BTN_TEMPLATE.format(btn_text)
-            active_toggles = self.page.locator(selector)
-
-            try:
-                await active_toggles.first.wait_for(state="visible", timeout=5000)
-            except Exception as e:
-                self.logger.debug(f"List {list_id} check finished: {e}")
-                self.logger.info(f"List {list_id} is empty, skipping cleanup.")
-                continue
-            
-            # Safety limit to prevent infinite loops in CI environments
-            max_cleanup_attempts = 20
-            attempts = 0
-            
-            while attempts < max_cleanup_attempts:
-                count = await active_toggles.count()
-                if count == 0:
-                    break
-
-                attempts += 1
-                try:
-                    await active_toggles.first.click()
-                    await expect(active_toggles).to_have_count(count - 1, timeout=5000)
-
-                except Exception as e:
-                    # Specific recovery logic: reload and re-locate elements
-                    await self.report_error(e, f"Interruption during cleanup of {list_id}", level="debug")
-                    await self.page.reload(wait_until="domcontentloaded")
-                    # Re-bind the locator after reload to avoid 'Stale Element' issues
-                    selector = self.ACTIVE_STATUS_BTN_TEMPLATE.format(btn_text)
-                    active_toggles = self.page.locator(selector)
+        selector = self.ACTIVE_STATUS_BTN_TEMPLATE.format(list_name_text)
+        active_toggles = self.page.locator(selector)
+        
+        count_before = await active_toggles.count()
+        if count_before > 0:
+            await active_toggles.first.click()
+            # Technical wait: ensuring the DOM reflects the change before the next operation
+            await expect(active_toggles).to_have_count(count_before - 1, timeout=5000)

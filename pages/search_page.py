@@ -31,64 +31,39 @@ class SearchPage(BasePage):
         # Ensure results are populated before continuing
         await expect(self.page.locator(self.RESULT_ITEMS).first).to_be_visible(timeout=15000)
 
-    async def get_filtered_books(self, max_year: int, limit: int):
+    async def get_current_page_results(self) -> list[dict]:
         """
-        Main orchestration: iterates through result pages until the limit is met.
+        Technical Logic: Scrapes raw data from the current view.
+        Returns a list of dicts: [{'year': int, 'href': str}, ...]
         """
-        found_books = []
-        current_page = 1
-       
-        while len(found_books) < limit:
-            self.logger.info(f"Scanning results on page {current_page}...")
-            
-            # Extract matches from current page
-            page_matches = await self._parse_results_on_page(max_year, limit - len(found_books))
-            found_books.extend(page_matches)
-            
-            if len(found_books) >= limit:
-                break
-
-            current_page += 1
-            if not await self._navigate_to_page():
-                break
-
-        return found_books
-
-    async def _parse_results_on_page(self, max_year: int, remaining_limit: int):
-        """
-        Parses results using the Locator API for stability.
-        """
-        matches = []
-        results = await self.page.locator(self.RESULT_ITEMS).all()
-
+        books_data = []
         domain = self.config['urls']['base_url'].rstrip('/')
-
+        
+        # Get all result cards
+        results = await self.page.locator(self.RESULT_ITEMS).all()
+        
         for item in results:
-            if len(matches) >= remaining_limit:
-                break
-
+            # 1. Extract Year (Handles multiple possible locations in DOM)
             year_element = item.locator(self.PUBLICATION_YEAR_DETAILS)
             if await year_element.count() == 0:
                 year_element = item.locator(self.PUBLICATION_YEAR_EDITIONS)
-
-            year_text = await year_element.first.inner_text()
+            
+            year_text = await year_element.first.inner_text() if await year_element.count() > 0 else ""
             year = self._extract_year(year_text)
             
-            if year and year <= max_year:
-                link_locator = item.locator(self.BOOK_TITLE_LINK)
-                if await link_locator.count() > 0:
-                    href = await link_locator.get_attribute("href")
-                    if not href:
-                        self.logger.warning("Link found but href attribute is missing. Skipping.")
-                        continue
+            # 2. Extract Link
+            link_locator = item.locator(self.BOOK_TITLE_LINK)
+            href = await link_locator.get_attribute("href") if await link_locator.count() > 0 else None
+            
+            if href:
+                books_data.append({
+                    "year": year, 
+                    "href": f"{domain}{href}" if href.startswith('/') else href
+                })
+        
+        return books_data
 
-                    full_url = f"{domain}{href}"
-                    matches.append(full_url)
-                    self.logger.info(f"Match found ({year}): {full_url}")
-                    
-        return matches
-
-    async def _navigate_to_page(self) -> bool:
+    async def navigate_to_next_page(self) -> bool:
         """
         Handles sequential pagination by interacting with the 'Next' control.
         Ensures a stable state transition before returning execution to the caller.
@@ -120,5 +95,7 @@ class SearchPage(BasePage):
             return False
 
     def _extract_year(self, text: str):
+        """Helper to clean UI strings into integers."""
+        if not text: return None
         match = re.search(r'\d{4}', text)
         return int(match.group()) if match else None

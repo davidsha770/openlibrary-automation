@@ -1,0 +1,32 @@
+[32mINFO    [0m automation_logger:workflows.py:19 Starting login flow for user: davidsha207@gmail.com
+[32mINFO    [0m automation_logger:login_page.py:64 Security challenge detected: button:has-text('Verify'). Attempting clearance...
+[32mINFO    [0m automation_logger:workflows.py:38 Authentication successful.
+[33mWARNING [0m automation_logger:performance.py:58 PERFORMANCE FAIL: Load Book: OL26242482M took 3659ms (Threshold: 2500ms)
+[32mINFO    [0m automation_logger:workflows.py:93 Adding https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M to Want to Read
+[32mINFO    [0m automation_logger:book_page.py:60 State change verified: Book is now 'Want to Read'
+[32mINFO    [0m automation_logger:visuals.py:16 Visual evidence captured for 'OL26242482M' at outputs/screenshots/OL26242482M.png
+[32mINFO    [0m automation_logger:workflows.py:106 Visual evidence attached to Allure for 'OL26242482M'
+[33mWARNING [0m automation_logger:performance.py:58 PERFORMANCE FAIL: Load Book: OL7525229M took 3815ms (Threshold: 2500ms)
+[32mINFO    [0m automation_logger:workflows.py:93 Adding https://openlibrary.org/works/OL893526W/Dune_Messiah?edition=key%3A/books/OL7525229M to Already Read
+[32mINFO    [0m automation_logger:book_page.py:60 State change verified: Book is now 'Already Read'
+[32mINFO    [0m automation_logger:visuals.py:16 Visual evidence captured for 'OL7525229M' at outputs/screenshots/OL7525229M.png
+[32mINFO    [0m automation_logger:workflows.py:106 Visual evidence attached to Allure for 'OL7525229M'
+[33mWARNING [0m automation_logger:performance.py:58 PERFORMANCE FAIL: Load Book: OL7524870M took 3803ms (Threshold: 2500ms)
+[32mINFO    [0m automation_logger:workflows.py:93 Adding https://openlibrary.org/works/OL893516W/Children_of_Dune?edition=key%3A/books/OL7524870M to Want to Read
+[32mINFO    [0m automation_logger:book_page.py:60 State change verified: Book is now 'Want to Read'
+[32mINFO    [0m automation_logger:visuals.py:16 Visual evidence captured for 'OL7524870M' at outputs/screenshots/OL7524870M.png
+[32mINFO    [0m automation_logger:workflows.py:106 Visual evidence attached to Allure for 'OL7524870M'
+[33mWARNING [0m automation_logger:performance.py:58 PERFORMANCE FAIL: Load Book: OL29370280M took 3762ms (Threshold: 2500ms)
+[32mINFO    [0m automation_logger:workflows.py:93 Adding https://openlibrary.org/works/OL893444W/The_Great_Dune_Trilogy?edition=key%3A/books/OL29370280M to Already Read
+[32mINFO    [0m automation_logger:book_page.py:60 State change verified: Book is now 'Already Read'
+[32mINFO    [0m automation_logger:visuals.py:16 Visual evidence captured for 'OL29370280M' at outputs/screenshots/OL29370280M.png
+[32mINFO    [0m automation_logger:workflows.py:106 Visual evidence attached to Allure for 'OL29370280M'
+[33mWARNING [0m automation_logger:performance.py:58 PERFORMANCE FAIL: Load Book: OL12509175M took 5064ms (Threshold: 2500ms)
+[32mINFO    [0m automation_logger:workflows.py:93 Adding https://openlibrary.org/works/OL264729W/Go_Ask_Alice?edition=key%3A/books/OL12509175M to Already Read
+[32mINFO    [0m automation_logger:book_page.py:60 State change verified: Book is now 'Already Read'
+[32mINFO    [0m automation_logger:visuals.py:16 Visual evidence captured for 'OL12509175M' at outputs/screenshots/OL12509175M.png
+[32mINFO    [0m automation_logger:workflows.py:106 Visual evidence attached to Allure for 'OL12509175M'
+[32mINFO    [0m automation_logger:reading_list_page.py:41 Sidebar WantToRead raw text captured: '2'
+[32mINFO    [0m automation_logger:reading_list_page.py:41 Sidebar AlreadyRead raw text captured: '3'
+[32mINFO    [0m automation_logger:test_e2e.py:52 Teardown: Reverting account state for user: user532228
+[32mINFO    [0m automation_logger:conftest.py:72 Browser context and playwright instance closed.

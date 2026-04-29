@@ -1,41 +1,32 @@
-2026-04-29 14:07:57,473 - INFO - Navigating to login page...
-2026-04-29 14:08:02,418 - INFO - Security challenge found: button:has-text('Verify'). Clicking...
-2026-04-29 14:08:04,582 - INFO - Waiting for login inputs to become ready...
-2026-04-29 14:08:08,421 - INFO - Login sequence successfully verified.
-2026-04-29 14:08:14,910 - INFO - Scanning results on page 1...
-2026-04-29 14:08:15,244 - INFO - Match found (1965): https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M
-2026-04-29 14:08:15,466 - INFO - Match found (1969): https://openlibrary.org/works/OL893526W/Dune_Messiah?edition=key%3A/books/OL7525229M
-2026-04-29 14:08:15,534 - INFO - Match found (1976): https://openlibrary.org/works/OL893516W/Children_of_Dune?edition=key%3A/books/OL7524870M
-2026-04-29 14:08:16,036 - INFO - Match found (1977): https://openlibrary.org/works/OL893444W/The_Great_Dune_Trilogy?edition=key%3A/books/OL29370280M
-2026-04-29 14:08:16,275 - INFO - Match found (1971): https://openlibrary.org/works/OL264729W/Go_Ask_Alice?edition=key%3A/books/OL12509175M
-2026-04-29 14:08:23,121 - WARNING - PERFORMANCE FAIL: Load Book: OL26242482M took 6810ms (Threshold: 2500ms)
-2026-04-29 14:08:23,121 - INFO - Adding https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M to Want to Read
-2026-04-29 14:08:24,203 - INFO - State change verified: Book is now 'Want to Read'
-2026-04-29 14:08:24,527 - INFO - Visual evidence captured for 'OL26242482M' at outputs/screenshots/OL26242482M.png
-2026-04-29 14:08:24,528 - INFO - Visual evidence attached to Allure for 'OL26242482M'
-2026-04-29 14:08:26,913 - INFO - Adding https://openlibrary.org/works/OL893526W/Dune_Messiah?edition=key%3A/books/OL7525229M to Already Read
-2026-04-29 14:08:28,221 - INFO - State change verified: Book is now 'Already Read'
-2026-04-29 14:08:28,683 - INFO - Visual evidence captured for 'OL7525229M' at outputs/screenshots/OL7525229M.png
-2026-04-29 14:08:28,685 - INFO - Visual evidence attached to Allure for 'OL7525229M'
-2026-04-29 14:08:34,052 - WARNING - PERFORMANCE FAIL: Load Book: OL7524870M took 5346ms (Threshold: 2500ms)
-2026-04-29 14:08:34,053 - INFO - Adding https://openlibrary.org/works/OL893516W/Children_of_Dune?edition=key%3A/books/OL7524870M to Already Read
-2026-04-29 14:08:35,218 - INFO - State change verified: Book is now 'Already Read'
-2026-04-29 14:08:35,499 - INFO - Visual evidence captured for 'OL7524870M' at outputs/screenshots/OL7524870M.png
-2026-04-29 14:08:35,500 - INFO - Visual evidence attached to Allure for 'OL7524870M'
-2026-04-29 14:08:38,815 - WARNING - PERFORMANCE FAIL: Load Book: OL29370280M took 3287ms (Threshold: 2500ms)
-2026-04-29 14:08:38,816 - INFO - Adding https://openlibrary.org/works/OL893444W/The_Great_Dune_Trilogy?edition=key%3A/books/OL29370280M to Want to Read
-2026-04-29 14:08:39,874 - INFO - State change verified: Book is now 'Want to Read'
-2026-04-29 14:08:40,534 - INFO - Visual evidence captured for 'OL29370280M' at outputs/screenshots/OL29370280M.png
-2026-04-29 14:08:40,535 - INFO - Visual evidence attached to Allure for 'OL29370280M'
-2026-04-29 14:08:45,134 - WARNING - PERFORMANCE FAIL: Load Book: OL12509175M took 4562ms (Threshold: 2500ms)
-2026-04-29 14:08:45,134 - INFO - Adding https://openlibrary.org/works/OL264729W/Go_Ask_Alice?edition=key%3A/books/OL12509175M to Want to Read
-2026-04-29 14:08:46,179 - INFO - State change verified: Book is now 'Want to Read'
-2026-04-29 14:08:46,598 - INFO - Visual evidence captured for 'OL12509175M' at outputs/screenshots/OL12509175M.png
-2026-04-29 14:08:46,599 - INFO - Visual evidence attached to Allure for 'OL12509175M'
-2026-04-29 14:08:48,941 - WARNING - PERFORMANCE FAIL: Reading List Load took 2251ms (Threshold: 2000ms)
-2026-04-29 14:08:48,942 - INFO - Navigating to 'My Books' for final count verification.
-2026-04-29 14:08:50,746 - INFO - Sidebar WantToRead raw text captured: '3'
-2026-04-29 14:08:50,761 - INFO - Sidebar AlreadyRead raw text captured: '2'
-2026-04-29 14:08:50,762 - INFO - Success: Count reached 5 after 0 retries.
-2026-04-29 14:08:50,763 - INFO - Teardown: Reverting account state for user: user532228
-2026-04-29 14:09:03,942 - INFO - Browser context and playwright instance closed.
+2026-04-29 20:12:15,631 - INFO - Starting login flow for user: davidsha207@gmail.com
+2026-04-29 20:12:18,755 - INFO - Security challenge detected: button:has-text('Verify'). Attempting clearance...
+2026-04-29 20:12:24,118 - INFO - Authentication successful.
+2026-04-29 20:12:34,182 - WARNING - PERFORMANCE FAIL: Load Book: OL26242482M took 3659ms (Threshold: 2500ms)
+2026-04-29 20:12:34,183 - INFO - Adding https://openlibrary.org/works/OL893415W/Dune?edition=key%3A/books/OL26242482M to Want to Read
+2026-04-29 20:12:34,741 - INFO - State change verified: Book is now 'Want to Read'
+2026-04-29 20:12:35,069 - INFO - Visual evidence captured for 'OL26242482M' at outputs/screenshots/OL26242482M.png
+2026-04-29 20:12:35,071 - INFO - Visual evidence attached to Allure for 'OL26242482M'
+2026-04-29 20:12:39,070 - WARNING - PERFORMANCE FAIL: Load Book: OL7525229M took 3815ms (Threshold: 2500ms)
+2026-04-29 20:12:39,071 - INFO - Adding https://openlibrary.org/works/OL893526W/Dune_Messiah?edition=key%3A/books/OL7525229M to Already Read
+2026-04-29 20:12:40,059 - INFO - State change verified: Book is now 'Already Read'
+2026-04-29 20:12:40,544 - INFO - Visual evidence captured for 'OL7525229M' at outputs/screenshots/OL7525229M.png
+2026-04-29 20:12:40,546 - INFO - Visual evidence attached to Allure for 'OL7525229M'
+2026-04-29 20:12:44,375 - WARNING - PERFORMANCE FAIL: Load Book: OL7524870M took 3803ms (Threshold: 2500ms)
+2026-04-29 20:12:44,376 - INFO - Adding https://openlibrary.org/works/OL893516W/Children_of_Dune?edition=key%3A/books/OL7524870M to Want to Read
+2026-04-29 20:12:45,446 - INFO - State change verified: Book is now 'Want to Read'
+2026-04-29 20:12:45,709 - INFO - Visual evidence captured for 'OL7524870M' at outputs/screenshots/OL7524870M.png
+2026-04-29 20:12:45,710 - INFO - Visual evidence attached to Allure for 'OL7524870M'
+2026-04-29 20:12:49,531 - WARNING - PERFORMANCE FAIL: Load Book: OL29370280M took 3762ms (Threshold: 2500ms)
+2026-04-29 20:12:49,532 - INFO - Adding https://openlibrary.org/works/OL893444W/The_Great_Dune_Trilogy?edition=key%3A/books/OL29370280M to Already Read
+2026-04-29 20:12:51,219 - INFO - State change verified: Book is now 'Already Read'
+2026-04-29 20:12:51,480 - INFO - Visual evidence captured for 'OL29370280M' at outputs/screenshots/OL29370280M.png
+2026-04-29 20:12:51,482 - INFO - Visual evidence attached to Allure for 'OL29370280M'
+2026-04-29 20:12:56,580 - WARNING - PERFORMANCE FAIL: Load Book: OL12509175M took 5064ms (Threshold: 2500ms)
+2026-04-29 20:12:56,582 - INFO - Adding https://openlibrary.org/works/OL264729W/Go_Ask_Alice?edition=key%3A/books/OL12509175M to Already Read
+2026-04-29 20:12:57,278 - INFO - State change verified: Book is now 'Already Read'
+2026-04-29 20:12:57,729 - INFO - Visual evidence captured for 'OL12509175M' at outputs/screenshots/OL12509175M.png
+2026-04-29 20:12:57,730 - INFO - Visual evidence attached to Allure for 'OL12509175M'
+2026-04-29 20:12:59,621 - INFO - Sidebar WantToRead raw text captured: '2'
+2026-04-29 20:12:59,674 - INFO - Sidebar AlreadyRead raw text captured: '3'
+2026-04-29 20:12:59,677 - INFO - Teardown: Reverting account state for user: user532228
+2026-04-29 20:13:03,622 - INFO - Browser context and playwright instance closed.
